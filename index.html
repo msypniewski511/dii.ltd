@@ -13,7 +13,6 @@
     />
     <meta name="theme-color" content="#0b1220" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Dhruvi Infinity Inspiration Ltd." />
     <meta
       property="og:description"
@@ -21,10 +20,8 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dii.ltd/" />
-    <!-- TODO: Replace with your real social preview image -->
-    <meta property="og:image" content="PLACEHOLDER-OG-IMAGE.jpg" />
+    <meta property="og:image" content="ILOVE.png" />
 
-    <!-- Ionicons -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -34,7 +31,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <!-- GSAP -->
     <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
@@ -74,9 +70,11 @@
       * {
         box-sizing: border-box;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         margin: 0;
         color: var(--ink);
@@ -128,7 +126,6 @@
         color: inherit;
       }
 
-      /* Sidebar */
       .sidebar {
         position: fixed;
         top: 0;
@@ -313,7 +310,6 @@
         padding: 6px 8px 0;
       }
 
-      /* Mobile menu */
       .menu-toggle {
         position: fixed;
         top: 16px;
@@ -351,7 +347,6 @@
         visibility: visible;
       }
 
-      /* Main */
       .main {
         position: relative;
         z-index: 1;
@@ -416,7 +411,6 @@
         margin: 14px 0 0;
       }
 
-      /* Hero */
       .hero {
         display: grid;
         grid-template-columns: 1.08fr 0.92fr;
@@ -484,8 +478,8 @@
 
       .hero-art {
         position: relative;
-        width: min(100%, 620px);
-        aspect-ratio: 1 / 1.02;
+        width: min(100%, 640px);
+        aspect-ratio: 1 / 1.05;
         border-radius: 32px;
         overflow: hidden;
         background:
@@ -553,26 +547,20 @@
 
       .hero-panel-main {
         left: 26px;
-        right: 120px;
-        top: 28px;
-        min-height: 174px;
+        right: 26px;
+        top: 26px;
+        min-height: 178px;
         padding: 20px;
-      }
-
-      .hero-panel-top {
-        top: 42px;
-        right: 22px;
-        width: 146px;
-        min-height: 132px;
-        padding: 16px;
+        z-index: 3;
       }
 
       .hero-panel-bottom {
-        left: 34px;
-        right: 28px;
+        left: 26px;
+        right: 26px;
         bottom: 26px;
-        min-height: 178px;
-        padding: 18px;
+        min-height: 272px;
+        padding: 0;
+        z-index: 2;
       }
 
       .hero-panel-badge {
@@ -588,18 +576,14 @@
         margin-bottom: 12px;
       }
 
-      .hero-panel-main h3,
-      .hero-panel-bottom h3,
-      .hero-panel-top h3 {
+      .hero-panel-main h3 {
         margin: 0 0 8px;
         color: var(--ink-strong);
         line-height: 1.15;
         letter-spacing: -0.02em;
       }
 
-      .hero-panel-main p,
-      .hero-panel-bottom p,
-      .hero-panel-top p {
+      .hero-panel-main p {
         margin: 0;
         color: var(--muted);
         line-height: 1.6;
@@ -638,23 +622,155 @@
         background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
       }
 
-      .hero-chip-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-top: 14px;
+      .hero-carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 272px;
       }
 
-      .hero-chip {
-        padding: 10px 12px;
-        border-radius: 14px;
+      .hero-carousel-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.02);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease,
+          visibility 0.5s ease;
+      }
+
+      .hero-slide.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+
+      .hero-slide picture,
+      .hero-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-slide img {
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .hero-slide-overlay {
+        position: absolute;
+        inset: auto 0 0;
+        padding: 20px 22px 22px;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 15, 30, 0) 0%,
+          rgba(10, 15, 30, 0.42) 38%,
+          rgba(10, 15, 30, 0.78) 100%
+        );
+        color: #fff;
+      }
+
+      .hero-slide-label {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(10px);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .hero-slide-overlay h3 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-slide-overlay p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 0.93rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-carousel-controls {
+        position: absolute;
+        inset: 16px 16px auto auto;
+        display: flex;
+        gap: 8px;
+        z-index: 4;
+      }
+
+      .hero-carousel-btn {
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         background: rgba(255, 255, 255, 0.78);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-        color: #334155;
-        font-size: 0.84rem;
+        color: var(--ink-strong);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        transition:
+          transform 0.12s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
-      /* Buttons */
+      .hero-carousel-btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: var(--shadow-md);
+      }
+
+      .hero-carousel-btn ion-icon {
+        font-size: 1.1rem;
+      }
+
+      .hero-carousel-dots {
+        position: absolute;
+        left: 20px;
+        bottom: 18px;
+        display: flex;
+        gap: 9px;
+        z-index: 4;
+      }
+
+      .hero-carousel-dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        transition:
+          transform 0.15s ease,
+          background 0.2s ease,
+          width 0.2s ease;
+      }
+
+      .hero-carousel-dot.active {
+        width: 28px;
+        background: rgba(255, 255, 255, 0.95);
+      }
+
       .btn {
         display: inline-flex;
         align-items: center;
@@ -702,7 +818,6 @@
         border-color: rgba(37, 99, 235, 0.1);
       }
 
-      /* Cards / grids */
       .grid {
         display: grid;
         gap: 18px;
@@ -711,9 +826,11 @@
       .grid-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
       .grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+
       .grid-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
@@ -730,6 +847,9 @@
         border: 1px solid rgba(255, 255, 255, 0.88);
         box-shadow: var(--shadow-sm);
         overflow: hidden;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.2s ease;
       }
 
       .card::before {
@@ -781,20 +901,6 @@
         color: #5c6b7d;
       }
 
-      .card .tag {
-        display: inline-flex;
-        margin-top: 14px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        background: rgba(219, 234, 254, 0.62);
-        border: 1px solid rgba(37, 99, 235, 0.1);
-        color: var(--blue-3);
-        font-size: 0.77rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
-
       .card-actions {
         display: flex;
         gap: 10px;
@@ -802,7 +908,6 @@
         margin-top: 18px;
       }
 
-      /* Platform band */
       .platform-band {
         padding: 28px;
         border-radius: 32px;
@@ -849,7 +954,6 @@
         line-height: 1.5;
       }
 
-      /* Product cards */
       .product-card {
         display: flex;
         flex-direction: column;
@@ -902,7 +1006,6 @@
         font-size: 1rem;
       }
 
-      /* Timeline */
       .flow-shell {
         position: relative;
         padding: 28px 0 12px;
@@ -989,6 +1092,9 @@
         border: 1px solid rgba(255, 255, 255, 0.9);
         box-shadow: var(--shadow-sm);
         min-height: 100%;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.2s ease;
       }
 
       .timeline-kicker {
@@ -1053,7 +1159,6 @@
         line-height: 1.6;
       }
 
-      /* Knowledge */
       .knowledge-split {
         display: grid;
         grid-template-columns: 1fr 0.95fr;
@@ -1155,9 +1260,11 @@
       .dot:nth-child(1) {
         background: #93c5fd;
       }
+
       .dot:nth-child(2) {
         background: #67e8f9;
       }
+
       .dot:nth-child(3) {
         background: #c4b5fd;
       }
@@ -1182,9 +1289,11 @@
       .placeholder-block.short {
         width: 46%;
       }
+
       .placeholder-block.mid {
         width: 72%;
       }
+
       .placeholder-block.long {
         width: 92%;
       }
@@ -1202,7 +1311,6 @@
         font-size: 0.93rem;
       }
 
-      /* Trust / principles */
       .pillars {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1229,7 +1337,6 @@
         line-height: 1.65;
       }
 
-      /* Contact */
       .contact-shell {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
@@ -1253,6 +1360,9 @@
         );
         border: 1px solid rgba(255, 255, 255, 0.88);
         box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.2s ease;
       }
 
       .contact-card h3 {
@@ -1337,7 +1447,6 @@
         margin-top: 3px;
       }
 
-      /* Footer */
       .footer {
         margin-top: 30px;
         padding-top: 22px;
@@ -1350,7 +1459,6 @@
         font-size: 0.92rem;
       }
 
-      /* Responsive */
       @media (max-width: 1260px) {
         .hero {
           grid-template-columns: 1fr;
@@ -1383,12 +1491,15 @@
         .grid-4 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
         .grid-3 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
         .metric-row {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
         .hero-points {
           grid-template-columns: 1fr;
         }
@@ -1400,12 +1511,15 @@
           align-items: center;
           justify-content: center;
         }
+
         .sidebar {
           transform: translateX(-100%);
         }
+
         .sidebar.open {
           transform: translateX(0);
         }
+
         .main {
           margin-left: 0;
           padding: 76px 20px 36px;
@@ -1458,23 +1572,26 @@
           top: 16px;
         }
 
-        .hero-panel-top {
-          position: relative;
-          width: auto;
-          top: auto;
-          right: auto;
-          margin: 198px 16px 0;
-        }
-
         .hero-panel-bottom {
           left: 16px;
           right: 16px;
           bottom: 16px;
+          min-height: 300px;
         }
 
         .hero-art {
           aspect-ratio: auto;
-          min-height: 720px;
+          min-height: 760px;
+        }
+
+        .hero-carousel-controls {
+          top: 12px;
+          right: 12px;
+        }
+
+        .hero-carousel-btn {
+          width: 38px;
+          height: 38px;
         }
 
         .section {
@@ -1490,6 +1607,7 @@
         html {
           scroll-behavior: auto;
         }
+
         * {
           animation: none !important;
           transition: none !important;
@@ -1518,33 +1636,34 @@
         </div>
         <div class="brand-copy">
           <strong>Dhruvi Infinity Inspiration Ltd.</strong>
-          <span
-            >Connected SaaS for founders, operators, and growing
-            businesses.</span
-          >
+          <span>
+            Connected SaaS for founders, operators, and growing businesses.
+          </span>
         </div>
       </div>
 
       <nav class="nav" id="nav">
-        <a href="#hero" class="active"
-          ><ion-icon name="home-outline"></ion-icon>Home</a
-        >
-        <a href="#platform"
-          ><ion-icon name="layers-outline"></ion-icon>Platform</a
-        >
-        <a href="#products"
-          ><ion-icon name="apps-outline"></ion-icon>Products</a
-        >
-        <a href="#how-it-works"
-          ><ion-icon name="git-network-outline"></ion-icon>How it works</a
-        >
-        <a href="#knowledge"
-          ><ion-icon name="library-outline"></ion-icon>Knowledge</a
-        >
-        <a href="#principles"
-          ><ion-icon name="shield-checkmark-outline"></ion-icon>Principles</a
-        >
-        <a href="#contact"><ion-icon name="mail-outline"></ion-icon>Contact</a>
+        <a href="#hero" class="active">
+          <ion-icon name="home-outline"></ion-icon>Home
+        </a>
+        <a href="#platform">
+          <ion-icon name="layers-outline"></ion-icon>Platform
+        </a>
+        <a href="#products">
+          <ion-icon name="apps-outline"></ion-icon>Products
+        </a>
+        <a href="#how-it-works">
+          <ion-icon name="git-network-outline"></ion-icon>How it works
+        </a>
+        <a href="#knowledge">
+          <ion-icon name="library-outline"></ion-icon>Knowledge
+        </a>
+        <a href="#principles">
+          <ion-icon name="shield-checkmark-outline"></ion-icon>Principles
+        </a>
+        <a href="#contact">
+          <ion-icon name="mail-outline"></ion-icon>Contact
+        </a>
       </nav>
 
       <div class="sidebar-stack">
@@ -1567,6 +1686,7 @@
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
+
             <a
               class="mini-link"
               href="https://www.dhruviinfinity.com/ifv"
@@ -1579,6 +1699,7 @@
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
+
             <a
               class="mini-link"
               href="https://www.aryabiz.co.uk/"
@@ -1591,6 +1712,7 @@
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
+
             <a
               class="mini-link"
               href="https://warewise-8b381130a046.herokuapp.com/"
@@ -1612,7 +1734,6 @@
 
     <main class="main">
       <div class="shell">
-        <!-- HERO -->
         <section class="section hero" id="hero">
           <div class="hero-copy reveal">
             <div class="eyebrow">
@@ -1650,24 +1771,26 @@
             <div class="hero-points">
               <div class="hero-point">
                 <strong>Founder tools</strong>
-                <span
-                  >Validate ideas, structure plans, and move toward launch with
-                  guided workflows.</span
-                >
+                <span>
+                  Validate ideas, structure plans, and move toward launch with
+                  guided workflows.
+                </span>
               </div>
+
               <div class="hero-point">
                 <strong>Operational systems</strong>
-                <span
-                  >Support shift planning, logistics control, and business
-                  execution with simpler software.</span
-                >
+                <span>
+                  Support shift planning, logistics control, and business
+                  execution with simpler software.
+                </span>
               </div>
+
               <div class="hero-point">
                 <strong>Knowledge layer</strong>
-                <span
-                  >Use articles, guides, and solution content to reduce
-                  confusion and improve decisions.</span
-                >
+                <span>
+                  Use articles, guides, and solution content to reduce confusion
+                  and improve decisions.
+                </span>
               </div>
             </div>
           </div>
@@ -1693,12 +1816,14 @@
                       <div class="mini-bar-fill" style="width: 84%"></div>
                     </div>
                   </div>
+
                   <div class="mini-bar">
                     <span><strong>Operations</strong><em>Rota → WMS</em></span>
                     <div class="mini-bar-track">
                       <div class="mini-bar-fill" style="width: 71%"></div>
                     </div>
                   </div>
+
                   <div class="mini-bar">
                     <span
                       ><strong>Knowledge</strong
@@ -1711,41 +1836,128 @@
                 </div>
               </div>
 
-              <div class="glass-card hero-panel-top">
-                <span class="hero-panel-badge">Soon</span>
-                <h3>Accountancy SaaS</h3>
-                <p>
-                  Add a preview card here later for finance, compliance, or
-                  founder reporting.
-                </p>
-              </div>
-
               <div class="glass-card hero-panel-bottom">
-                <span class="hero-panel-badge"
-                  >Placeholder for your future visual</span
-                >
-                <h3>
-                  Swap this area with a real product collage, carousel, or
-                  dashboard screenshot
-                </h3>
-                <p>
-                  Suggested replacement later: one branded hero image showing
-                  3–4 product previews with soft blue gradients and
-                  glassmorphism UI.
-                </p>
+                <div class="hero-carousel" id="heroCarousel">
+                  <div class="hero-carousel-controls">
+                    <button
+                      class="hero-carousel-btn"
+                      id="heroPrev"
+                      type="button"
+                      aria-label="Previous slide"
+                    >
+                      <ion-icon name="chevron-back-outline"></ion-icon>
+                    </button>
+                    <button
+                      class="hero-carousel-btn"
+                      id="heroNext"
+                      type="button"
+                      aria-label="Next slide"
+                    >
+                      <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                  </div>
 
-                <div class="hero-chip-grid">
-                  <div class="hero-chip">Startup Builder</div>
-                  <div class="hero-chip">IFV Builder</div>
-                  <div class="hero-chip">RotaPlan</div>
-                  <div class="hero-chip">NorthStar WMS</div>
+                  <div class="hero-carousel-track">
+                    <article class="hero-slide active">
+                      <picture>
+                        <source
+                          srcset="assets/images/dhruviinfinity.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/images/dhruviinfinity.jpg"
+                          alt="Startup Business Builder platform preview"
+                          loading="eager"
+                        />
+                      </picture>
+                      <div class="hero-slide-overlay">
+                        <span class="hero-slide-label">Startup Builder</span>
+                        <h3>
+                          Structure business ideas into a clearer launch path
+                        </h3>
+                        <p>
+                          Use guided workflows, planning tools, and strategic
+                          structure to move from concept to real business
+                          design.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article class="hero-slide">
+                      <picture>
+                        <source
+                          srcset="assets/images/ifv.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/images/ifv.jpg"
+                          alt="Innovation Founder Visa Builder preview"
+                          loading="lazy"
+                        />
+                      </picture>
+                      <div class="hero-slide-overlay">
+                        <span class="hero-slide-label">IFV Builder</span>
+                        <h3>
+                          Support visa-focused founders with a guided pathway
+                        </h3>
+                        <p>
+                          Connect founder readiness, evidence logic, and
+                          endorsement-oriented preparation into one focused
+                          flow.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article class="hero-slide">
+                      <picture>
+                        <source
+                          srcset="
+                            assets/images/dhruviinfinity-fast-checker.webp
+                          "
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/images/dhruviinfinity-fast-checker.jpg"
+                          alt="Fast Checker product preview"
+                          loading="lazy"
+                        />
+                      </picture>
+                      <div class="hero-slide-overlay">
+                        <span class="hero-slide-label">Fast Checker</span>
+                        <h3>
+                          Give founders a quick first signal before deeper work
+                        </h3>
+                        <p>
+                          Help users test early viability and understand whether
+                          they should move into deeper strategy or validation.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <div class="hero-carousel-dots" id="heroDots">
+                    <button
+                      class="hero-carousel-dot active"
+                      type="button"
+                      aria-label="Go to slide 1"
+                    ></button>
+                    <button
+                      class="hero-carousel-dot"
+                      type="button"
+                      aria-label="Go to slide 2"
+                    ></button>
+                    <button
+                      class="hero-carousel-dot"
+                      type="button"
+                      aria-label="Go to slide 3"
+                    ></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- PLATFORM -->
         <section class="section reveal" id="platform">
           <div class="section-head">
             <div class="eyebrow">
@@ -1811,37 +2023,36 @@
             <div class="metric-row">
               <div class="metric">
                 <strong>Founder layer</strong>
-                <span
-                  >Startup Builder, IFV workflows, and strategic planning
-                  support.</span
-                >
+                <span>
+                  Startup Builder, IFV workflows, and strategic planning
+                  support.
+                </span>
               </div>
               <div class="metric">
                 <strong>Ops layer</strong>
-                <span
-                  >Shift planning, team organisation, inventory, and warehouse
-                  control.</span
-                >
+                <span>
+                  Shift planning, team organisation, inventory, and warehouse
+                  control.
+                </span>
               </div>
               <div class="metric">
                 <strong>Future layer</strong>
-                <span
-                  >Accountancy, reporting, compliance, and financial management
-                  tools.</span
-                >
+                <span>
+                  Accountancy, reporting, compliance, and financial management
+                  tools.
+                </span>
               </div>
               <div class="metric">
                 <strong>Content layer</strong>
-                <span
-                  >Business guides, visa paths, know-how articles, and a
-                  solution center.</span
-                >
+                <span>
+                  Business guides, visa paths, know-how articles, and a solution
+                  center.
+                </span>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- PRODUCTS -->
         <section class="section reveal" id="products">
           <div class="section-head">
             <div class="eyebrow">
@@ -1868,25 +2079,25 @@
               </p>
               <ul class="product-list">
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Idea validation, frameworks, strategy, forecasts, and
-                    launch preparation</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Idea validation, frameworks, strategy, forecasts, and launch
+                    preparation
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Strong fit for founders who need structure rather than
-                    vague advice</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Strong fit for founders who need structure rather than vague
+                    advice
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Can become the core “business operating start point” for
-                    many users</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Can become the core “business operating start point” for
+                    many users
+                  </span>
                 </li>
               </ul>
               <div class="card-actions">
@@ -1912,25 +2123,25 @@
               </p>
               <ul class="product-list">
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Helpful for founders exploring the UK Innovator Founder
-                    Visa route</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Helpful for founders exploring the UK Innovator Founder Visa
+                    route
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Supports idea shaping, evidence logic, and
-                    founder-readiness positioning</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Supports idea shaping, evidence logic, and founder-readiness
+                    positioning
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Natural bridge between strategic planning and
-                    immigration-specific preparation</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Natural bridge between strategic planning and
+                    immigration-specific preparation
+                  </span>
                 </li>
               </ul>
               <div class="card-actions">
@@ -1956,24 +2167,23 @@
               </p>
               <ul class="product-list">
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Useful for shift-based operations and service teams</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Useful for shift-based operations and service teams
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Can position DII beyond founders and into business
-                    operations</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Can position DII beyond founders and into business
+                    operations
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Good proof that DII also builds practical execution
-                    software</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Good proof that DII also builds practical execution software
+                  </span>
                 </li>
               </ul>
               <div class="card-actions">
@@ -1999,25 +2209,24 @@
               </p>
               <ul class="product-list">
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Positions DII in logistics and operational
-                    infrastructure</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Positions DII in logistics and operational infrastructure
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Strong complement to rota planning and wider back-office
-                    systems</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Strong complement to rota planning and wider back-office
+                    systems
+                  </span>
                 </li>
                 <li>
-                  <ion-icon name="checkmark-circle-outline"></ion-icon
-                  ><span
-                    >Can later connect naturally to finance and reporting
-                    products</span
-                  >
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Can later connect naturally to finance and reporting
+                    products
+                  </span>
                 </li>
               </ul>
               <div class="card-actions">
@@ -2034,7 +2243,6 @@
           </div>
         </section>
 
-        <!-- HOW IT WORKS -->
         <section class="section reveal" id="how-it-works">
           <div class="section-head">
             <div class="eyebrow">
@@ -2074,25 +2282,25 @@
                     </p>
                     <ul class="timeline-list">
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Founders can begin with business structure and
-                          validation</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Founders can begin with business structure and
+                          validation
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Operators can move directly to rota or warehouse
-                          workflows</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Operators can move directly to rota or warehouse
+                          workflows
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >DII acts as the parent layer guiding them to the
-                          right system</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          DII acts as the parent layer guiding them to the right
+                          system
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -2150,25 +2358,24 @@
                     </p>
                     <ul class="timeline-list">
                       <li>
-                        <ion-icon name="arrow-forward-outline"></ion-icon
-                        ><span
-                          >Startup Builder for general founders and structured
-                          planning</span
-                        >
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <span>
+                          Startup Builder for general founders and structured
+                          planning
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="arrow-forward-outline"></ion-icon
-                        ><span
-                          >IFV Builder for founders with a visa and endorsement
-                          pathway in mind</span
-                        >
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <span>
+                          IFV Builder for founders with a visa and endorsement
+                          pathway in mind
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="arrow-forward-outline"></ion-icon
-                        ><span
-                          >RotaPlan and WMS for execution-focused
-                          businesses</span
-                        >
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <span>
+                          RotaPlan and WMS for execution-focused businesses
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -2187,23 +2394,23 @@
                     </p>
                     <ul class="timeline-list">
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Frameworks and guided steps reduce random work</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Frameworks and guided steps reduce random work
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Operational tools reduce manual friction in
-                          day-to-day business</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Operational tools reduce manual friction in day-to-day
+                          business
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Future finance tools can complete the lifecycle</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Future finance tools can complete the lifecycle
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -2260,25 +2467,25 @@
                     </p>
                     <ul class="timeline-list">
                       <li>
-                        <ion-icon name="book-outline"></ion-icon
-                        ><span
-                          >Educational articles attract discovery traffic and
-                          build authority</span
-                        >
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>
+                          Educational articles attract discovery traffic and
+                          build authority
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="book-outline"></ion-icon
-                        ><span
-                          >Solution pages can explain which DII tool fits which
-                          business problem</span
-                        >
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>
+                          Solution pages can explain which DII tool fits which
+                          business problem
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="book-outline"></ion-icon
-                        ><span
-                          >Guides help visitors understand before they buy or
-                          sign up</span
-                        >
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>
+                          Guides help visitors understand before they buy or
+                          sign up
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -2297,24 +2504,24 @@
                     </p>
                     <ul class="timeline-list">
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Founders begin with planning and validation</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Founders begin with planning and validation
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >Businesses stay for operations, learning, and future
-                          finance tooling</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          Businesses stay for operations, learning, and future
+                          finance tooling
+                        </span>
                       </li>
                       <li>
-                        <ion-icon name="checkmark-outline"></ion-icon
-                        ><span
-                          >DII grows from startup support into a wider business
-                          infrastructure brand</span
-                        >
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                        <span>
+                          DII grows from startup support into a wider business
+                          infrastructure brand
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -2347,7 +2554,6 @@
           </div>
         </section>
 
-        <!-- KNOWLEDGE -->
         <section class="section reveal" id="knowledge">
           <div class="section-head">
             <div class="eyebrow">
@@ -2378,49 +2584,52 @@
                   <ion-icon name="document-text-outline"></ion-icon>
                   <div>
                     <strong>Business guides</strong>
-                    <span
-                      >Articles on strategy, validation, planning, growth, and
-                      execution.</span
-                    >
+                    <span>
+                      Articles on strategy, validation, planning, growth, and
+                      execution.
+                    </span>
                   </div>
                 </div>
+
                 <div class="feature-item">
                   <ion-icon name="globe-outline"></ion-icon>
                   <div>
                     <strong>Visa pathways</strong>
-                    <span
-                      >Educational content that supports founder decision-making
-                      before they enter the IFV flow.</span
-                    >
+                    <span>
+                      Educational content that supports founder decision-making
+                      before they enter the IFV flow.
+                    </span>
                   </div>
                 </div>
+
                 <div class="feature-item">
                   <ion-icon name="build-outline"></ion-icon>
                   <div>
                     <strong>Solution center</strong>
-                    <span
-                      >Pages like “Best software path for service businesses”,
+                    <span>
+                      Pages like “Best software path for service businesses”,
                       “How to validate a startup idea”, or “How to organise a
-                      small operations team”.</span
-                    >
+                      small operations team”.
+                    </span>
                   </div>
                 </div>
+
                 <div class="feature-item">
                   <ion-icon name="stats-chart-outline"></ion-icon>
                   <div>
                     <strong>SEO + trust layer</strong>
-                    <span
-                      >Content brings discovery traffic while products convert
-                      that traffic into real users.</span
-                    >
+                    <span>
+                      Content brings discovery traffic while products convert
+                      that traffic into real users.
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div class="card-actions">
-                <a class="btn btn-secondary" href="#contact"
-                  >Plan content structure</a
-                >
+                <a class="btn btn-secondary" href="#contact">
+                  Plan content structure
+                </a>
               </div>
             </div>
 
@@ -2453,7 +2662,6 @@
           </div>
         </section>
 
-        <!-- PRINCIPLES -->
         <section class="section reveal" id="principles">
           <div class="section-head">
             <div class="eyebrow">
@@ -2476,6 +2684,7 @@
                 and create clearer next steps.
               </p>
             </article>
+
             <article class="pillar">
               <h3>Practical delivery</h3>
               <p>
@@ -2483,6 +2692,7 @@
                 or vague digital promises.
               </p>
             </article>
+
             <article class="pillar">
               <h3>Connected systems</h3>
               <p>
@@ -2490,6 +2700,7 @@
                 execution, and future finance layers.
               </p>
             </article>
+
             <article class="pillar">
               <h3>Learning built in</h3>
               <p>
@@ -2500,7 +2711,6 @@
           </div>
         </section>
 
-        <!-- CONTACT -->
         <section class="section reveal" id="contact">
           <div class="section-head">
             <div class="eyebrow">
@@ -2585,18 +2795,18 @@
                 </div>
                 <div>
                   <ion-icon name="globe-outline"></ion-icon>
-                  <span
-                    ><a href="https://dii.ltd" target="_blank" rel="noopener"
-                      >dii.ltd</a
-                    ></span
-                  >
+                  <span>
+                    <a href="https://dii.ltd" target="_blank" rel="noopener">
+                      dii.ltd
+                    </a>
+                  </span>
                 </div>
                 <div>
                   <ion-icon name="layers-outline"></ion-icon>
-                  <span
-                    >Parent brand for founder tools, operations systems, and
-                    future finance software.</span
-                  >
+                  <span>
+                    Parent brand for founder tools, operations systems, and
+                    future finance software.
+                  </span>
                 </div>
               </div>
 
@@ -2618,10 +2828,10 @@
               >© 2026 Dhruvi Infinity Inspiration Ltd. All rights
               reserved.</span
             >
-            <span
-              >Designed as a parent-company homepage for a connected SaaS
-              ecosystem.</span
-            >
+            <span>
+              Designed as a parent-company homepage for a connected SaaS
+              ecosystem.
+            </span>
           </div>
         </section>
       </div>
@@ -2662,7 +2872,6 @@
         });
       });
 
-      // Active nav highlight
       const sections = [...document.querySelectorAll("section[id]")];
       const linkMap = new Map(
         sections.map((section) => [
@@ -2689,7 +2898,86 @@
 
       sections.forEach((section) => observer.observe(section));
 
-      // GSAP
+      const carousel = document.getElementById("heroCarousel");
+      const slides = carousel ? carousel.querySelectorAll(".hero-slide") : [];
+      const dots = carousel
+        ? carousel.querySelectorAll(".hero-carousel-dot")
+        : [];
+      const prevBtn = document.getElementById("heroPrev");
+      const nextBtn = document.getElementById("heroNext");
+
+      let currentSlide = 0;
+      let autoplayId = null;
+      const autoplayDelay = 5000;
+
+      function showSlide(index) {
+        if (!slides.length) return;
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentSlide);
+          dot.setAttribute(
+            "aria-current",
+            i === currentSlide ? "true" : "false",
+          );
+        });
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      function startAutoplay() {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+        stopAutoplay();
+        autoplayId = window.setInterval(nextSlide, autoplayDelay);
+      }
+
+      function stopAutoplay() {
+        if (autoplayId) {
+          window.clearInterval(autoplayId);
+          autoplayId = null;
+        }
+      }
+
+      if (slides.length) {
+        showSlide(0);
+
+        nextBtn?.addEventListener("click", () => {
+          nextSlide();
+          startAutoplay();
+        });
+
+        prevBtn?.addEventListener("click", () => {
+          prevSlide();
+          startAutoplay();
+        });
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            showSlide(index);
+            startAutoplay();
+          });
+        });
+
+        carousel.addEventListener("mouseenter", stopAutoplay);
+        carousel.addEventListener("mouseleave", startAutoplay);
+        carousel.addEventListener("focusin", stopAutoplay);
+        carousel.addEventListener("focusout", startAutoplay);
+
+        startAutoplay();
+      }
+
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
@@ -2746,20 +3034,19 @@
           ease: "power2.out",
         });
 
-        gsap.from(".hero-panel-top", {
-          opacity: 0,
-          x: 20,
-          y: -10,
-          duration: 0.65,
-          delay: 0.24,
-          ease: "power2.out",
-        });
-
         gsap.from(".hero-panel-bottom", {
           opacity: 0,
           y: 18,
           duration: 0.72,
-          delay: 0.32,
+          delay: 0.24,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-carousel-controls, .hero-carousel-dots", {
+          opacity: 0,
+          y: 10,
+          duration: 0.5,
+          delay: 0.4,
           ease: "power2.out",
         });
 
