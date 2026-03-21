@@ -561,6 +561,7 @@
         min-height: 272px;
         padding: 0;
         z-index: 2;
+        overflow: hidden;
       }
 
       .hero-panel-badge {
@@ -627,6 +628,8 @@
         width: 100%;
         height: 100%;
         min-height: 272px;
+        overflow: hidden;
+        border-radius: 22px;
       }
 
       .hero-carousel-track {
@@ -645,6 +648,8 @@
           opacity 0.5s ease,
           transform 0.5s ease,
           visibility 0.5s ease;
+        overflow: hidden;
+        border-radius: 22px;
       }
 
       .hero-slide.active {
@@ -653,11 +658,22 @@
         transform: scale(1);
       }
 
-      .hero-slide picture,
-      .hero-slide img {
+      .hero-slide picture {
+        position: absolute;
+        inset: 0;
         display: block;
         width: 100%;
         height: 100%;
+      }
+
+      .hero-slide img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
       }
 
       .hero-slide img {
@@ -667,15 +683,10 @@
 
       .hero-slide-overlay {
         position: absolute;
-        inset: auto 0 0;
-        padding: 20px 22px 22px;
-        background: linear-gradient(
-          180deg,
-          rgba(10, 15, 30, 0) 0%,
-          rgba(10, 15, 30, 0.42) 38%,
-          rgba(10, 15, 30, 0.78) 100%
-        );
-        color: #fff;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
       }
 
       .hero-slide-label {
