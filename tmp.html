@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dhruvi Infinity Inspiration Ltd.</title>
+
+    <!-- Ionicons (icons in sidebar) -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- GSAP for animations -->
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #444;
+        --ink-strong: #111;
+        --muted: #8a8a8a;
+        --soft: #f6f7f8;
+        --brand: #2563eb; /* calm blue for accents */
+        --card: #ffffff;
+        --ring: rgba(0, 0, 0, 0.08);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Inter",
+          Arial,
+          "Noto Sans",
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: 280px;
+        background: var(--soft);
+        padding: 24px 18px;
+        box-shadow: 2px 0 30px var(--ring);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 30;
+        transition: transform 0.35s ease;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 4px 8px;
+      }
+      .badge {
+        font-weight: 700;
+        color: var(--ink-strong);
+        letter-spacing: 0.5px;
+        font-size: 1.15rem;
+      }
+      .nav {
+        margin-top: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 12px;
+        border-radius: 12px;
+        color: var(--ink);
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.08s;
+      }
+      .nav a ion-icon {
+        font-size: 20px;
+        color: #667085;
+      }
+      .nav a:hover {
+        background: #eef2ff;
+        color: var(--ink-strong);
+      }
+      .nav a.active {
+        background: #e7efff;
+        color: var(--ink-strong);
+        box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.15);
+      }
+      .spacer {
+        flex: 1;
+      }
+      .side-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        border-radius: 12px;
+        background: #eef2ff;
+        border: 1px solid rgba(37, 99, 235, 0.15);
+      }
+      .side-cta .btn {
+        width: 100%;
+      }
+
+      /* MOBILE TOGGLE */
+      .toggle {
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        z-index: 40;
+        border: none;
+        background: #ffffff;
+        box-shadow: var(--shadow);
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: none;
+      }
+      .toggle:active {
+        transform: scale(0.98);
+      }
+
+      /* MAIN */
+      .main {
+        margin-left: 280px;
+        padding: 56px 56px 40px;
+        width: 100%;
+        max-width: 1400px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 92px;
+      }
+      .hero h1 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-size: clamp(28px, 3.5vw, 48px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .lead {
+        font-size: 1.12rem;
+        color: #555;
+        line-height: 1.65;
+        margin-bottom: 20px;
+      }
+      .kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+      }
+      .hero img {
+        width: 100%;
+        max-width: 520px;
+        border-radius: var(--radius);
+        box-shadow: 0 20px 60px rgba(74, 129, 246, 0.18);
+        display: block;
+        margin-left: auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+        transition:
+          transform 0.12s ease,
+          box-shadow 0.2s ease,
+          background 0.2s;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+      }
+      .btn.secondary {
+        background: #ffffff;
+        color: #1f2937;
+        border: 1px solid #e5e7eb;
+        box-shadow: var(--shadow);
+      }
+      .btn.secondary:hover {
+        transform: translateY(-2px);
+      }
+
+      section {
+        margin-bottom: 96px;
+      }
+      section h2 {
+        font-size: clamp(22px, 2.2vw, 34px);
+        color: var(--ink-strong);
+        margin: 0 0 10px;
+      }
+      section p {
+        max-width: 980px;
+        line-height: 1.75;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+        margin-top: 24px;
+      }
+      .card {
+        grid-column: span 6;
+        background: var(--card);
+        border-radius: var(--radius);
+        border: 1px solid #eee;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.12s,
+          box-shadow 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 1.15rem;
+        color: #111;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #eee;
+        color: #8c8c8c;
+        font-size: 0.95rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero img {
+          margin: 0 auto;
+        }
+      }
+      @media (max-width: 860px) {
+        .toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+        .main {
+          margin-left: 0;
+          padding: 70px 22px 34px;
+        }
+        .cards .card {
+          grid-column: span 12;
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .btn,
+        .card,
+        .nav a {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile sidebar toggle -->
+    <button class="toggle" aria-label="Open menu">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <ion-icon
+          name="sparkles-outline"
+          style="font-size: 22px; color: #2563eb"
+        ></ion-icon>
+        <div class="badge">Dhruvi Infinity Inspiration</div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#hero" class="active"
+          ><ion-icon name="home-outline"></ion-icon>Home</a
+        >
+        <a href="#about"
+          ><ion-icon name="information-circle-outline"></ion-icon>About</a
+        >
+        <a href="#products"
+          ><ion-icon name="apps-outline"></ion-icon>Products</a
+        >
+        <a href="#vision"><ion-icon name="planet-outline"></ion-icon>Vision</a>
+        <a href="#contact"><ion-icon name="mail-outline"></ion-icon>Contact</a>
+      </nav>
+
+      <div class="spacer"></div>
+
+      <div class="side-cta">
+        <a class="btn" href="https://dii.ltd" target="_blank" rel="noopener"
+          >Company Site</a
+        >
+        <a
+          class="btn secondary"
+          href="https://www.dhruviinfinity.com/"
+          target="_blank"
+          rel="noopener"
+          >Business Builder</a
+        >
+        <a
+          class="btn secondary"
+          href="https://www.aryabiz.co.uk/"
+          target="_blank"
+          rel="noopener"
+          >RotaFriend</a
+        >
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- HERO -->
+      <section id="hero" class="hero">
+        <div>
+          <div class="kicker">Empowering Businesses</div>
+          <h1>Smart Innovation & Automation for Ambitious Teams</h1>
+          <p class="lead">
+            Dhruvi Infinity Inspiration Ltd. builds AI-powered SaaS that
+            simplifies decisions, streamlines operations and scales reliably
+            across the UK, US and Canada.
+          </p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap">
+            <a class="btn" href="#products">
+              <ion-icon name="flash-outline"></ion-icon> Explore Solutions
+            </a>
+            <a class="btn secondary" href="#contact">
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon> Talk to
+              Us
+            </a>
+          </div>
+        </div>
+        <img src="ILOVE.png" alt="DII – glass neon blocks" loading="eager" />
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="reveal">
+        <h2>About DII</h2>
+        <p>
+          We’re a product studio focused on intelligent automation, clean UX,
+          and dependable delivery. From small local services to enterprise
+          operations, our software reduces manual workload, increases clarity,
+          and lets teams focus on growth. Presence: UK, USA, Canada.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>What we build</h3>
+            <p class="meta">
+              SaaS, APIs, and workflow tools with AI-assisted insights.
+            </p>
+          </article>
+          <article class="card">
+            <h3>How we deliver</h3>
+            <p class="meta">
+              Lean, testable, SSL-only, and ready for corporate networks (HSTS,
+              /up health, static root).
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section id="products" class="reveal">
+        <h2>Products</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Business Builder App</h3>
+            <p class="meta">
+              AI-powered, 9-stage framework for turning ideas into operational
+              businesses: market research, financial planning, legal &
+              compliance, and more.
+            </p>
+          </article>
+          <article class="card">
+            <h3>RotaFriend</h3>
+            <p class="meta">
+              Simple, reliable rota planning with base & night allowances, rapid
+              sharing, and a health endpoint for rock-solid uptime checks.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Trainer Platform (in development)</h3>
+            <p class="meta">
+              Tools for personal trainers & coaches: programs, client tracking,
+              and analytics.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- VISION -->
+      <section id="vision" class="reveal">
+        <h2>Our Vision</h2>
+        <p>
+          Innovation with purpose. We design an ecosystem of SaaS products that
+          quietly remove friction: smarter decisions, fewer clicks, faster
+          outcomes. Automation where it matters; clarity everywhere.
+        </p>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p class="meta">London HQ — 86–90 Paul Street, EC2A 4NE</p>
+        <p class="meta">Email: contact@dii.ltd</p>
+        <div
+          style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <a class="btn" href="mailto:contact@dii.ltd"
+            ><ion-icon name="send-outline"></ion-icon> Email Us</a
+          >
+          <a
+            class="btn secondary"
+            href="https://dii.ltd"
+            target="_blank"
+            rel="noopener"
+            ><ion-icon name="globe-outline"></ion-icon> dii.ltd</a
+          >
+        </div>
+        <div class="footer">
+          © 2025 Dhruvi Infinity Inspiration Ltd. All rights reserved.
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Sidebar mobile toggle
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.querySelector(".toggle");
+      toggleBtn.addEventListener("click", () =>
+        sidebar.classList.toggle("open"),
+      );
+
+      // Close sidebar after clicking a link on mobile
+      document.querySelectorAll(".nav a").forEach((a) => {
+        a.addEventListener("click", () => sidebar.classList.remove("open"));
+      });
+
+      // Active link highlight on scroll
+      const sections = [...document.querySelectorAll("section[id]")];
+      const links = [...document.querySelectorAll(".nav a")];
+      const map = new Map(
+        sections.map((s) => [
+          s.id,
+          links.find((a) => a.getAttribute("href") === "#" + s.id),
+        ]),
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              links.forEach((l) => l.classList.remove("active"));
+              const link = map.get(entry.target.id);
+              if (link) link.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 },
+      );
+      sections.forEach((s) => observer.observe(s));
+
+      // GSAP Animations (respect reduced motion)
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (!prefersReduced && window.gsap) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero entrance
+        gsap.from("#hero h1", {
+          y: 24,
+          opacity: 0,
+          duration: 0.7,
+          ease: "power2.out",
+        });
+        gsap.from("#hero .lead", {
+          y: 18,
+          opacity: 0,
+          delay: 0.1,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+        gsap.from("#hero .btn", {
+          y: 16,
+          opacity: 0,
+          delay: 0.15,
+          duration: 0.6,
+          stagger: 0.06,
+          ease: "power2.out",
+        });
+        gsap.from("#hero img", {
+          x: 24,
+          opacity: 0,
+          rotate: 0.001,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+
+        // Reveal sections/cards on scroll
+        document.querySelectorAll(".reveal").forEach((el) => {
+          gsap.from(el, {
+            opacity: 0,
+            y: 26,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 78%",
+              toggleActions: "play none none reverse",
+            },
+          });
+          el.querySelectorAll(".card").forEach((c, i) => {
+            gsap.from(c, {
+              opacity: 0,
+              y: 18,
+              duration: 0.55,
+              delay: i * 0.06,
+              ease: "power2.out",
+              scrollTrigger: { trigger: el, start: "top 75%" },
+            });
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

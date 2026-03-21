@@ -1,319 +1,2788 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhruvi Infinity Inspiration Ltd.</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Dhruvi Infinity Inspiration Ltd. | Build, Launch & Scale with Connected
+      SaaS
+    </title>
+    <meta
+      name="description"
+      content="Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Business Builder, IFV Builder, RotaPlan, NorthStar WMS, and a growing knowledge base for business growth."
+    />
+    <meta name="theme-color" content="#0b1220" />
 
-  <!-- Ionicons (icons in sidebar) -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- GSAP for animations -->
-  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dhruvi Infinity Inspiration Ltd." />
+    <meta
+      property="og:description"
+      content="A connected ecosystem of tools for founders, operations teams, and growing businesses."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dii.ltd/" />
+    <!-- TODO: Replace with your real social preview image -->
+    <meta property="og:image" content="PLACEHOLDER-OG-IMAGE.jpg" />
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --ink:#444;
-      --ink-strong:#111;
-      --muted:#8a8a8a;
-      --soft:#f6f7f8;
-      --brand:#2563eb; /* calm blue for accents */
-      --card:#ffffff;
-      --ring: rgba(0,0,0,.08);
-      --shadow: 0 10px 30px rgba(0,0,0,.06);
-      --radius: 14px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; background:var(--bg); color:var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      display:flex; min-height:100vh; overflow-x:hidden;
-    }
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
-    /* SIDEBAR */
-    .sidebar{
-      position:fixed; inset:0 auto 0 0; width:280px; background:var(--soft);
-      padding:24px 18px; box-shadow:2px 0 30px var(--ring);
-      display:flex; flex-direction:column; gap:18px; z-index:30;
-      transition:transform .35s ease;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; padding:4px 8px;
-    }
-    .badge{
-      font-weight:700; color:var(--ink-strong); letter-spacing:.5px; font-size:1.15rem;
-    }
-    .nav{
-      margin-top:6px; display:flex; flex-direction:column; gap:6px;
-    }
-    .nav a{
-      display:flex; align-items:center; gap:12px;
-      padding:12px 12px; border-radius:12px; color:var(--ink);
-      text-decoration:none; transition:background .2s, color .2s, transform .08s;
-    }
-    .nav a ion-icon{font-size:20px; color:#667085}
-    .nav a:hover{ background:#eef2ff; color:var(--ink-strong) }
-    .nav a.active{ background:#e7efff; color:var(--ink-strong); box-shadow:inset 0 0 0 1px rgba(37,99,235,.15) }
-    .spacer{flex:1}
-    .side-cta{
-      display:flex; flex-direction:column; gap:10px; padding:12px;
-      border-radius:12px; background:#eef2ff; border:1px solid rgba(37,99,235,.15);
-    }
-    .side-cta .btn{width:100%}
+    <!-- GSAP -->
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    /* MOBILE TOGGLE */
-    .toggle{
-      position:fixed; top:14px; left:14px; z-index:40; border:none;
-      background:#ffffff; box-shadow:var(--shadow); border-radius:12px; padding:10px 12px; display:none;
-    }
-    .toggle:active{transform:scale(.98)}
+    <style>
+      :root {
+        --bg: #f7fbff;
+        --bg-strong: #eef6ff;
+        --surface: rgba(255, 255, 255, 0.78);
+        --surface-strong: #ffffff;
+        --ink: #4b5563;
+        --ink-strong: #0f172a;
+        --muted: #6b7280;
+        --line: rgba(15, 23, 42, 0.08);
 
-    /* MAIN */
-    .main{
-      margin-left:280px; padding:56px 56px 40px; width:100%; max-width:1400px;
-    }
-    .hero{
-      display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:40px; margin-bottom:92px;
-    }
-    .hero h1{
-      margin:0 0 12px; color:var(--ink-strong); font-size:clamp(28px, 3.5vw, 48px);
-      line-height:1.05; letter-spacing:-.02em;
-    }
-    .lead{ font-size:1.12rem; color:#555; line-height:1.65; margin-bottom:20px; }
-    .kicker{ text-transform:uppercase; letter-spacing:.22em; color:var(--muted); font-size:.8rem; margin-bottom:12px; }
-    .hero img{
-      width:100%; max-width:520px; border-radius:var(--radius);
-      box-shadow:0 20px 60px rgba(74, 129, 246, .18);
-      display:block; margin-left:auto;
-    }
+        --blue-1: #0ea5e9;
+        --blue-2: #2563eb;
+        --blue-3: #1d4ed8;
+        --blue-4: #60a5fa;
+        --cyan: #67e8f9;
+        --indigo: #6366f1;
 
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px;
-      background:var(--brand); color:#fff; border-radius:10px; text-decoration:none;
-      box-shadow:0 6px 18px rgba(37,99,235,.25); transition:transform .12s ease, box-shadow .2s ease, background .2s;
-      border:1px solid rgba(255,255,255,.15);
-    }
-    .btn:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(37,99,235,.28) }
-    .btn.secondary{ background:#ffffff; color:#1f2937; border:1px solid #e5e7eb; box-shadow:var(--shadow) }
-    .btn.secondary:hover{ transform:translateY(-2px) }
+        --ok: #16a34a;
+        --warn: #d97706;
 
-    section{ margin-bottom:96px }
-    section h2{ font-size:clamp(22px,2.2vw,34px); color:var(--ink-strong); margin:0 0 10px }
-    section p{ max-width:980px; line-height:1.75 }
+        --shadow-sm: 0 10px 30px rgba(37, 99, 235, 0.08);
+        --shadow-md: 0 16px 40px rgba(37, 99, 235, 0.12);
+        --shadow-lg: 0 22px 70px rgba(37, 99, 235, 0.16);
 
-    .cards{
-      display:grid; grid-template-columns:repeat(12,1fr); gap:18px; margin-top:24px;
-    }
-    .card{
-      grid-column: span 6; background:var(--card); border-radius:var(--radius);
-      border:1px solid #eee; padding:20px; box-shadow:var(--shadow); transition:transform .12s, box-shadow .2s;
-    }
-    .card:hover{ transform:translateY(-3px); box-shadow:0 18px 36px rgba(0,0,0,.08) }
-    .card h3{ margin:0 0 6px; font-size:1.15rem; color:#111 }
-    .meta{ color:var(--muted); font-size:.95rem }
+        --radius-sm: 14px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
 
-    .footer{
-      margin-top:40px; padding-top:24px; border-top:1px solid #eee; color:#8c8c8c; font-size:.95rem;
-    }
+        --sidebar: 290px;
+        --container: 1380px;
+      }
 
-    /* Responsive */
-    @media (max-width: 1024px){
-      .hero{ grid-template-columns:1fr; }
-      .hero img{ margin:0 auto }
-    }
-    @media (max-width: 860px){
-      .toggle{ display:inline-flex; align-items:center; gap:6px }
-      .sidebar{ transform:translateX(-100%) }
-      .sidebar.open{ transform:translateX(0) }
-      .main{ margin-left:0; padding:70px 22px 34px }
-      .cards .card{ grid-column: span 12 }
-    }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Inter,
+          Arial,
+          sans-serif;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(96, 165, 250, 0.22),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at left 20%,
+            rgba(14, 165, 233, 0.12),
+            transparent 18%
+          ),
+          linear-gradient(180deg, #f8fbff 0%, #f3f8ff 35%, #f8fbff 100%);
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto }
-      .btn, .card, .nav a{ transition:none !important }
-    }
-  </style>
-</head>
-<body>
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(37, 99, 235, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+        background-size: 34px 34px;
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.65),
+          transparent 92%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
 
-  <!-- Mobile sidebar toggle -->
-  <button class="toggle" aria-label="Open menu">
-    <ion-icon name="menu-outline"></ion-icon>
-  </button>
+      a {
+        color: inherit;
+      }
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-      <ion-icon name="sparkles-outline" style="font-size:22px;color:#2563eb"></ion-icon>
-      <div class="badge">Dhruvi Infinity Inspiration</div>
-    </div>
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: var(--sidebar);
+        padding: 24px 18px 18px;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(20px);
+        border-right: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 8px 0 40px rgba(37, 99, 235, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        z-index: 30;
+        transition: transform 0.35s ease;
+      }
 
-    <nav class="nav" id="nav">
-      <a href="#hero" class="active"><ion-icon name="home-outline"></ion-icon>Home</a>
-      <a href="#about"><ion-icon name="information-circle-outline"></ion-icon>About</a>
-      <a href="#products"><ion-icon name="apps-outline"></ion-icon>Products</a>
-      <a href="#vision"><ion-icon name="planet-outline"></ion-icon>Vision</a>
-      <a href="#contact"><ion-icon name="mail-outline"></ion-icon>Contact</a>
-    </nav>
+      .brand {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 10px 10px 12px;
+        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(239, 246, 255, 0.9)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow-sm);
+      }
 
-    <div class="spacer"></div>
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        background: linear-gradient(
+          135deg,
+          var(--blue-1),
+          var(--blue-2),
+          var(--indigo)
+        );
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+        flex: 0 0 auto;
+      }
 
-    <div class="side-cta">
-      <a class="btn" href="https://dii.ltd" target="_blank" rel="noopener">Company Site</a>
-      <a class="btn secondary" href="https://www.dhruviinfinity.com/" target="_blank" rel="noopener">Business Builder</a>
-      <a class="btn secondary" href="https://www.aryabiz.co.uk/" target="_blank" rel="noopener">RotaFriend</a>
-    </div>
-  </aside>
+      .brand-copy strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--ink-strong);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
 
-  <!-- Main content -->
-  <main class="main">
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div>
-        <div class="kicker">Empowering Businesses</div>
-        <h1>Smart Innovation & Automation for Ambitious Teams</h1>
-        <p class="lead">
-          Dhruvi Infinity Inspiration Ltd. builds AI-powered SaaS that simplifies decisions,
-          streamlines operations and scales reliably across the UK, US and Canada.
-        </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn" href="#products">
-            <ion-icon name="flash-outline"></ion-icon> Explore Solutions
-          </a>
-          <a class="btn secondary" href="#contact">
-            <ion-icon name="chatbubble-ellipses-outline"></ion-icon> Talk to Us
-          </a>
+      .brand-copy span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        padding: 12px 14px;
+        border-radius: 14px;
+        color: #334155;
+        transition:
+          background 0.2s ease,
+          transform 0.12s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .nav a ion-icon {
+        font-size: 1.1rem;
+        color: #64748b;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        background: linear-gradient(
+          135deg,
+          rgba(219, 234, 254, 0.9),
+          rgba(239, 246, 255, 0.95)
+        );
+        color: var(--ink-strong);
+        box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
+      }
+
+      .nav a:hover {
+        transform: translateY(-1px);
+      }
+
+      .sidebar-stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .side-card {
+        padding: 16px;
+        border-radius: 18px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.84),
+          rgba(243, 248, 255, 0.9)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .side-card h3 {
+        margin: 0 0 8px;
+        color: var(--ink-strong);
+        font-size: 0.95rem;
+      }
+
+      .side-card p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .side-links {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .mini-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        text-decoration: none;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+        transition:
+          transform 0.12s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .mini-link:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
+        border-color: rgba(37, 99, 235, 0.16);
+      }
+
+      .mini-link strong {
+        display: block;
+        color: var(--ink-strong);
+        font-size: 0.92rem;
+      }
+
+      .mini-link span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .sidebar-footer {
+        margin-top: auto;
+        font-size: 0.8rem;
+        color: #7c8798;
+        padding: 6px 8px 0;
+      }
+
+      /* Mobile menu */
+      .menu-toggle {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 45;
+        border: none;
+        border-radius: 14px;
+        padding: 11px 13px;
+        color: var(--ink-strong);
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow-sm);
+        display: none;
+        cursor: pointer;
+      }
+
+      .menu-toggle ion-icon {
+        font-size: 1.25rem;
+      }
+
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.28);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+        z-index: 20;
+      }
+
+      .backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Main */
+      .main {
+        position: relative;
+        z-index: 1;
+        margin-left: var(--sidebar);
+        width: 100%;
+        padding: 42px 44px 48px;
+      }
+
+      .shell {
+        max-width: var(--container);
+        margin: 0 auto;
+      }
+
+      .section {
+        margin-bottom: 104px;
+      }
+
+      .section-head {
+        margin-bottom: 22px;
+        max-width: 920px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        color: #2563eb;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: var(--shadow-sm);
+        margin-bottom: 14px;
+      }
+
+      .section h2,
+      .hero-copy h1 {
+        margin: 0;
+        color: var(--ink-strong);
+        letter-spacing: -0.035em;
+        line-height: 1.02;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.3rem, 5vw, 4.65rem);
+        max-width: 900px;
+      }
+
+      .section h2 {
+        font-size: clamp(1.9rem, 3vw, 3rem);
+        margin-bottom: 12px;
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1.07rem;
+        line-height: 1.8;
+        color: #526071;
+        margin: 14px 0 0;
+      }
+
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 26px;
+        align-items: stretch;
+        min-height: calc(100vh - 84px);
+        padding-top: 12px;
+      }
+
+      .hero-copy,
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+        padding: 18px 0;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .hero-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .hero-point {
+        padding: 14px 15px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow-sm);
+        min-height: 100%;
+      }
+
+      .hero-point strong {
+        display: block;
+        color: var(--ink-strong);
+        font-size: 0.96rem;
+        margin-bottom: 6px;
+      }
+
+      .hero-point span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .hero-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-art {
+        position: relative;
+        width: min(100%, 620px);
+        aspect-ratio: 1 / 1.02;
+        border-radius: 32px;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(103, 232, 249, 0.7),
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at 82% 24%,
+            rgba(96, 165, 250, 0.75),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 35% 84%,
+            rgba(99, 102, 241, 0.42),
+            transparent 18%
+          ),
+          linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(239, 246, 255, 0.88) 55%,
+            rgba(219, 234, 254, 0.75)
+          );
+        border: 1px solid rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow-lg);
+        padding: 20px;
+        isolation: isolate;
+      }
+
+      .hero-art::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+        background-size: 26px 26px;
+        opacity: 0.55;
+        z-index: -1;
+      }
+
+      .glass-card {
+        position: absolute;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 18px 50px rgba(37, 99, 235, 0.14);
+        overflow: hidden;
+      }
+
+      .glass-card::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(37, 99, 235, 0.16),
+          transparent
+        );
+      }
+
+      .hero-panel-main {
+        left: 26px;
+        right: 120px;
+        top: 28px;
+        min-height: 174px;
+        padding: 20px;
+      }
+
+      .hero-panel-top {
+        top: 42px;
+        right: 22px;
+        width: 146px;
+        min-height: 132px;
+        padding: 16px;
+      }
+
+      .hero-panel-bottom {
+        left: 34px;
+        right: 28px;
+        bottom: 26px;
+        min-height: 178px;
+        padding: 18px;
+      }
+
+      .hero-panel-badge {
+        display: inline-flex;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(14, 165, 233, 0.14);
+        color: var(--blue-3);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .hero-panel-main h3,
+      .hero-panel-bottom h3,
+      .hero-panel-top h3 {
+        margin: 0 0 8px;
+        color: var(--ink-strong);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-panel-main p,
+      .hero-panel-bottom p,
+      .hero-panel-top p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .mini-bars {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .mini-bar {
+        display: grid;
+        gap: 6px;
+      }
+
+      .mini-bar span {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 0.82rem;
+        color: #475569;
+      }
+
+      .mini-bar-track {
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(37, 99, 235, 0.08);
+        overflow: hidden;
+      }
+
+      .mini-bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+      }
+
+      .hero-chip-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .hero-chip {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+        color: #334155;
+        font-size: 0.84rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 18px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          transform 0.12s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(
+          135deg,
+          var(--blue-1),
+          var(--blue-2),
+          var(--indigo)
+        );
+      }
+
+      .btn-secondary {
+        color: var(--ink-strong);
+        background: rgba(255, 255, 255, 0.78);
+        border-color: rgba(37, 99, 235, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-ghost {
+        color: var(--blue-3);
+        background: rgba(219, 234, 254, 0.62);
+        border-color: rgba(37, 99, 235, 0.1);
+      }
+
+      /* Cards / grids */
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        position: relative;
+        padding: 22px;
+        border-radius: 24px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(249, 252, 255, 0.96)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(103, 232, 249, 0.4),
+          rgba(37, 99, 235, 0.25),
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.16),
+          rgba(37, 99, 235, 0.16)
+        );
+        color: var(--blue-3);
+        margin-bottom: 14px;
+        font-size: 1.3rem;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        color: var(--ink-strong);
+        font-size: 1.18rem;
+        letter-spacing: -0.02em;
+      }
+
+      .card p {
+        margin: 0;
+        line-height: 1.7;
+        color: #5c6b7d;
+      }
+
+      .card .tag {
+        display: inline-flex;
+        margin-top: 14px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(219, 234, 254, 0.62);
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        color: var(--blue-3);
+        font-size: 0.77rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+
+      /* Platform band */
+      .platform-band {
+        padding: 28px;
+        border-radius: 32px;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(96, 165, 250, 0.18),
+            transparent 20%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(239, 246, 255, 0.88)
+          );
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-md);
+      }
+
+      .metric-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .metric {
+        padding: 18px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--ink-strong);
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        letter-spacing: -0.02em;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+
+      /* Product cards */
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .product-card .product-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .product-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        background: rgba(239, 246, 255, 0.95);
+        color: var(--blue-3);
+        white-space: nowrap;
+      }
+
+      .product-list {
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 9px;
+      }
+
+      .product-list li {
+        display: flex;
+        gap: 10px;
+        color: #4c5b6c;
+        line-height: 1.55;
+      }
+
+      .product-list ion-icon {
+        flex: 0 0 auto;
+        margin-top: 2px;
+        color: #2563eb;
+        font-size: 1rem;
+      }
+
+      /* Timeline */
+      .flow-shell {
+        position: relative;
+        padding: 28px 0 12px;
+      }
+
+      .flow-intro {
+        max-width: 900px;
+        margin-bottom: 26px;
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 34px;
+        padding: 10px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          180deg,
+          rgba(14, 165, 233, 0.18),
+          rgba(37, 99, 235, 0.44),
+          rgba(99, 102, 241, 0.34),
+          rgba(14, 165, 233, 0.15)
+        );
+        border-radius: 999px;
+      }
+
+      .timeline-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 84px 1fr;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .timeline-side {
+        min-height: 100%;
+      }
+
+      .timeline-center {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      .timeline-marker {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          var(--blue-1),
+          var(--blue-2),
+          var(--indigo)
+        );
+        color: #fff;
+        font-weight: 800;
+        box-shadow: 0 18px 38px rgba(37, 99, 235, 0.22);
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        z-index: 2;
+      }
+
+      .timeline-card,
+      .timeline-summary {
+        border-radius: 24px;
+        padding: 22px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(247, 251, 255, 0.96)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        box-shadow: var(--shadow-sm);
+        min-height: 100%;
+      }
+
+      .timeline-kicker {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: rgba(219, 234, 254, 0.58);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+        color: var(--blue-3);
+      }
+
+      .timeline-card h3,
+      .timeline-summary h3 {
+        margin: 0 0 10px;
+        color: var(--ink-strong);
+        font-size: 1.22rem;
+        letter-spacing: -0.02em;
+      }
+
+      .timeline-card p,
+      .timeline-summary p {
+        margin: 0;
+        line-height: 1.72;
+        color: #59697b;
+      }
+
+      .timeline-list {
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .timeline-list li {
+        display: flex;
+        gap: 10px;
+        line-height: 1.56;
+        color: #465668;
+      }
+
+      .timeline-list ion-icon {
+        flex: 0 0 auto;
+        color: #2563eb;
+        margin-top: 2px;
+        font-size: 1rem;
+      }
+
+      .timeline-placeholder {
+        margin-top: 16px;
+        padding: 14px 15px;
+        border-radius: 16px;
+        background: rgba(239, 246, 255, 0.75);
+        border: 1px dashed rgba(37, 99, 235, 0.25);
+        color: #516173;
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      /* Knowledge */
+      .knowledge-split {
+        display: grid;
+        grid-template-columns: 1fr 0.95fr;
+        gap: 20px;
+        align-items: start;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .feature-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+      }
+
+      .feature-item ion-icon {
+        font-size: 1.1rem;
+        color: #2563eb;
+        margin-top: 2px;
+      }
+
+      .feature-item strong {
+        display: block;
+        color: var(--ink-strong);
+        margin-bottom: 4px;
+      }
+
+      .placeholder-frame {
+        position: relative;
+        min-height: 420px;
+        border-radius: 28px;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 82% 15%,
+            rgba(96, 165, 250, 0.3),
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at 18% 84%,
+            rgba(103, 232, 249, 0.24),
+            transparent 18%
+          ),
+          linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(239, 246, 255, 0.85)
+          );
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-md);
+        padding: 22px;
+      }
+
+      .placeholder-frame::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.55;
+        pointer-events: none;
+      }
+
+      .placeholder-window {
+        position: relative;
+        z-index: 1;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+      }
+
+      .placeholder-window .window-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cbd5e1;
+      }
+
+      .dot:nth-child(1) {
+        background: #93c5fd;
+      }
+      .dot:nth-child(2) {
+        background: #67e8f9;
+      }
+      .dot:nth-child(3) {
+        background: #c4b5fd;
+      }
+
+      .window-body {
+        padding: 18px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .placeholder-block {
+        height: 18px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(191, 219, 254, 0.55),
+          rgba(219, 234, 254, 0.95),
+          rgba(191, 219, 254, 0.45)
+        );
+      }
+
+      .placeholder-block.short {
+        width: 46%;
+      }
+      .placeholder-block.mid {
+        width: 72%;
+      }
+      .placeholder-block.long {
+        width: 92%;
+      }
+
+      .placeholder-note {
+        position: relative;
+        z-index: 1;
+        margin-top: 18px;
+        padding: 16px;
+        border-radius: 16px;
+        background: rgba(239, 246, 255, 0.72);
+        border: 1px dashed rgba(37, 99, 235, 0.22);
+        color: #516173;
+        line-height: 1.7;
+        font-size: 0.93rem;
+      }
+
+      /* Trust / principles */
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .pillar {
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .pillar h3 {
+        margin: 0 0 8px;
+        color: var(--ink-strong);
+        font-size: 1.02rem;
+      }
+
+      .pillar p {
+        margin: 0;
+        color: #5c6b7d;
+        line-height: 1.65;
+      }
+
+      /* Contact */
+      .contact-shell {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: start;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .contact-card {
+        padding: 20px;
+        border-radius: 22px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(247, 251, 255, 0.96)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .contact-card h3 {
+        margin: 0 0 10px;
+        color: var(--ink-strong);
+        font-size: 1.03rem;
+      }
+
+      .contact-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .contact-card li {
+        color: #516173;
+        line-height: 1.55;
+        word-break: break-word;
+      }
+
+      .contact-card a {
+        text-decoration: none;
+        color: var(--blue-3);
+        font-weight: 600;
+      }
+
+      .contact-card a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-panel {
+        padding: 24px;
+        border-radius: 26px;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(96, 165, 250, 0.18),
+            transparent 26%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(239, 246, 255, 0.9)
+          );
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow-md);
+      }
+
+      .contact-panel h3 {
+        margin: 0 0 10px;
+        color: var(--ink-strong);
+        font-size: 1.25rem;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-panel p {
+        margin: 0 0 14px;
+        line-height: 1.72;
+        color: #556476;
+      }
+
+      .contact-meta {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 18px;
+      }
+
+      .contact-meta div {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: #475569;
+        line-height: 1.6;
+      }
+
+      .contact-meta ion-icon {
+        color: #2563eb;
+        font-size: 1.05rem;
+        flex: 0 0 auto;
+        margin-top: 3px;
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: 30px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        color: #708092;
+        font-size: 0.92rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 1260px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .hero-copy {
+          padding-top: 30px;
+        }
+
+        .hero-visual {
+          justify-content: flex-start;
+        }
+
+        .hero-art {
+          width: min(100%, 760px);
+        }
+
+        .knowledge-split,
+        .contact-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .pillars {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .metric-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .hero-points {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+        .main {
+          margin-left: 0;
+          padding: 76px 20px 36px;
+        }
+
+        .timeline::before {
+          left: 28px;
+          transform: none;
+        }
+
+        .timeline-row {
+          grid-template-columns: 56px 1fr;
+          gap: 14px;
+        }
+
+        .timeline-side:first-child {
+          display: none;
+        }
+
+        .timeline-center {
+          grid-row: 1;
+          grid-column: 1;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .timeline-side:last-child {
+          grid-column: 2;
+        }
+
+        .timeline-card,
+        .timeline-summary {
+          padding: 18px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .contact-grid,
+        .metric-row,
+        .pillars {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel-main {
+          left: 16px;
+          right: 16px;
+          top: 16px;
+        }
+
+        .hero-panel-top {
+          position: relative;
+          width: auto;
+          top: auto;
+          right: auto;
+          margin: 198px 16px 0;
+        }
+
+        .hero-panel-bottom {
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+        }
+
+        .hero-art {
+          aspect-ratio: auto;
+          min-height: 720px;
+        }
+
+        .section {
+          margin-bottom: 82px;
+        }
+
+        .footer {
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="sidebar"
+      aria-expanded="false"
+    >
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <ion-icon name="sparkles-outline"></ion-icon>
+        </div>
+        <div class="brand-copy">
+          <strong>Dhruvi Infinity Inspiration Ltd.</strong>
+          <span
+            >Connected SaaS for founders, operators, and growing
+            businesses.</span
+          >
         </div>
       </div>
-      <img src="ILOVE.png" alt="DII – glass neon blocks" loading="eager" />
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="reveal">
-      <h2>About DII</h2>
-      <p>
-        We’re a product studio focused on intelligent automation, clean UX, and dependable delivery.
-        From small local services to enterprise operations, our software reduces manual workload,
-        increases clarity, and lets teams focus on growth. Presence: UK, USA, Canada.
-      </p>
-      <div class="cards">
-        <article class="card">
-          <h3>What we build</h3>
-          <p class="meta">SaaS, APIs, and workflow tools with AI-assisted insights.</p>
-        </article>
-        <article class="card">
-          <h3>How we deliver</h3>
-          <p class="meta">Lean, testable, SSL-only, and ready for corporate networks (HSTS, /up health, static root).</p>
-        </article>
-      </div>
-    </section>
+      <nav class="nav" id="nav">
+        <a href="#hero" class="active"
+          ><ion-icon name="home-outline"></ion-icon>Home</a
+        >
+        <a href="#platform"
+          ><ion-icon name="layers-outline"></ion-icon>Platform</a
+        >
+        <a href="#products"
+          ><ion-icon name="apps-outline"></ion-icon>Products</a
+        >
+        <a href="#how-it-works"
+          ><ion-icon name="git-network-outline"></ion-icon>How it works</a
+        >
+        <a href="#knowledge"
+          ><ion-icon name="library-outline"></ion-icon>Knowledge</a
+        >
+        <a href="#principles"
+          ><ion-icon name="shield-checkmark-outline"></ion-icon>Principles</a
+        >
+        <a href="#contact"><ion-icon name="mail-outline"></ion-icon>Contact</a>
+      </nav>
 
-    <!-- PRODUCTS -->
-    <section id="products" class="reveal">
-      <h2>Products</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Business Builder App</h3>
-          <p class="meta">
-            AI-powered, 9-stage framework for turning ideas into operational businesses:
-            market research, financial planning, legal & compliance, and more.
+      <div class="sidebar-stack">
+        <div class="side-card">
+          <h3>Live ecosystem</h3>
+          <p>
+            Move from idea validation to launch, operations, and future finance
+            tooling inside one connected company ecosystem.
           </p>
-        </article>
-        <article class="card">
-          <h3>RotaFriend</h3>
-          <p class="meta">
-            Simple, reliable rota planning with base & night allowances, rapid sharing,
-            and a health endpoint for rock-solid uptime checks.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Trainer Platform (in development)</h3>
-          <p class="meta">
-            Tools for personal trainers & coaches: programs, client tracking, and analytics.
-          </p>
-        </article>
+          <div class="side-links">
+            <a
+              class="mini-link"
+              href="https://www.dhruviinfinity.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <strong>Startup Builder</strong>
+                <span>Business planning & growth</span>
+              </div>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a
+              class="mini-link"
+              href="https://www.dhruviinfinity.com/ifv"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <strong>IFV Builder</strong>
+                <span>Visa-focused founder path</span>
+              </div>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a
+              class="mini-link"
+              href="https://www.aryabiz.co.uk/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <strong>RotaPlan</strong>
+                <span>Shift planning & operations</span>
+              </div>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a
+              class="mini-link"
+              href="https://warewise-8b381130a046.herokuapp.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <strong>NorthStar WMS</strong>
+                <span>Warehouse control</span>
+              </div>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <!-- VISION -->
-    <section id="vision" class="reveal">
-      <h2>Our Vision</h2>
-      <p>
-        Innovation with purpose. We design an ecosystem of SaaS products that quietly remove friction:
-        smarter decisions, fewer clicks, faster outcomes. Automation where it matters; clarity everywhere.
-      </p>
-    </section>
+      <div class="sidebar-footer">London HQ · 86–90 Paul Street, EC2A 4NE</div>
+    </aside>
 
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-      <h2>Contact</h2>
-      <p class="meta">London HQ — 86–90 Paul Street, EC2A 4NE</p>
-      <p class="meta">Email: contact@dii.ltd</p>
-      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn" href="mailto:contact@dii.ltd"><ion-icon name="send-outline"></ion-icon> Email Us</a>
-        <a class="btn secondary" href="https://dii.ltd" target="_blank" rel="noopener"><ion-icon name="globe-outline"></ion-icon> dii.ltd</a>
+    <main class="main">
+      <div class="shell">
+        <!-- HERO -->
+        <section class="section hero" id="hero">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">
+              <ion-icon name="flash-outline"></ion-icon>
+              Build · Launch · Operate · Scale
+            </div>
+
+            <h1>
+              One company. Multiple systems. A cleaner way to build and run real
+              businesses.
+            </h1>
+
+            <p class="lede">
+              Dhruvi Infinity Inspiration Ltd. brings together connected SaaS
+              products for founders and operators: business building, visa-path
+              preparation, rota planning, warehouse control, and an expanding
+              knowledge base for smarter decisions.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#products">
+                <ion-icon name="rocket-outline"></ion-icon>
+                Explore the ecosystem
+              </a>
+              <a class="btn btn-secondary" href="#how-it-works">
+                <ion-icon name="git-network-outline"></ion-icon>
+                See how it works
+              </a>
+              <a class="btn btn-ghost" href="#contact">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                Contact DII
+              </a>
+            </div>
+
+            <div class="hero-points">
+              <div class="hero-point">
+                <strong>Founder tools</strong>
+                <span
+                  >Validate ideas, structure plans, and move toward launch with
+                  guided workflows.</span
+                >
+              </div>
+              <div class="hero-point">
+                <strong>Operational systems</strong>
+                <span
+                  >Support shift planning, logistics control, and business
+                  execution with simpler software.</span
+                >
+              </div>
+              <div class="hero-point">
+                <strong>Knowledge layer</strong>
+                <span
+                  >Use articles, guides, and solution content to reduce
+                  confusion and improve decisions.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-art">
+              <div class="glass-card hero-panel-main">
+                <span class="hero-panel-badge">DII ecosystem</span>
+                <h3>From business idea to daily operations</h3>
+                <p>
+                  Position DII as the parent layer above your product family.
+                  This panel can stay visual even before you add real
+                  screenshots.
+                </p>
+
+                <div class="mini-bars">
+                  <div class="mini-bar">
+                    <span
+                      ><strong>Founders</strong
+                      ><em>Validation → launch</em></span
+                    >
+                    <div class="mini-bar-track">
+                      <div class="mini-bar-fill" style="width: 84%"></div>
+                    </div>
+                  </div>
+                  <div class="mini-bar">
+                    <span><strong>Operations</strong><em>Rota → WMS</em></span>
+                    <div class="mini-bar-track">
+                      <div class="mini-bar-fill" style="width: 71%"></div>
+                    </div>
+                  </div>
+                  <div class="mini-bar">
+                    <span
+                      ><strong>Knowledge</strong
+                      ><em>Guides → solution center</em></span
+                    >
+                    <div class="mini-bar-track">
+                      <div class="mini-bar-fill" style="width: 66%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card hero-panel-top">
+                <span class="hero-panel-badge">Soon</span>
+                <h3>Accountancy SaaS</h3>
+                <p>
+                  Add a preview card here later for finance, compliance, or
+                  founder reporting.
+                </p>
+              </div>
+
+              <div class="glass-card hero-panel-bottom">
+                <span class="hero-panel-badge"
+                  >Placeholder for your future visual</span
+                >
+                <h3>
+                  Swap this area with a real product collage, carousel, or
+                  dashboard screenshot
+                </h3>
+                <p>
+                  Suggested replacement later: one branded hero image showing
+                  3–4 product previews with soft blue gradients and
+                  glassmorphism UI.
+                </p>
+
+                <div class="hero-chip-grid">
+                  <div class="hero-chip">Startup Builder</div>
+                  <div class="hero-chip">IFV Builder</div>
+                  <div class="hero-chip">RotaPlan</div>
+                  <div class="hero-chip">NorthStar WMS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PLATFORM -->
+        <section class="section reveal" id="platform">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="layers-outline"></ion-icon>
+              Platform overview
+            </div>
+            <h2>A parent company page that explains the whole ecosystem</h2>
+            <p>
+              DII should not feel like a generic agency homepage. It should
+              clearly show how your products connect: founders start with idea
+              and strategy tools, then move toward operational software and
+              deeper business support.
+            </p>
+          </div>
+
+          <div class="platform-band">
+            <div class="grid grid-4">
+              <article class="card">
+                <div class="card-icon">
+                  <ion-icon name="bulb-outline"></ion-icon>
+                </div>
+                <h3>Start with an idea</h3>
+                <p>
+                  Use structured tools to test viability, understand markets,
+                  and turn ideas into stronger ventures.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                </div>
+                <h3>Build a real plan</h3>
+                <p>
+                  Move from vague ambition to frameworks, forecasts, strategy,
+                  and launch-ready documentation.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <ion-icon name="briefcase-outline"></ion-icon>
+                </div>
+                <h3>Run operations</h3>
+                <p>
+                  Support workforce planning and warehouse control with
+                  practical software for real workflows.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <ion-icon name="library-outline"></ion-icon>
+                </div>
+                <h3>Learn as you grow</h3>
+                <p>
+                  Add educational articles, guides, and solution content to
+                  create an evergreen business knowledge layer.
+                </p>
+              </article>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric">
+                <strong>Founder layer</strong>
+                <span
+                  >Startup Builder, IFV workflows, and strategic planning
+                  support.</span
+                >
+              </div>
+              <div class="metric">
+                <strong>Ops layer</strong>
+                <span
+                  >Shift planning, team organisation, inventory, and warehouse
+                  control.</span
+                >
+              </div>
+              <div class="metric">
+                <strong>Future layer</strong>
+                <span
+                  >Accountancy, reporting, compliance, and financial management
+                  tools.</span
+                >
+              </div>
+              <div class="metric">
+                <strong>Content layer</strong>
+                <span
+                  >Business guides, visa paths, know-how articles, and a
+                  solution center.</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section class="section reveal" id="products">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="apps-outline"></ion-icon>
+              Products
+            </div>
+            <h2>The current DII product family</h2>
+            <p>
+              Keep this section practical and clickable. The goal is to help
+              visitors instantly understand what each system does and where it
+              fits in the wider business lifecycle.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card product-card">
+              <div class="product-head">
+                <h3>Startup Business Builder</h3>
+                <span class="product-status">Live platform</span>
+              </div>
+              <p>
+                Your founder-facing system for structuring, validating, and
+                developing business ideas into more complete plans.
+              </p>
+              <ul class="product-list">
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Idea validation, frameworks, strategy, forecasts, and
+                    launch preparation</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Strong fit for founders who need structure rather than
+                    vague advice</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Can become the core “business operating start point” for
+                    many users</span
+                  >
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  class="btn btn-secondary"
+                  href="https://www.dhruviinfinity.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open Startup Builder
+                </a>
+              </div>
+            </article>
+
+            <article class="card product-card">
+              <div class="product-head">
+                <h3>Innovation Founder Visa Builder</h3>
+                <span class="product-status">Focused path</span>
+              </div>
+              <p>
+                A specialised layer for founders preparing visa-ready venture
+                cases, validation, evidence, and endorsement-facing workflows.
+              </p>
+              <ul class="product-list">
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Helpful for founders exploring the UK Innovator Founder
+                    Visa route</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Supports idea shaping, evidence logic, and
+                    founder-readiness positioning</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Natural bridge between strategic planning and
+                    immigration-specific preparation</span
+                  >
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  class="btn btn-secondary"
+                  href="https://www.dhruviinfinity.com/ifv"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open IFV Builder
+                </a>
+              </div>
+            </article>
+
+            <article class="card product-card">
+              <div class="product-head">
+                <h3>RotaPlan</h3>
+                <span class="product-status">Operations</span>
+              </div>
+              <p>
+                A simpler scheduling layer for teams that need rota planning,
+                allowances, and cleaner workforce coordination.
+              </p>
+              <ul class="product-list">
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Useful for shift-based operations and service teams</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Can position DII beyond founders and into business
+                    operations</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Good proof that DII also builds practical execution
+                    software</span
+                  >
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  class="btn btn-secondary"
+                  href="https://www.aryabiz.co.uk/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open RotaPlan
+                </a>
+              </div>
+            </article>
+
+            <article class="card product-card">
+              <div class="product-head">
+                <h3>NorthStar WMS</h3>
+                <span class="product-status">Growing ops tool</span>
+              </div>
+              <p>
+                A warehouse and inventory control layer for growing businesses
+                that need clearer stock, movement, and operational visibility.
+              </p>
+              <ul class="product-list">
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Positions DII in logistics and operational
+                    infrastructure</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Strong complement to rota planning and wider back-office
+                    systems</span
+                  >
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon
+                  ><span
+                    >Can later connect naturally to finance and reporting
+                    products</span
+                  >
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  class="btn btn-secondary"
+                  href="https://warewise-8b381130a046.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open NorthStar WMS
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section reveal" id="how-it-works">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="git-network-outline"></ion-icon>
+              How it works
+            </div>
+            <h2>A cleaner flow from idea to operations</h2>
+            <p>
+              This section is designed like your IFV-style timeline but broader.
+              It explains how a founder or business can move through the DII
+              ecosystem instead of seeing your products as disconnected
+              websites.
+            </p>
+          </div>
+
+          <div class="flow-shell">
+            <div class="flow-intro">
+              <p class="lede">
+                You can keep this as the main narrative section on the homepage.
+                Later, add screenshots or mini carousels beside specific stages.
+                For now, placeholder notes show you where those visuals should
+                go.
+              </p>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-row">
+                <div class="timeline-side">
+                  <div class="timeline-card">
+                    <span class="timeline-kicker">Step 01</span>
+                    <h3>Start with a business idea or growth problem</h3>
+                    <p>
+                      The first job is not to overwhelm the visitor. It is to
+                      help them identify where they are: early founder,
+                      visa-focused founder, operator with team planning needs,
+                      or logistics-focused business.
+                    </p>
+                    <ul class="timeline-list">
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Founders can begin with business structure and
+                          validation</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Operators can move directly to rota or warehouse
+                          workflows</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >DII acts as the parent layer guiding them to the
+                          right system</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline-center">
+                  <div class="timeline-marker">1</div>
+                </div>
+
+                <div class="timeline-side">
+                  <div class="timeline-summary">
+                    <span class="timeline-kicker">Visual placeholder</span>
+                    <h3>Add a simple “entry point” illustration here later</h3>
+                    <p>
+                      Suggested future visual: a clean 3-lane diagram showing
+                      Founder, Visa, and Operations paths.
+                    </p>
+                    <div class="timeline-placeholder">
+                      TODO: Replace this box with a wide image or mini-carousel.
+                      Recommended image ratio: 16:10 or 4:3. Keep the background
+                      light, glassy, and blue-toned.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-row">
+                <div class="timeline-side">
+                  <div class="timeline-summary">
+                    <span class="timeline-kicker">Bridge layer</span>
+                    <h3>
+                      DII should route the user to the right product instead of
+                      making them guess
+                    </h3>
+                    <p>
+                      This is where your homepage can quietly work like a
+                      selector. The user understands the ecosystem and clicks
+                      into the correct entry point.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-center">
+                  <div class="timeline-marker">2</div>
+                </div>
+
+                <div class="timeline-side">
+                  <div class="timeline-card">
+                    <span class="timeline-kicker">Step 02</span>
+                    <h3>Choose the best path inside the ecosystem</h3>
+                    <p>
+                      Once the visitor understands their context, they can move
+                      into the right flow: business building, visa preparation,
+                      scheduling, or warehouse operations.
+                    </p>
+                    <ul class="timeline-list">
+                      <li>
+                        <ion-icon name="arrow-forward-outline"></ion-icon
+                        ><span
+                          >Startup Builder for general founders and structured
+                          planning</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="arrow-forward-outline"></ion-icon
+                        ><span
+                          >IFV Builder for founders with a visa and endorsement
+                          pathway in mind</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="arrow-forward-outline"></ion-icon
+                        ><span
+                          >RotaPlan and WMS for execution-focused
+                          businesses</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-row">
+                <div class="timeline-side">
+                  <div class="timeline-card">
+                    <span class="timeline-kicker">Step 03</span>
+                    <h3>Build structure, evidence, and operational clarity</h3>
+                    <p>
+                      The deeper value of DII is that it helps users move from
+                      uncertainty to structured action. It is not just software;
+                      it is a system for clearer business decision-making.
+                    </p>
+                    <ul class="timeline-list">
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Frameworks and guided steps reduce random work</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Operational tools reduce manual friction in
+                          day-to-day business</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Future finance tools can complete the lifecycle</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline-center">
+                  <div class="timeline-marker">3</div>
+                </div>
+
+                <div class="timeline-side">
+                  <div class="timeline-summary">
+                    <span class="timeline-kicker">Visual placeholder</span>
+                    <h3>Add product screenshots stacked vertically</h3>
+                    <p>
+                      Best future content here: one screenshot of Startup
+                      Builder, one IFV workspace screenshot, and one operations
+                      dashboard shot.
+                    </p>
+                    <div class="timeline-placeholder">
+                      TODO: Use 3 cards or a small slider. Each image should
+                      have a short caption: “Validate”, “Prepare”, “Operate”.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-row">
+                <div class="timeline-side">
+                  <div class="timeline-summary">
+                    <span class="timeline-kicker">Content layer</span>
+                    <h3>Education becomes part of the product strategy</h3>
+                    <p>
+                      Your articles, business guides, visa-path content, and
+                      future knowledge base should feel like part of the DII
+                      system, not just extra pages.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-center">
+                  <div class="timeline-marker">4</div>
+                </div>
+
+                <div class="timeline-side">
+                  <div class="timeline-card">
+                    <span class="timeline-kicker">Step 04</span>
+                    <h3>
+                      Support growth with a knowledge base and solution center
+                    </h3>
+                    <p>
+                      This is where DII gains long-term SEO depth and trust. You
+                      are not only selling products — you are becoming a source
+                      of structured business guidance.
+                    </p>
+                    <ul class="timeline-list">
+                      <li>
+                        <ion-icon name="book-outline"></ion-icon
+                        ><span
+                          >Educational articles attract discovery traffic and
+                          build authority</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="book-outline"></ion-icon
+                        ><span
+                          >Solution pages can explain which DII tool fits which
+                          business problem</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="book-outline"></ion-icon
+                        ><span
+                          >Guides help visitors understand before they buy or
+                          sign up</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-row">
+                <div class="timeline-side">
+                  <div class="timeline-card">
+                    <span class="timeline-kicker">Step 05</span>
+                    <h3>Expand into a connected business operating system</h3>
+                    <p>
+                      The strongest long-term positioning is not “we make apps.”
+                      It is “we create a connected operating environment for
+                      modern businesses.”
+                    </p>
+                    <ul class="timeline-list">
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Founders begin with planning and validation</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >Businesses stay for operations, learning, and future
+                          finance tooling</span
+                        >
+                      </li>
+                      <li>
+                        <ion-icon name="checkmark-outline"></ion-icon
+                        ><span
+                          >DII grows from startup support into a wider business
+                          infrastructure brand</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline-center">
+                  <div class="timeline-marker">5</div>
+                </div>
+
+                <div class="timeline-side">
+                  <div class="timeline-summary">
+                    <span class="timeline-kicker">Final placeholder</span>
+                    <h3>
+                      Add a future ecosystem diagram or animated product map
+                    </h3>
+                    <p>
+                      Recommended later: a branded visual showing the
+                      relationships between Builder, IFV, RotaPlan, WMS, and
+                      Accountancy.
+                    </p>
+                    <div class="timeline-placeholder">
+                      TODO: Make this the most polished visual in the whole
+                      timeline. This is the place to show DII as one connected
+                      system.
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- KNOWLEDGE -->
+        <section class="section reveal" id="knowledge">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="library-outline"></ion-icon>
+              Knowledge & solution center
+            </div>
+            <h2>
+              Turn educational content into a real trust and growth engine
+            </h2>
+            <p>
+              Your articles and future knowledge base should not feel secondary.
+              They can become a major part of why people discover DII, trust it,
+              and return when they are ready for software.
+            </p>
+          </div>
+
+          <div class="knowledge-split">
+            <div class="card">
+              <h3>What this section can become</h3>
+              <p>
+                Build a structured content layer around business creation,
+                founder readiness, visa paths, operations, and practical
+                solutions for growing companies.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature-item">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                  <div>
+                    <strong>Business guides</strong>
+                    <span
+                      >Articles on strategy, validation, planning, growth, and
+                      execution.</span
+                    >
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <ion-icon name="globe-outline"></ion-icon>
+                  <div>
+                    <strong>Visa pathways</strong>
+                    <span
+                      >Educational content that supports founder decision-making
+                      before they enter the IFV flow.</span
+                    >
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <ion-icon name="build-outline"></ion-icon>
+                  <div>
+                    <strong>Solution center</strong>
+                    <span
+                      >Pages like “Best software path for service businesses”,
+                      “How to validate a startup idea”, or “How to organise a
+                      small operations team”.</span
+                    >
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <ion-icon name="stats-chart-outline"></ion-icon>
+                  <div>
+                    <strong>SEO + trust layer</strong>
+                    <span
+                      >Content brings discovery traffic while products convert
+                      that traffic into real users.</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn btn-secondary" href="#contact"
+                  >Plan content structure</a
+                >
+              </div>
+            </div>
+
+            <div class="placeholder-frame">
+              <div class="placeholder-window">
+                <div class="window-top">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="window-body">
+                  <div class="placeholder-block long"></div>
+                  <div class="placeholder-block mid"></div>
+                  <div class="placeholder-block long"></div>
+                  <div class="placeholder-block short"></div>
+                  <div class="placeholder-block long"></div>
+                  <div class="placeholder-block mid"></div>
+                  <div class="placeholder-block short"></div>
+                </div>
+              </div>
+
+              <div class="placeholder-note">
+                <strong>Placeholder instructions:</strong><br />
+                Replace this area later with either:
+                <br />1) a knowledge-base screenshot, <br />2) a 3-slide content
+                carousel, <br />3) a category grid for Articles / Guides /
+                Solution Center / Case Studies.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRINCIPLES -->
+        <section class="section reveal" id="principles">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              Principles
+            </div>
+            <h2>How DII should feel as a company</h2>
+            <p>
+              This section helps your parent brand feel credible and
+              intentional. It translates technical seriousness into human
+              business language.
+            </p>
+          </div>
+
+          <div class="pillars">
+            <article class="pillar">
+              <h3>Structured thinking</h3>
+              <p>
+                We design tools that reduce confusion, bring order to decisions,
+                and create clearer next steps.
+              </p>
+            </article>
+            <article class="pillar">
+              <h3>Practical delivery</h3>
+              <p>
+                Our products focus on usable outputs, not decorative complexity
+                or vague digital promises.
+              </p>
+            </article>
+            <article class="pillar">
+              <h3>Connected systems</h3>
+              <p>
+                We build products that can grow together across planning,
+                execution, and future finance layers.
+              </p>
+            </article>
+            <article class="pillar">
+              <h3>Learning built in</h3>
+              <p>
+                Knowledge, guidance, and educational content are part of the
+                experience, not an afterthought.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section reveal" id="contact">
+          <div class="section-head">
+            <div class="eyebrow">
+              <ion-icon name="mail-outline"></ion-icon>
+              Contact
+            </div>
+            <h2>Contact the right side of the company</h2>
+            <p>
+              This layout gives DII a cleaner business feel and makes your email
+              structure look intentional rather than improvised.
+            </p>
+          </div>
+
+          <div class="contact-shell">
+            <div class="contact-grid">
+              <article class="contact-card">
+                <h3>General contact</h3>
+                <ul>
+                  <li><a href="mailto:contact@dii.ltd">contact@dii.ltd</a></li>
+                  <li>
+                    Best for partnerships, introductions, and general company
+                    enquiries.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="contact-card">
+                <h3>Sales</h3>
+                <ul>
+                  <li><a href="mailto:sales@dii.ltd">sales@dii.ltd</a></li>
+                  <li>
+                    <a href="mailto:sales.ifv@dii.ltd">sales.ifv@dii.ltd</a>
+                  </li>
+                  <li>
+                    Use for demos, product questions, or commercial discussions.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="contact-card">
+                <h3>Support</h3>
+                <ul>
+                  <li><a href="mailto:support@dii.ltd">support@dii.ltd</a></li>
+                  <li>
+                    <a href="mailto:support.ifv@dii.ltd">support.ifv@dii.ltd</a>
+                  </li>
+                  <li>
+                    Use for user issues, account access, product help, and
+                    platform support.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="contact-card">
+                <h3>Legal & specialist</h3>
+                <ul>
+                  <li><a href="mailto:legal@dii.ltd">legal@dii.ltd</a></li>
+                  <li>
+                    <a href="mailto:contact.ifv@dii.ltd">contact.ifv@dii.ltd</a>
+                  </li>
+                  <li>
+                    Use for legal enquiries, formal correspondence, and
+                    IFV-specific contact.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="contact-panel">
+              <h3>Dhruvi Infinity Inspiration Ltd.</h3>
+              <p>
+                Position DII as the company layer above all products. This panel
+                can stay stable even while individual products evolve.
+              </p>
+
+              <div class="contact-meta">
+                <div>
+                  <ion-icon name="location-outline"></ion-icon>
+                  <span
+                    >86–90 Paul Street, London, EC2A 4NE, United Kingdom</span
+                  >
+                </div>
+                <div>
+                  <ion-icon name="globe-outline"></ion-icon>
+                  <span
+                    ><a href="https://dii.ltd" target="_blank" rel="noopener"
+                      >dii.ltd</a
+                    ></span
+                  >
+                </div>
+                <div>
+                  <ion-icon name="layers-outline"></ion-icon>
+                  <span
+                    >Parent brand for founder tools, operations systems, and
+                    future finance software.</span
+                  >
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn btn-primary" href="mailto:contact@dii.ltd">
+                  <ion-icon name="send-outline"></ion-icon>
+                  Email DII
+                </a>
+                <a class="btn btn-secondary" href="#products">
+                  <ion-icon name="apps-outline"></ion-icon>
+                  View products
+                </a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="footer">
+            <span
+              >© 2026 Dhruvi Infinity Inspiration Ltd. All rights
+              reserved.</span
+            >
+            <span
+              >Designed as a parent-company homepage for a connected SaaS
+              ecosystem.</span
+            >
+          </div>
+        </section>
       </div>
-      <div class="footer">© 2025 Dhruvi Infinity Inspiration Ltd. All rights reserved.</div>
-    </section>
-  </main>
+    </main>
 
-  <script>
-    // Sidebar mobile toggle
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.querySelector('.toggle');
-    toggleBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const menuToggle = document.getElementById("menuToggle");
+      const backdrop = document.getElementById("backdrop");
+      const navLinks = document.querySelectorAll(".nav a");
 
-    // Close sidebar after clicking a link on mobile
-    document.querySelectorAll('.nav a').forEach(a=>{
-      a.addEventListener('click', ()=> sidebar.classList.remove('open'));
-    });
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
 
-    // Active link highlight on scroll
-    const sections = [...document.querySelectorAll('section[id]')];
-    const links = [...document.querySelectorAll('.nav a')];
-    const map = new Map(sections.map(s => [s.id, links.find(a=>a.getAttribute('href')==='#'+s.id)]));
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("show");
+        menuToggle.setAttribute("aria-expanded", "true");
+      }
 
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          links.forEach(l=>l.classList.remove('active'));
-          const link = map.get(entry.target.id);
-          if(link) link.classList.add('active');
+      menuToggle.addEventListener("click", () => {
+        const isOpen = sidebar.classList.contains("open");
+        if (isOpen) {
+          closeSidebar();
+        } else {
+          openSidebar();
         }
       });
-    }, {rootMargin: "-40% 0px -50% 0px", threshold: 0.01});
-    sections.forEach(s=>observer.observe(s));
 
-    // GSAP Animations (respect reduced motion)
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!prefersReduced && window.gsap){
-      gsap.registerPlugin(ScrollTrigger);
+      backdrop.addEventListener("click", closeSidebar);
 
-      // Hero entrance
-      gsap.from('#hero h1', {y:24, opacity:0, duration:.7, ease:'power2.out'});
-      gsap.from('#hero .lead', {y:18, opacity:0, delay:.1, duration:.6, ease:'power2.out'});
-      gsap.from('#hero .btn', {y:16, opacity:0, delay:.15, duration:.6, stagger:.06, ease:'power2.out'});
-      gsap.from('#hero img', {x:24, opacity:0, rotate:0.001, duration:.8, ease:'power2.out'});
-
-      // Reveal sections/cards on scroll
-      document.querySelectorAll('.reveal').forEach((el)=>{
-        gsap.from(el, {
-          opacity:0, y:26, duration:.7, ease:'power2.out',
-          scrollTrigger:{ trigger: el, start: "top 78%", toggleActions: "play none none reverse" }
-        });
-        el.querySelectorAll('.card').forEach((c, i)=>{
-          gsap.from(c, {
-            opacity:0, y:18, duration:.55, delay:i*0.06, ease:'power2.out',
-            scrollTrigger:{ trigger: el, start: "top 75%" }
-          });
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 920) closeSidebar();
         });
       });
-    }
-  </script>
-</body>
+
+      // Active nav highlight
+      const sections = [...document.querySelectorAll("section[id]")];
+      const linkMap = new Map(
+        sections.map((section) => [
+          section.id,
+          document.querySelector(`.nav a[href="#${section.id}"]`),
+        ]),
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => link.classList.remove("active"));
+              const active = linkMap.get(entry.target.id);
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        {
+          rootMargin: "-38% 0px -48% 0px",
+          threshold: 0.01,
+        },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      // GSAP
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reduceMotion && window.gsap) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".hero-copy .eyebrow", {
+          opacity: 0,
+          y: 18,
+          duration: 0.55,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-copy h1", {
+          opacity: 0,
+          y: 26,
+          duration: 0.7,
+          delay: 0.06,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-copy .lede", {
+          opacity: 0,
+          y: 18,
+          duration: 0.65,
+          delay: 0.14,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-actions .btn", {
+          opacity: 0,
+          y: 16,
+          stagger: 0.07,
+          duration: 0.55,
+          delay: 0.2,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-point", {
+          opacity: 0,
+          y: 18,
+          stagger: 0.08,
+          duration: 0.55,
+          delay: 0.26,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-panel-main", {
+          opacity: 0,
+          x: 18,
+          duration: 0.7,
+          delay: 0.1,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-panel-top", {
+          opacity: 0,
+          x: 20,
+          y: -10,
+          duration: 0.65,
+          delay: 0.24,
+          ease: "power2.out",
+        });
+
+        gsap.from(".hero-panel-bottom", {
+          opacity: 0,
+          y: 18,
+          duration: 0.72,
+          delay: 0.32,
+          ease: "power2.out",
+        });
+
+        document.querySelectorAll(".reveal").forEach((section) => {
+          gsap.from(
+            section.querySelectorAll(
+              ".card, .pillar, .contact-card, .timeline-card, .timeline-summary, .metric, .placeholder-frame, .contact-panel",
+            ),
+            {
+              opacity: 0,
+              y: 24,
+              duration: 0.65,
+              stagger: 0.06,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 78%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+      }
+    </script>
+  </body>
 </html>
