@@ -9,14 +9,14 @@
     </title>
     <meta
       name="description"
-      content="Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Business Builder, IFV Builder, RotaPlan, NorthStar WMS, and a growing knowledge base for business growth."
+      content="Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Builder, IFV Builder, RotaPlan, NorthStar WMS, DII Accounts, and a growing knowledge base for business growth."
     />
     <meta name="theme-color" content="#0b1220" />
 
     <meta property="og:title" content="Dhruvi Infinity Inspiration Ltd." />
     <meta
       property="og:description"
-      content="A connected ecosystem of tools for founders, operations teams, and growing businesses."
+      content="A connected ecosystem of tools for founders, operations teams, finance workflows, and growing businesses."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dii.ltd/" />
@@ -51,6 +51,7 @@
         --blue-4: #60a5fa;
         --cyan: #67e8f9;
         --indigo: #6366f1;
+        --mint: #4ade80;
 
         --ok: #16a34a;
         --warn: #d97706;
@@ -120,6 +121,86 @@
         );
         pointer-events: none;
         z-index: 0;
+      }
+
+      .page-infinity {
+        position: fixed;
+        top: -24px;
+        right: -52px;
+        width: min(66vw, 860px);
+        height: min(28vw, 370px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.32;
+        transform: rotate(-4deg);
+        filter: saturate(92%);
+      }
+
+      .page-infinity::before,
+      .page-infinity::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 999px;
+      }
+
+      .page-infinity::before {
+        inset: 12% 6% 18%;
+        background:
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.14),
+            transparent 12%
+          ),
+          radial-gradient(
+            circle at 24% 54%,
+            rgba(103, 232, 249, 0.07),
+            transparent 26%
+          ),
+          radial-gradient(
+            circle at 74% 44%,
+            rgba(96, 165, 250, 0.08),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 88% 34%,
+            rgba(74, 222, 128, 0.045),
+            transparent 16%
+          );
+        filter: blur(128px);
+      }
+
+      .page-infinity::after {
+        inset: 4% 6% 8%;
+        background:
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.1),
+            transparent 8%
+          ),
+          radial-gradient(
+            circle at 20% 64%,
+            rgba(99, 102, 241, 0.05),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 80% 36%,
+            rgba(103, 232, 249, 0.05),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 88% 34%,
+            rgba(74, 222, 128, 0.04),
+            transparent 16%
+          );
+        filter: blur(156px);
+      }
+
+      .page-infinity-svg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
       }
 
       a {
@@ -440,6 +521,18 @@
         margin-top: 8px;
       }
 
+      .hero-action-note {
+        max-width: 700px;
+        margin: -2px 0 0;
+        color: #5b6878;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .hero-action-note strong {
+        color: var(--ink-strong);
+      }
+
       .hero-points {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -477,9 +570,15 @@
       }
 
       .hero-art {
+        --hero-panel-gap: 20px;
+        --hero-panel-main-height: 236px;
         position: relative;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: var(--hero-panel-gap);
         width: min(100%, 640px);
-        aspect-ratio: 1 / 1.05;
+        aspect-ratio: 1 / 1.28;
+        min-height: 820px;
         border-radius: 32px;
         overflow: hidden;
         background:
@@ -546,35 +645,34 @@
       }
 
       .hero-panel-main {
-        left: 26px;
-        right: 26px;
-        top: 26px;
-        min-height: 178px;
-        padding: 20px;
+        position: relative;
+        min-height: var(--hero-panel-main-height);
+        padding: 24px;
         z-index: 3;
       }
 
       .hero-panel-bottom {
-        left: 26px;
-        right: 26px;
-        bottom: 26px;
+        position: relative;
+        height: 100%;
         min-height: 272px;
         padding: 0;
         z-index: 2;
         overflow: hidden;
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: none;
       }
 
       .hero-panel-badge {
         display: inline-flex;
-        padding: 8px 10px;
+        padding: 10px 14px;
         border-radius: 999px;
         background: rgba(14, 165, 233, 0.14);
         color: var(--blue-3);
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
       }
 
       .hero-panel-main h3 {
@@ -582,13 +680,14 @@
         color: var(--ink-strong);
         line-height: 1.15;
         letter-spacing: -0.02em;
+        font-size: 1.58rem;
       }
 
       .hero-panel-main p {
         margin: 0;
         color: var(--muted);
         line-height: 1.6;
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
 
       .mini-bars {
@@ -627,7 +726,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        min-height: 272px;
+        min-height: inherit;
         overflow: hidden;
         border-radius: 22px;
       }
@@ -636,17 +735,25 @@
         position: relative;
         width: 100%;
         height: 100%;
+        min-height: inherit;
       }
 
       .hero-slide {
         position: absolute;
         inset: 0;
+        height: 100%;
+        min-height: inherit;
         opacity: 0;
         visibility: hidden;
-        transform: scale(1.02);
+        z-index: 0;
+        pointer-events: none;
+        background-color: rgba(219, 234, 254, 0.28);
+        background-image: var(--slide-image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
         transition:
           opacity 0.5s ease,
-          transform 0.5s ease,
           visibility 0.5s ease;
         overflow: hidden;
         border-radius: 22px;
@@ -655,7 +762,8 @@
       .hero-slide.active {
         opacity: 1;
         visibility: visible;
-        transform: scale(1);
+        z-index: 1;
+        pointer-events: auto;
       }
 
       .hero-slide picture {
@@ -664,6 +772,7 @@
         display: block;
         width: 100%;
         height: 100%;
+        z-index: 0;
       }
 
       .hero-slide img {
@@ -674,6 +783,9 @@
         height: 100%;
         object-fit: cover;
         object-position: center top;
+        z-index: 0;
+        backface-visibility: hidden;
+        transform: translateZ(0);
       }
 
       .hero-slide img {
@@ -687,6 +799,14 @@
         right: 0;
         bottom: 0;
         z-index: 2;
+        padding: 26px 22px 46px;
+        color: #fff;
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0) 0%,
+          rgba(15, 23, 42, 0.34) 52%,
+          rgba(15, 23, 42, 0.86) 100%
+        );
       }
 
       .hero-slide-label {
@@ -708,6 +828,7 @@
         font-size: 1.2rem;
         line-height: 1.15;
         letter-spacing: -0.02em;
+        color: #fff;
       }
 
       .hero-slide-overlay p {
@@ -969,6 +1090,64 @@
         display: flex;
         flex-direction: column;
         min-height: 100%;
+      }
+
+      .products-grid .product-card-featured {
+        grid-column: 1 / -1;
+      }
+
+      .product-router {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin: 24px 0 0;
+      }
+
+      .route-pill {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px;
+        border-radius: 18px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.12s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .route-pill:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(37, 99, 235, 0.18);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .route-pill strong {
+        color: var(--ink-strong);
+        font-size: 0.96rem;
+      }
+
+      .route-pill span {
+        color: #5b6878;
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .route-pill.route-pill-contact {
+        background: linear-gradient(
+          180deg,
+          rgba(219, 234, 254, 0.86),
+          rgba(239, 246, 255, 0.96)
+        );
+      }
+
+      .product-card[id] {
+        scroll-margin-top: 110px;
       }
 
       .product-card .product-head {
@@ -1437,6 +1616,25 @@
         color: #556476;
       }
 
+      .contact-lead {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(37, 99, 235, 0.08);
+      }
+
+      .contact-lead strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--ink-strong);
+      }
+
+      .contact-lead span {
+        color: #556476;
+        line-height: 1.62;
+      }
+
       .contact-meta {
         display: grid;
         gap: 10px;
@@ -1471,6 +1669,14 @@
       }
 
       @media (max-width: 1260px) {
+        .page-infinity {
+          top: -10px;
+          right: -106px;
+          width: min(74vw, 760px);
+          height: min(31vw, 340px);
+          opacity: 0.72;
+        }
+
         .hero {
           grid-template-columns: 1fr;
           min-height: auto;
@@ -1486,6 +1692,7 @@
 
         .hero-art {
           width: min(100%, 760px);
+          min-height: 900px;
         }
 
         .knowledge-split,
@@ -1517,6 +1724,15 @@
       }
 
       @media (max-width: 920px) {
+        .page-infinity {
+          top: 42px;
+          right: -138px;
+          width: min(86vw, 610px);
+          height: min(34vw, 246px);
+          opacity: 0.5;
+          transform: rotate(-4deg) scale(0.92);
+        }
+
         .menu-toggle {
           display: inline-flex;
           align-items: center;
@@ -1537,28 +1753,41 @@
         }
 
         .timeline::before {
-          left: 28px;
+          left: 29px;
           transform: none;
         }
 
         .timeline-row {
-          grid-template-columns: 56px 1fr;
+          grid-template-columns: 58px minmax(0, 1fr);
+          align-items: start;
           gap: 14px;
         }
 
         .timeline-side:first-child {
-          display: none;
+          display: block;
+          grid-column: 2;
+          grid-row: 1;
         }
 
         .timeline-center {
-          grid-row: 1;
           grid-column: 1;
+          grid-row: 1 / span 2;
           align-items: flex-start;
           justify-content: flex-start;
+          padding-top: 2px;
         }
 
         .timeline-side:last-child {
           grid-column: 2;
+          grid-row: 2;
+        }
+
+        .timeline-row:nth-child(even) .timeline-side:first-child {
+          grid-row: 2;
+        }
+
+        .timeline-row:nth-child(even) .timeline-side:last-child {
+          grid-row: 1;
         }
 
         .timeline-card,
@@ -1568,6 +1797,15 @@
       }
 
       @media (max-width: 760px) {
+        .page-infinity {
+          top: 82px;
+          right: -190px;
+          width: 420px;
+          height: 180px;
+          opacity: 0.38;
+          transform: rotate(-4deg) scale(0.82);
+        }
+
         .grid-4,
         .grid-3,
         .grid-2,
@@ -1577,22 +1815,20 @@
           grid-template-columns: 1fr;
         }
 
+        .hero-art {
+          --hero-panel-gap: 16px;
+          --hero-panel-main-height: 220px;
+          aspect-ratio: auto;
+          min-height: 860px;
+          padding: 16px;
+        }
+
         .hero-panel-main {
-          left: 16px;
-          right: 16px;
-          top: 16px;
+          padding: 20px;
         }
 
         .hero-panel-bottom {
-          left: 16px;
-          right: 16px;
-          bottom: 16px;
           min-height: 300px;
-        }
-
-        .hero-art {
-          aspect-ratio: auto;
-          min-height: 760px;
         }
 
         .hero-carousel-controls {
@@ -1640,6 +1876,113 @@
 
     <div class="backdrop" id="backdrop"></div>
 
+    <div class="page-infinity" aria-hidden="true">
+      <svg
+        class="page-infinity-svg"
+        viewBox="0 0 1000 420"
+        fill="none"
+        focusable="false"
+      >
+        <defs>
+          <linearGradient
+            id="pageInfinityGradientPrimary"
+            x1="28"
+            y1="210"
+            x2="972"
+            y2="210"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stop-color="#22d3ee" />
+            <stop offset="0.18" stop-color="#93c5fd" />
+            <stop offset="0.46" stop-color="#ffffff" />
+            <stop offset="0.54" stop-color="#ffffff" />
+            <stop offset="0.8" stop-color="#60a5fa" />
+            <stop offset="1" stop-color="#34d399" />
+          </linearGradient>
+          <radialGradient
+            id="pageInfinityCenterGlow"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(500 210) rotate(90) scale(74 138)"
+          >
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0.84" />
+            <stop offset="0.22" stop-color="#ecfeff" stop-opacity="0.68" />
+            <stop offset="0.48" stop-color="#67e8f9" stop-opacity="0.22" />
+            <stop offset="0.76" stop-color="#60a5fa" stop-opacity="0.12" />
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
+          <filter
+            id="pageInfinityBlurWide"
+            x="-30%"
+            y="-60%"
+            width="160%"
+            height="220%"
+          >
+            <feGaussianBlur stdDeviation="60" />
+          </filter>
+          <filter
+            id="pageInfinityBlurSoft"
+            x="-30%"
+            y="-60%"
+            width="160%"
+            height="220%"
+          >
+            <feGaussianBlur stdDeviation="34" />
+          </filter>
+        </defs>
+
+        <ellipse
+          cx="500"
+          cy="210"
+          rx="138"
+          ry="74"
+          fill="url(#pageInfinityCenterGlow)"
+          opacity="0.24"
+          filter="url(#pageInfinityBlurWide)"
+        />
+
+        <path
+          d="M 24 210 C 150 86 302 86 500 210 C 698 334 850 334 976 210"
+          stroke="url(#pageInfinityGradientPrimary)"
+          stroke-width="34"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.05"
+          filter="url(#pageInfinityBlurWide)"
+        />
+        <path
+          d="M 24 210 C 150 334 302 334 500 210 C 698 86 850 86 976 210"
+          stroke="url(#pageInfinityGradientPrimary)"
+          stroke-width="34"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.05"
+          filter="url(#pageInfinityBlurWide)"
+        />
+
+        <path
+          d="M 24 210 C 150 86 302 86 500 210 C 698 334 850 334 976 210"
+          stroke="url(#pageInfinityGradientPrimary)"
+          stroke-width="11"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.16"
+          filter="url(#pageInfinityBlurSoft)"
+        />
+        <path
+          d="M 24 210 C 150 334 302 334 500 210 C 698 86 850 86 976 210"
+          stroke="url(#pageInfinityGradientPrimary)"
+          stroke-width="11"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.16"
+          filter="url(#pageInfinityBlurSoft)"
+        />
+      </svg>
+    </div>
+
     <aside class="sidebar" id="sidebar">
       <div class="brand">
         <div class="brand-mark">
@@ -1681,7 +2024,7 @@
         <div class="side-card">
           <h3>Live ecosystem</h3>
           <p>
-            Move from idea validation to launch, operations, and future finance
+            Move from idea validation to launch, operations, and accountancy
             tooling inside one connected company ecosystem.
           </p>
           <div class="side-links">
@@ -1736,6 +2079,19 @@
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
+
+            <a
+              class="mini-link"
+              href="https://dii-accounts-dd56c53b72d2.herokuapp.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <strong>DII Accounts</strong>
+                <span>Accountancy & reporting</span>
+              </div>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
           </div>
         </div>
       </div>
@@ -1760,24 +2116,35 @@
             <p class="lede">
               Dhruvi Infinity Inspiration Ltd. brings together connected SaaS
               products for founders and operators: business building, visa-path
-              preparation, rota planning, warehouse control, and an expanding
-              knowledge base for smarter decisions.
+              preparation, rota planning, warehouse control, accountancy
+              operations, and an expanding knowledge base for smarter
+              decisions.
             </p>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="#products">
                 <ion-icon name="rocket-outline"></ion-icon>
-                Explore the ecosystem
+                Choose a product
               </a>
               <a class="btn btn-secondary" href="#how-it-works">
                 <ion-icon name="git-network-outline"></ion-icon>
-                See how it works
+                Follow the journey
               </a>
-              <a class="btn btn-ghost" href="#contact">
+              <a
+                class="btn btn-ghost"
+                href="mailto:contact@dii.ltd?subject=Help%20me%20choose%20the%20right%20DII%20product&amp;body=Name:%0ACompany:%0AWhat%20are%20you%20trying%20to%20solve%3F%0AWhich%20route%20sounds%20closest%3A%20founder%20planning%20%2F%20IFV%20path%20%2F%20operations%20software%20%2F%20accountancy%20%2F%20not%20sure%0A"
+              >
                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                Contact DII
+                Ask DII for guidance
               </a>
             </div>
+
+            <p class="hero-action-note">
+              <strong>Choose a product</strong> if you already know the problem,
+              <strong>follow the journey</strong> if you want to see how the
+              tools connect, or <strong>ask DII for guidance</strong> if you
+              want help choosing the right route.
+            </p>
 
             <div class="hero-points">
               <div class="hero-point">
@@ -1797,10 +2164,10 @@
               </div>
 
               <div class="hero-point">
-                <strong>Knowledge layer</strong>
+                <strong>Finance layer</strong>
                 <span>
-                  Use articles, guides, and solution content to reduce confusion
-                  and improve decisions.
+                  Bring invoices, payments, reporting, and account access into
+                  the wider DII workspace.
                 </span>
               </div>
             </div>
@@ -1810,11 +2177,11 @@
             <div class="hero-art">
               <div class="glass-card hero-panel-main">
                 <span class="hero-panel-badge">DII ecosystem</span>
-                <h3>From business idea to daily operations</h3>
+                <h3>From business idea to daily operations and finance</h3>
                 <p>
-                  Position DII as the parent layer above your product family.
-                  This panel can stay visual even before you add real
-                  screenshots.
+                  DII brings the product family into one view, helping founders
+                  and operators understand where to start and how planning,
+                  operations, and finance tools connect as they grow.
                 </p>
 
                 <div class="mini-bars">
@@ -1837,11 +2204,11 @@
 
                   <div class="mini-bar">
                     <span
-                      ><strong>Knowledge</strong
-                      ><em>Guides → solution center</em></span
+                      ><strong>Finance</strong
+                      ><em>Accounts → reporting</em></span
                     >
                     <div class="mini-bar-track">
-                      <div class="mini-bar-fill" style="width: 66%"></div>
+                      <div class="mini-bar-fill" style="width: 63%"></div>
                     </div>
                   </div>
                 </div>
@@ -1869,14 +2236,17 @@
                   </div>
 
                   <div class="hero-carousel-track">
-                    <article class="hero-slide active">
+                    <article
+                      class="hero-slide active"
+                      style="--slide-image: url('assets/images/dhruviinfinity.jpg')"
+                    >
                       <picture>
                         <source
-                          srcset="/assets/images/dhruviinfinity.webp"
+                          srcset="assets/images/dhruviinfinity.webp"
                           type="image/webp"
                         />
                         <img
-                          src="/assets/images/dhruviinfinity.jpg"
+                          src="assets/images/dhruviinfinity.jpg"
                           alt="Startup Business Builder platform preview"
                           loading="eager"
                         />
@@ -1894,14 +2264,17 @@
                       </div>
                     </article>
 
-                    <article class="hero-slide">
+                    <article
+                      class="hero-slide"
+                      style="--slide-image: url('assets/images/ifv.jpg')"
+                    >
                       <picture>
                         <source
-                          srcset="/assets/images/ifv.webp"
+                          srcset="assets/images/ifv.webp"
                           type="image/webp"
                         />
                         <img
-                          src="/assets/images/ifv.jpg"
+                          src="assets/images/ifv.jpg"
                           alt="Innovation Founder Visa Builder preview"
                           loading="lazy"
                         />
@@ -1919,16 +2292,19 @@
                       </div>
                     </article>
 
-                    <article class="hero-slide">
+                    <article
+                      class="hero-slide"
+                      style="
+                        --slide-image: url('assets/images/dhruviinfinity-fast-checker.jpg')
+                      "
+                    >
                       <picture>
                         <source
-                          srcset="
-                            /assets/images/dhruviinfinity-fast-checker.webp
-                          "
+                          srcset="assets/images/dhruviinfinity-fast-checker.webp"
                           type="image/webp"
                         />
                         <img
-                          src="/assets/images/dhruviinfinity-fast-checker.jpg"
+                          src="assets/images/dhruviinfinity-fast-checker.jpg"
                           alt="Fast Checker product preview"
                           loading="lazy"
                         />
@@ -1941,6 +2317,29 @@
                         <p>
                           Help users test early viability and understand whether
                           they should move into deeper strategy or validation.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article
+                      class="hero-slide"
+                      style="--slide-image: url('assets/images/DIIAccounts.jpg')"
+                    >
+                      <picture>
+                        <img
+                          src="assets/images/DIIAccounts.jpg"
+                          alt="DII Accounts accountancy workspace preview"
+                          loading="lazy"
+                        />
+                      </picture>
+                      <div class="hero-slide-overlay">
+                        <span class="hero-slide-label">DII Accounts</span>
+                        <h3>
+                          Add accountancy operations to the wider DII ecosystem
+                        </h3>
+                        <p>
+                          Bring invoices, payments, reporting, and organisation
+                          finance workflows into one UK-focused workspace.
                         </p>
                       </div>
                     </article>
@@ -1962,6 +2361,11 @@
                       type="button"
                       aria-label="Go to slide 3"
                     ></button>
+                    <button
+                      class="hero-carousel-dot"
+                      type="button"
+                      aria-label="Go to slide 4"
+                    ></button>
                   </div>
                 </div>
               </div>
@@ -1975,12 +2379,12 @@
               <ion-icon name="layers-outline"></ion-icon>
               Platform overview
             </div>
-            <h2>A parent company page that explains the whole ecosystem</h2>
+            <h2>One ecosystem for founders, operators, and growing teams</h2>
             <p>
-              DII should not feel like a generic agency homepage. It should
-              clearly show how your products connect: founders start with idea
-              and strategy tools, then move toward operational software and
-              deeper business support.
+              DII brings the product family into one place so visitors can see
+              how idea validation, visa support, operations software,
+              accountancy tooling, and practical guidance connect across the
+              business journey.
             </p>
           </div>
 
@@ -2021,12 +2425,12 @@
 
               <article class="card">
                 <div class="card-icon">
-                  <ion-icon name="library-outline"></ion-icon>
+                  <ion-icon name="card-outline"></ion-icon>
                 </div>
-                <h3>Learn as you grow</h3>
+                <h3>Control finance</h3>
                 <p>
-                  Add educational articles, guides, and solution content to
-                  create an evergreen business knowledge layer.
+                  Bring invoices, payments, reporting, and organisation-level
+                  finance workflows into a clearer daily workspace.
                 </p>
               </article>
             </div>
@@ -2047,10 +2451,10 @@
                 </span>
               </div>
               <div class="metric">
-                <strong>Future layer</strong>
+                <strong>Finance layer</strong>
                 <span>
-                  Accountancy, reporting, compliance, and financial management
-                  tools.
+                  DII Accounts, reporting, payments, and accountancy
+                  operations.
                 </span>
               </div>
               <div class="metric">
@@ -2070,16 +2474,44 @@
               <ion-icon name="apps-outline"></ion-icon>
               Products
             </div>
-            <h2>The current DII product family</h2>
+            <h2>The DII product family</h2>
             <p>
-              Keep this section practical and clickable. The goal is to help
-              visitors instantly understand what each system does and where it
-              fits in the wider business lifecycle.
+              Use Startup Builder for general founder planning, IFV Builder for
+              visa-path preparation, and RotaPlan or NorthStar when the
+              operational challenge is scheduling, workforce coordination, stock
+              control, or accountancy operations.
             </p>
           </div>
 
-          <div class="grid grid-2">
-            <article class="card product-card">
+          <div class="product-router" aria-label="Product routes">
+            <a class="route-pill" href="#startup-builder">
+              <strong>Founder planning</strong>
+              <span>Go straight to Startup Builder.</span>
+            </a>
+            <a class="route-pill" href="#ifv-builder">
+              <strong>IFV preparation</strong>
+              <span>Open the visa-focused route.</span>
+            </a>
+            <a class="route-pill" href="#rotaplan">
+              <strong>Shift planning</strong>
+              <span>See the rota and workforce option.</span>
+            </a>
+            <a class="route-pill" href="#northstar-wms">
+              <strong>Warehouse control</strong>
+              <span>Jump to stock and movement visibility.</span>
+            </a>
+            <a class="route-pill" href="#dii-accounts">
+              <strong>Accounting & reporting</strong>
+              <span>Go to the finance workspace.</span>
+            </a>
+            <a class="route-pill route-pill-contact" href="#contact">
+              <strong>Need help choosing?</strong>
+              <span>Start with the contact route and get pointed to the right team.</span>
+            </a>
+          </div>
+
+          <div class="grid grid-2 products-grid">
+            <article class="card product-card" id="startup-builder">
               <div class="product-head">
                 <h3>Startup Business Builder</h3>
                 <span class="product-status">Live platform</span>
@@ -2106,8 +2538,8 @@
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Can become the core “business operating start point” for
-                    many users
+                    Gives founders one structured place to move from idea to
+                    launch planning
                   </span>
                 </li>
               </ul>
@@ -2118,12 +2550,12 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Open Startup Builder
+                  Go to founder planning
                 </a>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article class="card product-card" id="ifv-builder">
               <div class="product-head">
                 <h3>Innovation Founder Visa Builder</h3>
                 <span class="product-status">Focused path</span>
@@ -2143,14 +2575,14 @@
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Supports idea shaping, evidence logic, and founder-readiness
-                    positioning
+                    Supports idea shaping, evidence logic, and founder readiness
+                    for endorsement conversations
                   </span>
                 </li>
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Natural bridge between strategic planning and
+                    Connects strategic planning with
                     immigration-specific preparation
                   </span>
                 </li>
@@ -2162,12 +2594,12 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Open IFV Builder
+                  Go to IFV Builder
                 </a>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article class="card product-card" id="rotaplan">
               <div class="product-head">
                 <h3>RotaPlan</h3>
                 <span class="product-status">Operations</span>
@@ -2186,14 +2618,14 @@
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Can position DII beyond founders and into business
-                    operations
+                    Helps teams manage shifts, people, and day-to-day
+                    coordination more clearly
                   </span>
                 </li>
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Good proof that DII also builds practical execution software
+                    Built for businesses that need a simpler execution layer
                   </span>
                 </li>
               </ul>
@@ -2204,12 +2636,12 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Open RotaPlan
+                  See the shift planning tool
                 </a>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article class="card product-card" id="northstar-wms">
               <div class="product-head">
                 <h3>NorthStar WMS</h3>
                 <span class="product-status">Growing ops tool</span>
@@ -2222,7 +2654,8 @@
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Positions DII in logistics and operational infrastructure
+                    Helps growing teams manage stock and warehouse operations
+                    with more visibility
                   </span>
                 </li>
                 <li>
@@ -2235,8 +2668,7 @@
                 <li>
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                   <span>
-                    Can later connect naturally to finance and reporting
-                    products
+                    Fits naturally alongside finance and reporting workflows
                   </span>
                 </li>
               </ul>
@@ -2247,7 +2679,55 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Open NorthStar WMS
+                  See the warehouse control tool
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="card product-card product-card-featured"
+              id="dii-accounts"
+            >
+              <div class="product-head">
+                <h3>DII Accounts</h3>
+                <span class="product-status">MVP live</span>
+              </div>
+              <p>
+                A UK-focused accountancy workspace for organisations that need
+                cleaner invoicing, payments, reporting, and day-to-day finance
+                operations inside the wider DII ecosystem.
+              </p>
+              <ul class="product-list">
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Designed around organisation-first account access and a
+                    clearer membership model
+                  </span>
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Brings invoices, payments, reporting, and finance workflows
+                    into one workspace
+                  </span>
+                </li>
+                <li>
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span>
+                    Connects planning, operations, invoicing, and reporting
+                    inside one wider workspace
+                  </span>
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  class="btn btn-secondary"
+                  href="https://dii-accounts-dd56c53b72d2.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open DII Accounts
                 </a>
               </div>
             </article>
@@ -2260,22 +2740,20 @@
               <ion-icon name="git-network-outline"></ion-icon>
               How it works
             </div>
-            <h2>A cleaner flow from idea to operations</h2>
+            <h2>A cleaner flow from idea to operations and finance</h2>
             <p>
-              This section is designed like your IFV-style timeline but broader.
-              It explains how a founder or business can move through the DII
-              ecosystem instead of seeing your products as disconnected
-              websites.
+              Follow how people move through DII: start with the business need,
+              find the right path, and move into tools that support planning,
+              operations, finance, and long-term growth.
             </p>
           </div>
 
           <div class="flow-shell">
             <div class="flow-intro">
               <p class="lede">
-                You can keep this as the main narrative section on the homepage.
-                Later, add screenshots or mini carousels beside specific stages.
-                For now, placeholder notes show you where those visuals should
-                go.
+                This flow shows how DII turns scattered business questions into
+                a clearer next step, then into working systems and ongoing
+                support.
               </p>
             </div>
 
@@ -2284,12 +2762,12 @@
                 <div class="timeline-side">
                   <div class="timeline-card">
                     <span class="timeline-kicker">Step 01</span>
-                    <h3>Start with a business idea or growth problem</h3>
+                    <h3>Start with a business need, idea, or growth challenge</h3>
                     <p>
-                      The first job is not to overwhelm the visitor. It is to
-                      help them identify where they are: early founder,
-                      visa-focused founder, operator with team planning needs,
-                      or logistics-focused business.
+                      People arrive with different starting points: an early
+                      idea, a visa pathway, a scheduling problem, an
+                      operations challenge, or a finance process that needs
+                      structure.
                     </p>
                     <ul class="timeline-list">
                       <li>
@@ -2302,15 +2780,15 @@
                       <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>
-                          Operators can move directly to rota or warehouse
-                          workflows
+                          Operators can move directly to rota, warehouse, or
+                          accountancy workflows
                         </span>
                       </li>
                       <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>
-                          DII acts as the parent layer guiding them to the right
-                          system
+                          DII helps route them to the right system without
+                          unnecessary guesswork
                         </span>
                       </li>
                     </ul>
@@ -2323,16 +2801,14 @@
 
                 <div class="timeline-side">
                   <div class="timeline-summary">
-                    <span class="timeline-kicker">Visual placeholder</span>
-                    <h3>Add a simple “entry point” illustration here later</h3>
+                    <span class="timeline-kicker">Path overview</span>
+                    <h3>Founder, visa, operations, and finance paths start here</h3>
                     <p>
-                      Suggested future visual: a clean 3-lane diagram showing
-                      Founder, Visa, and Operations paths.
+                      DII helps people recognise their entry point before they
+                      choose a product or contact route.
                     </p>
                     <div class="timeline-placeholder">
-                      TODO: Replace this box with a wide image or mini-carousel.
-                      Recommended image ratio: 16:10 or 4:3. Keep the background
-                      light, glassy, and blue-toned.
+                      Founder path | Visa path | Operations path | Finance path
                     </div>
                   </div>
                 </div>
@@ -2341,15 +2817,14 @@
               <article class="timeline-row">
                 <div class="timeline-side">
                   <div class="timeline-summary">
-                    <span class="timeline-kicker">Bridge layer</span>
+                    <span class="timeline-kicker">Routing layer</span>
                     <h3>
-                      DII should route the user to the right product instead of
-                      making them guess
+                      DII routes people to the right product without guesswork
                     </h3>
                     <p>
-                      This is where your homepage can quietly work like a
-                      selector. The user understands the ecosystem and clicks
-                      into the correct entry point.
+                      The homepage helps visitors understand the ecosystem
+                      quickly, then move into the product or conversation that
+                      fits them best.
                     </p>
                   </div>
                 </div>
@@ -2365,7 +2840,7 @@
                     <p>
                       Once the visitor understands their context, they can move
                       into the right flow: business building, visa preparation,
-                      scheduling, or warehouse operations.
+                      scheduling, warehouse operations, or finance control.
                     </p>
                     <ul class="timeline-list">
                       <li>
@@ -2388,6 +2863,13 @@
                           RotaPlan and WMS for execution-focused businesses
                         </span>
                       </li>
+                      <li>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        <span>
+                          DII Accounts for invoicing, payments, reporting, and
+                          accountancy operations
+                        </span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -2399,9 +2881,9 @@
                     <span class="timeline-kicker">Step 03</span>
                     <h3>Build structure, evidence, and operational clarity</h3>
                     <p>
-                      The deeper value of DII is that it helps users move from
-                      uncertainty to structured action. It is not just software;
-                      it is a system for clearer business decision-making.
+                      DII helps people move from uncertainty to structured
+                      action with guided workflows, clearer evidence, and better
+                      operational visibility.
                     </p>
                     <ul class="timeline-list">
                       <li>
@@ -2420,7 +2902,8 @@
                       <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>
-                          Future finance tools can complete the lifecycle
+                          DII Accounts adds finance operations to the same
+                          lifecycle
                         </span>
                       </li>
                     </ul>
@@ -2433,16 +2916,15 @@
 
                 <div class="timeline-side">
                   <div class="timeline-summary">
-                    <span class="timeline-kicker">Visual placeholder</span>
-                    <h3>Add product screenshots stacked vertically</h3>
+                    <span class="timeline-kicker">Product snapshot</span>
+                    <h3>See strategy, validation, operations, and finance in one flow</h3>
                     <p>
-                      Best future content here: one screenshot of Startup
-                      Builder, one IFV workspace screenshot, and one operations
-                      dashboard shot.
+                      Business Builder, IFV preparation, operations tools, and
+                      DII Accounts each solve a different stage of the journey
+                      while staying connected.
                     </p>
                     <div class="timeline-placeholder">
-                      TODO: Use 3 cards or a small slider. Each image should
-                      have a short caption: “Validate”, “Prepare”, “Operate”.
+                      Validate | Prepare | Operate | Account
                     </div>
                   </div>
                 </div>
@@ -2452,11 +2934,11 @@
                 <div class="timeline-side">
                   <div class="timeline-summary">
                     <span class="timeline-kicker">Content layer</span>
-                    <h3>Education becomes part of the product strategy</h3>
+                    <h3>Education strengthens every product decision</h3>
                     <p>
-                      Your articles, business guides, visa-path content, and
-                      future knowledge base should feel like part of the DII
-                      system, not just extra pages.
+                      Articles, guides, visa-path content, and solution pages
+                      help people understand the problem before they commit to a
+                      product.
                     </p>
                   </div>
                 </div>
@@ -2472,9 +2954,8 @@
                       Support growth with a knowledge base and solution center
                     </h3>
                     <p>
-                      This is where DII gains long-term SEO depth and trust. You
-                      are not only selling products — you are becoming a source
-                      of structured business guidance.
+                      Helpful content builds trust, supports earlier discovery,
+                      and helps visitors make better product decisions.
                     </p>
                     <ul class="timeline-list">
                       <li>
@@ -2509,9 +2990,9 @@
                     <span class="timeline-kicker">Step 05</span>
                     <h3>Expand into a connected business operating system</h3>
                     <p>
-                      The strongest long-term positioning is not “we make apps.”
-                      It is “we create a connected operating environment for
-                      modern businesses.”
+                      The ecosystem is structured so planning, execution,
+                      finance, and learning can work together as the business
+                      grows.
                     </p>
                     <ul class="timeline-list">
                       <li>
@@ -2523,15 +3004,15 @@
                       <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>
-                          Businesses stay for operations, learning, and future
-                          finance tooling
+                          Businesses stay for operations, finance, and learning
+                          support
                         </span>
                       </li>
                       <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>
-                          DII grows from startup support into a wider business
-                          infrastructure brand
+                          The same ecosystem can support teams beyond the first
+                          launch stage
                         </span>
                       </li>
                     </ul>
@@ -2544,19 +3025,14 @@
 
                 <div class="timeline-side">
                   <div class="timeline-summary">
-                    <span class="timeline-kicker">Final placeholder</span>
-                    <h3>
-                      Add a future ecosystem diagram or animated product map
-                    </h3>
+                    <span class="timeline-kicker">Ecosystem view</span>
+                    <h3>One brand with connected business layers</h3>
                     <p>
-                      Recommended later: a branded visual showing the
-                      relationships between Builder, IFV, RotaPlan, WMS, and
-                      Accountancy.
+                      The product family connects founder support, operations
+                      systems, finance tools, and knowledge under one company.
                     </p>
                     <div class="timeline-placeholder">
-                      TODO: Make this the most polished visual in the whole
-                      timeline. This is the place to show DII as one connected
-                      system.
+                      Founders | Operations | Knowledge | Finance
                     </div>
                   </div>
                 </div>
@@ -2571,23 +3047,20 @@
               <ion-icon name="library-outline"></ion-icon>
               Knowledge & solution center
             </div>
-            <h2>
-              Turn educational content into a real trust and growth engine
-            </h2>
+              <h2>Guides and explainers that help people choose the right route</h2>
             <p>
-              Your articles and future knowledge base should not feel secondary.
-              They can become a major part of why people discover DII, trust it,
-              and return when they are ready for software.
+              The knowledge layer helps people discover DII, understand their
+              options, and return when they are ready for software or support.
             </p>
           </div>
 
           <div class="knowledge-split">
             <div class="card">
-              <h3>What this section can become</h3>
+              <h3>What the knowledge layer covers</h3>
               <p>
-                Build a structured content layer around business creation,
-                founder readiness, visa paths, operations, and practical
-                solutions for growing companies.
+                A structured content layer covering business creation, founder
+                readiness, visa paths, operations, finance workflows, and
+                practical solutions for growing companies.
               </p>
 
               <div class="feature-list">
@@ -2596,8 +3069,8 @@
                   <div>
                     <strong>Business guides</strong>
                     <span>
-                      Articles on strategy, validation, planning, growth, and
-                      execution.
+                      Articles on strategy, validation, planning, growth,
+                      execution, and finance operations.
                     </span>
                   </div>
                 </div>
@@ -2619,8 +3092,9 @@
                     <strong>Solution center</strong>
                     <span>
                       Pages like “Best software path for service businesses”,
-                      “How to validate a startup idea”, or “How to organise a
-                      small operations team”.
+                      “How to validate a startup idea”, “How to organise a
+                      small operations team”, or “How to simplify invoicing and
+                      reporting as you grow”.
                     </span>
                   </div>
                 </div>
@@ -2628,10 +3102,10 @@
                 <div class="feature-item">
                   <ion-icon name="stats-chart-outline"></ion-icon>
                   <div>
-                    <strong>SEO + trust layer</strong>
+                    <strong>Discovery + trust</strong>
                     <span>
-                      Content brings discovery traffic while products convert
-                      that traffic into real users.
+                      Useful content helps more people find DII and understand
+                      the right next step.
                     </span>
                   </div>
                 </div>
@@ -2639,7 +3113,7 @@
 
               <div class="card-actions">
                 <a class="btn btn-secondary" href="#contact">
-                  Plan content structure
+                  Ask about the knowledge layer
                 </a>
               </div>
             </div>
@@ -2663,11 +3137,9 @@
               </div>
 
               <div class="placeholder-note">
-                <strong>Placeholder instructions:</strong><br />
-                Replace this area later with either:
-                <br />1) a knowledge-base screenshot, <br />2) a 3-slide content
-                carousel, <br />3) a category grid for Articles / Guides /
-                Solution Center / Case Studies.
+                <strong>Content themes:</strong><br />
+                Articles, guides, solution explainers, finance workflows, and
+                case-led content all belong in this layer.
               </div>
             </div>
           </div>
@@ -2679,11 +3151,10 @@
               <ion-icon name="shield-checkmark-outline"></ion-icon>
               Principles
             </div>
-            <h2>How DII should feel as a company</h2>
+            <h2>What DII stands for</h2>
             <p>
-              This section helps your parent brand feel credible and
-              intentional. It translates technical seriousness into human
-              business language.
+              These principles explain how DII approaches product design,
+              delivery, and support across the ecosystem.
             </p>
           </div>
 
@@ -2707,8 +3178,8 @@
             <article class="pillar">
               <h3>Connected systems</h3>
               <p>
-                We build products that can grow together across planning,
-                execution, and future finance layers.
+                We build products that work together across planning,
+                execution, finance, and reporting layers.
               </p>
             </article>
 
@@ -2728,10 +3199,11 @@
               <ion-icon name="mail-outline"></ion-icon>
               Contact
             </div>
-            <h2>Contact the right side of the company</h2>
+            <h2>Choose a route or start one conversation</h2>
             <p>
-              This layout gives DII a cleaner business feel and makes your email
-              structure look intentional rather than improvised.
+              If you already know the inbox you need, use it directly. If not,
+              start with one guided enquiry and DII will route you to the right
+              team.
             </p>
           </div>
 
@@ -2793,9 +3265,19 @@
             <aside class="contact-panel">
               <h3>Dhruvi Infinity Inspiration Ltd.</h3>
               <p>
-                Position DII as the company layer above all products. This panel
-                can stay stable even while individual products evolve.
+                DII brings the product family together, giving founders and
+                operators one clear place to reach planning, operations, and
+                finance tools across the wider ecosystem.
               </p>
+
+              <div class="contact-lead">
+                <strong>Best first step if you need direction</strong>
+                <span>
+                  Use the guided enquiry to explain your situation in one email,
+                  and DII can point you to the right product, team, or next
+                  conversation.
+                </span>
+              </div>
 
               <div class="contact-meta">
                 <div>
@@ -2816,19 +3298,22 @@
                   <ion-icon name="layers-outline"></ion-icon>
                   <span>
                     Parent brand for founder tools, operations systems, and
-                    future finance software.
+                    finance and accountancy software.
                   </span>
                 </div>
               </div>
 
               <div class="card-actions">
-                <a class="btn btn-primary" href="mailto:contact@dii.ltd">
+                <a
+                  class="btn btn-primary"
+                  href="mailto:contact@dii.ltd?subject=Help%20me%20choose%20the%20right%20DII%20route&amp;body=Name:%0ACompany:%0AWhat%20are%20you%20trying%20to%20solve%3F%0AWhich%20product%20or%20area%20sounds%20closest%3F%0A"
+                >
                   <ion-icon name="send-outline"></ion-icon>
-                  Email DII
+                  Start a guided enquiry
                 </a>
                 <a class="btn btn-secondary" href="#products">
                   <ion-icon name="apps-outline"></ion-icon>
-                  View products
+                  Compare products first
                 </a>
               </div>
             </aside>

@@ -1,0 +1,44 @@
+# SEO Keywords
+
+## Current Homepage Keyword Direction
+
+### Brand Terms
+- Dhruvi Infinity Inspiration Ltd
+- DII
+- dii.ltd
+
+### Core Positioning Terms
+- connected SaaS
+- business builder software
+- founder tools
+- operations software
+- accountancy software
+- finance workspace
+- business operating system
+
+### Product Terms Mentioned On The Homepage
+- Startup Business Builder
+- Innovation Founder Visa Builder
+- RotaPlan
+- NorthStar WMS
+- DII Accounts
+
+## Recommended Page Intent
+- Primary intent: explain DII as the parent brand connecting founder and operations tools
+- Primary intent: explain DII as the parent brand connecting founder, operations, and finance tools
+- Secondary intent: route users into the correct product or contact path
+- Future intent: support content-led discovery around founder planning, visa preparation, business operations, and finance workflows
+
+## Future Content Clusters
+- startup idea validation
+- business planning tools
+- Innovator Founder Visa preparation
+- rota planning software
+- warehouse management for growing businesses
+- small business accountancy workspace
+- invoicing and reporting software
+- practical business operations guides
+
+## Notes
+- Keep keyword usage natural.
+- Homepage CTA routing is now sharper, so the next pass can focus on metadata, schema, and intent reinforcement.
