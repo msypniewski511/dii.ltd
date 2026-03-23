@@ -7,6 +7,8 @@ This folder is the persistent operating context for future Codex sessions workin
 - Production page: `/index.html`
 - Domain config: `/CNAME`
 - Social preview image: `/ILOVE.png`
+- Crawl files: `/robots.txt`, `/sitemap.xml`
+- Search Console verification: `/google46d6e99a9bb78479.html`
 - Product screenshots: `/assets/images/`
 - Non-production artifact: `/tmp.html`
 
@@ -23,6 +25,8 @@ This folder is the persistent operating context for future Codex sessions workin
 - `/CODEX/architecture/`: structure, file map, assets, SEO, and implementation conventions
 - `/CODEX/content/`: brand voice, copy inventory, and keyword direction
 - `/CODEX/design/`: visual system, UI patterns, and component inventory
+- `/CODEX/design/ui_playbook.md`: reusable Codex UI instructions for future projects
+- `/CODEX/design/ui_foundation.css`: reusable CSS starter extracted from the live site
 - `/CODEX/tasks/`: backlog and workflow state
 - `/CODEX/testing/`: QA, browser, and performance notes
 - `/CODEX/logs/`: session notes and recent repo-level changes

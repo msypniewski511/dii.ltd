@@ -32,11 +32,18 @@
 - Outcome: the fixed sidebar now stays within the viewport height and scrolls internally, so mobile and shorter-screen users can reach the full menu and sidebar content.
 - Files: `/index.html`, `/CODEX_START_HERE.md`, `/CODEX/architecture/frontend_map.md`, `/CODEX/logs/*`, `/CODEX/tasks/*`
 
-## P1 High
+### DII-013 Capture reusable UI playbook and CSS starter
+- Status: DONE on 2026-03-23
+- Outcome: the visual system is now documented as a reusable Codex prompt plus a starter CSS file for future projects.
+- Files: `/CODEX/design/ui_playbook.md`, `/CODEX/design/ui_foundation.css`, `/CODEX/design/design_system.md`, `/CODEX/README.md`, `/CODEX/reference/important_paths.md`, `/CODEX/logs/*`, `/CODEX/tasks/*`
 
 ### DII-005 Strengthen homepage SEO foundations
-- Area: SEO
-- Why now: the site has a good title and description but no canonical tag, no Twitter card tags, no schema, and no documented page-intent structure beyond the single page.
+- Status: DONE on 2026-03-23
+- Outcome: the homepage now has canonical markup, robots directives, Twitter card tags, JSON-LD schema, `/robots.txt`, `/sitemap.xml`, and a documented Google Search Console verification file in the repo root.
+- Files: `/index.html`, `/robots.txt`, `/sitemap.xml`, `/google46d6e99a9bb78479.html`, `/CODEX/architecture/seo_map.md`, `/CODEX/content/seo_keywords.md`, `/CODEX/tasks/*`, `/CODEX/logs/*`
+
+## P1 High
+- No open P1 tasks at the moment.
 
 ## P2 Medium
 

@@ -51,3 +51,9 @@
 ## 2026-03-23
 - Updated `/index.html` sidebar styling to keep the fixed menu capped to the viewport height and scrollable internally
 - The fixed sidebar now uses viewport-bound height and `overflow-y: auto`, so the full menu and ecosystem links remain reachable on smaller screens and shorter viewports.
+- Added `/CODEX/design/ui_playbook.md` with reusable Codex UI instructions extracted from the live site
+- Added `/CODEX/design/ui_foundation.css` with the reusable CSS starter system extracted from `/index.html`
+- Updated `/index.html` SEO metadata to add canonical, robots, Twitter card tags, and JSON-LD schema
+- Added `/robots.txt`
+- Added `/sitemap.xml`
+- Logged the existing `/google46d6e99a9bb78479.html` Google Search Console verification file in the CODEX docs

@@ -5,6 +5,9 @@
 
 ## Current Codebase Shape
 - `/index.html`: main and only production page
+- `/robots.txt`: crawl permissions and sitemap declaration
+- `/sitemap.xml`: single-page sitemap for the homepage
+- `/google46d6e99a9bb78479.html`: Google Search Console verification file
 - `/assets/images/`: product screenshots used in the hero carousel
 - `/ILOVE.png`: open graph/social share image
 - `/CNAME`: custom domain configuration for `dii.ltd`
@@ -21,10 +24,10 @@
 - Strong visual direction for a single static file
 - Clear product inventory with external links, including DII Accounts
 - Reusable card, button, and layout patterns already exist
-- Good baseline metadata for title, description, Open Graph, and viewport
+- Good baseline metadata with title, description, canonical, Open Graph, Twitter tags, JSON-LD schema, and crawl files
 
 ## Current Weaknesses
 - Several sections still use abstract placeholder visuals even though the live copy is now visitor-facing
 - CSS and JS are embedded in one large HTML file, which hurts maintainability
 - Contact flow is still limited to `mailto:` rather than a form, even though the lead path is now clearer
-- SEO structure is basic and missing canonical, Twitter, and schema support
+- The site is still a single-page homepage, which limits long-tail SEO until real content pages exist

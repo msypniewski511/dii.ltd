@@ -41,6 +41,11 @@
 - Compact route pills for product selection and guided conversion
 - Full-width featured product card for the finance layer
 
+## Reuse Pack
+- Reusable CSS starter: `/CODEX/design/ui_foundation.css`
+- Reusable Codex prompt and UI instructions: `/CODEX/design/ui_playbook.md`
+- Exact production reference for section-specific styles: `/index.html`
+
 ## Current Hero Direction
 - The right hero visual is intentionally tall and framed like a layered dashboard rather than a short media card.
 - The upper glass summary card is oversized relative to the carousel so the ecosystem explanation reads as part of the hero, not as a small caption block.

@@ -36,6 +36,15 @@
 - Dependencies: DII-002
 - Notes: Completed on 2026-03-22 in `/index.html`. This pass added a hero CTA guidance note, a product routing layer, product-specific jump targets, and stronger guided-enquiry copy in the contact panel.
 
+## DII-005
+- Title: Strengthen SEO foundations for the homepage
+- Description: Added the missing homepage SEO baseline so the one-page site is easier to index, share, and submit to search tools.
+- Area: SEO
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-002
+- Notes: Completed on 2026-03-23 in `/index.html`, `/robots.txt`, and `/sitemap.xml`. This pass added canonical, robots, Twitter card tags, JSON-LD schema, and logged the existing `/google46d6e99a9bb78479.html` verification file.
+
 ## DII-010
 - Title: Add DII Accounts to the live ecosystem
 - Description: Added the new accountancy product across the homepage using the live URL, real image asset, and revised finance-layer copy.
@@ -62,3 +71,12 @@
 - Status: DONE
 - Dependencies: None
 - Notes: Completed on 2026-03-23 in `/index.html`. The sidebar now uses viewport-bound height plus internal scrolling behavior.
+
+## DII-013
+- Title: Capture reusable UI playbook and CSS starter
+- Description: Turned the current visual language into a reusable Codex prompt plus a starter CSS kit for future projects.
+- Area: Design system / documentation
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: None
+- Notes: Completed on 2026-03-23 in `/CODEX/design/ui_playbook.md` and `/CODEX/design/ui_foundation.css`, with matching updates to the design and reference docs.

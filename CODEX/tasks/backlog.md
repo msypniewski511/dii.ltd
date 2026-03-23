@@ -36,9 +36,9 @@
 - Description: Add missing SEO baseline elements and align on-page copy with homepage intent.
 - Area: SEO
 - Priority: P1 High
-- Status: TODO
+- Status: DONE
 - Dependencies: DII-002
-- Notes: Canonical, Twitter tags, and schema are missing. The single-page architecture also needs better intent documentation.
+- Notes: Completed on 2026-03-23. Added canonical, robots, Twitter tags, JSON-LD schema, `/robots.txt`, `/sitemap.xml`, and documented the Google Search Console verification file at the repo root.
 
 ### DII-011
 - Title: Polish remaining internal-sounding homepage copy
@@ -68,6 +68,15 @@
 - Status: DONE
 - Dependencies: None
 - Notes: Completed on 2026-03-23. The fixed sidebar now uses viewport-bound height and `overflow-y: auto`.
+
+### DII-013
+- Title: Capture reusable UI playbook and CSS starter
+- Description: Package the current visual system into reusable Codex instructions plus a starter CSS file for future projects.
+- Area: Design system / documentation
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: None
+- Notes: Completed on 2026-03-23. Reusable assets now live in `/CODEX/design/ui_playbook.md` and `/CODEX/design/ui_foundation.css`.
 
 ### DII-007
 - Title: Replace placeholder visuals with production-ready assets

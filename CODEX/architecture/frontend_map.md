@@ -11,10 +11,17 @@
 
 ## Live File Structure
 
+### Root files
+- `/robots.txt`: allows crawling and points bots to `https://dii.ltd/sitemap.xml`
+- `/sitemap.xml`: currently lists the homepage only
+- `/google46d6e99a9bb78479.html`: Google Search Console verification file supplied by the site owner
+
 ### `/index.html`
 - `<head>`
-  - Title, description, theme color
-  - Open Graph title, description, type, url, image
+  - Title, description, robots, canonical, theme color, and favicon
+  - Open Graph title, description, site name, type, url, image, and image alt
+  - Twitter card title, description, and image metadata
+  - JSON-LD graph for `Organization`, `WebSite`, and `WebPage`
   - External script tags for Ionicons and GSAP
   - One large inline `<style>` block
 - `<body>`
@@ -108,3 +115,8 @@
 - Inline CSS and JS make future changes harder to isolate and cache
 - `carousel` logic assumes `#heroCarousel` exists before event binding
 - No separate reusable asset pipeline yet; all presentation logic is embedded in one file
+
+## Reuse Assets
+- `/CODEX/design/ui_playbook.md` stores the reusable Codex-facing design instructions for this visual language.
+- `/CODEX/design/ui_foundation.css` stores the extracted starter CSS system for reuse in future projects.
+- `/index.html` remains the exact source for page-specific selectors beyond the starter kit.

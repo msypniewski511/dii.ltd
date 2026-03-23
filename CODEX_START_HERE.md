@@ -20,20 +20,21 @@ Persistent collaboration docs live in `/CODEX/`.
 ## Current State
 - Live source of truth is `/index.html`.
 - The frontend is a single static HTML file with large inline `<style>` and `<script>` blocks.
+- Root SEO/crawl files now include `/robots.txt`, `/sitemap.xml`, and `/google46d6e99a9bb78479.html`.
 - Primary experience is a scrollable one-page layout with a fixed sidebar, hero carousel, product cards, timeline, knowledge placeholder, principles section, and contact block.
 - `tmp.html` is an older concept/prototype file and currently contains appended prompt text after the HTML; do not treat it as production.
 - No `CODEX/` workspace existed before this bootstrap. Initial architecture, task, content, design, and testing docs were created on 2026-03-22.
 
 ## Active Priorities
-- `DII-005` Strengthen SEO foundations for the single-page homepage.
 - `DII-006` Improve accessibility affordances and states.
 - `DII-007` Replace visible placeholder visuals with production-ready assets.
+- `DII-004` Extract inline CSS and JS after content and layout stabilize.
 
 ## Current In-Progress Task
 - None.
 
 ## Recommended Next Task
-- `DII-005` Strengthen SEO foundations for the single-page homepage.
+- `DII-006` Improve accessibility affordances and states.
 
 ## Recent Changes
 - Created `/CODEX/` workspace structure and seeded it with real findings from `/index.html`, `/tmp.html`, `/assets/images/`, `/CNAME`, and the current repository state.
@@ -46,6 +47,8 @@ Persistent collaboration docs live in `/CODEX/`.
 - Added DII Accounts across the live ecosystem, product family, hero carousel, and workflow copy so the finance layer is now represented as a real product rather than only future intent.
 - Polished the remaining homepage copy so product, workflow, knowledge, and contact sections read more like a finished visitor-facing site and less like internal planning notes.
 - Made the fixed sidebar scrollable inside the viewport so the full menu remains reachable on smaller screens and shorter viewports.
+- Added a reusable UI playbook and starter CSS pack under `/CODEX/design/` so future Codex sessions can reuse this visual system across other projects.
+- Strengthened the homepage SEO baseline with canonical, Twitter card tags, JSON-LD schema, `/robots.txt`, `/sitemap.xml`, and a logged Google Search Console verification file at `/google46d6e99a9bb78479.html`.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.

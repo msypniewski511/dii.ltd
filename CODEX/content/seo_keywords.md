@@ -41,4 +41,4 @@
 
 ## Notes
 - Keep keyword usage natural.
-- Homepage CTA routing is now sharper, so the next pass can focus on metadata, schema, and intent reinforcement.
+- Canonical, social tags, schema, and crawl files were added on 2026-03-23, so the next SEO step is content architecture rather than homepage metadata basics.

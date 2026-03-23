@@ -27,3 +27,6 @@
 
 ## 2026-03-23
 - Completed `DII-012` by making the fixed sidebar scrollable within the viewport using viewport-bound height and internal vertical scrolling.
+- Completed `DII-013` by packaging the current visual system into a reusable UI playbook and starter CSS file for future projects.
+- Confirmed the supplied Google Search Console verification file exists at `/google46d6e99a9bb78479.html`.
+- Completed `DII-005` by adding canonical, robots, Twitter card tags, JSON-LD schema, `/robots.txt`, and `/sitemap.xml` to the production SEO baseline.

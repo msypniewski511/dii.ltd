@@ -1,23 +1,23 @@
 # Next Task
 
-## DII-005
-- Title: Strengthen SEO foundations for the homepage
-- Priority: P1 High
+## DII-006
+- Title: Improve accessibility affordances and states
+- Priority: P2 Medium
 - Status: TODO
-- Area: SEO
+- Area: Accessibility
 
 ## Why This Is Next
-- The homepage message and CTA structure are now clearer, which makes this a cleaner moment to lock in metadata, page intent, and schema without immediate copy churn.
-- The page still lacks canonical markup, Twitter card coverage, and structured data for the parent-brand homepage.
-- A stronger SEO baseline will support later content expansion from the knowledge layer.
+- The homepage now has a stronger copy, CTA, and SEO baseline, but keyboard and assistive affordances are still weaker than the visual polish.
+- There is still no skip link, focus-visible styling is limited, and section-state feedback is mainly visual.
+- Accessibility work now improves real usability without forcing another large content or layout rewrite.
 
 ## Relevant Files
 - `/index.html`
-- `/CODEX/content/seo_keywords.md`
+- `/CODEX/architecture/frontend_map.md`
 - `/CODEX/project/current_priorities.md`
 - `/CODEX/tasks/backlog.md`
 
 ## Acceptance Criteria
-- The homepage has a canonical URL, stronger social metadata coverage, and a baseline schema strategy if appropriate for the current page.
-- On-page intent and keyword direction stay aligned with the actual homepage message.
-- Related CODEX docs are updated to reflect the SEO baseline.
+- The page gains a usable skip link and stronger visible keyboard-focus treatment.
+- Landmark and active-state behavior are improved without breaking the current layout.
+- Related CODEX docs are updated to reflect the accessibility baseline.
