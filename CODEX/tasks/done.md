@@ -53,3 +53,12 @@
 - Status: DONE
 - Dependencies: DII-002
 - Notes: Completed on 2026-03-22 in `/index.html`. The products, workflow, knowledge, principles, and contact sections now read more consistently as finished visitor-facing copy.
+
+## DII-012
+- Title: Make the fixed sidebar scrollable on smaller screens
+- Description: Capped the fixed sidebar to the viewport and enabled internal vertical scrolling so shorter screens can still reach the full menu.
+- Area: Responsive UX / navigation
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: None
+- Notes: Completed on 2026-03-23 in `/index.html`. The sidebar now uses viewport-bound height plus internal scrolling behavior.

@@ -47,3 +47,7 @@
 - The infinity accent now sits deeper in the background with a softer, blurrier glow.
 - The infinity accent is now noticeably more transparent and diffused.
 - The infinity accent is now intentionally very faint and atmospheric rather than decorative-first.
+
+## 2026-03-23
+- Updated `/index.html` sidebar styling to keep the fixed menu capped to the viewport height and scrollable internally
+- The fixed sidebar now uses viewport-bound height and `overflow-y: auto`, so the full menu and ecosystem links remain reachable on smaller screens and shorter viewports.

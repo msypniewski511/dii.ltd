@@ -26,6 +26,7 @@
     - Anchor navigation
     - "Live ecosystem" side card with external product links
     - Office address footer
+    - Internal vertical scrolling when the sidebar content exceeds the viewport height
   - `<main>` containing all homepage sections
   - One inline `<script>` block for sidebar behavior, active nav, carousel, and GSAP reveals
 
@@ -88,6 +89,9 @@
   - `920px`
   - `760px`
   - `prefers-reduced-motion: reduce`
+- Sidebar behavior:
+  - Fixed at desktop and mobile
+  - Scrolls internally via `overflow-y: auto` when the menu/content exceeds the viewport height
 
 ## JS Behavior
 - Mobile sidebar open/close via `#menuToggle`, `#sidebar`, and `#backdrop`

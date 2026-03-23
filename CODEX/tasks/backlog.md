@@ -60,6 +60,15 @@
 - Dependencies: None
 - Notes: Existing interactivity is usable, but focus styling and assistive-state signals are weak.
 
+### DII-012
+- Title: Make the fixed sidebar scrollable on smaller screens
+- Description: Keep the sidebar capped to the viewport height and allow internal vertical scrolling so the full menu and ecosystem links stay reachable.
+- Area: Responsive UX / navigation
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: None
+- Notes: Completed on 2026-03-23. The fixed sidebar now uses viewport-bound height and `overflow-y: auto`.
+
 ### DII-007
 - Title: Replace placeholder visuals with production-ready assets
 - Description: Remove mock placeholder boxes and insert real screenshots, diagrams, or structured content blocks.

@@ -45,6 +45,7 @@ Persistent collaboration docs live in `/CODEX/`.
 - Clarified the homepage CTA hierarchy so visitors can choose between selecting a product, following the DII journey, or starting a guided enquiry.
 - Added DII Accounts across the live ecosystem, product family, hero carousel, and workflow copy so the finance layer is now represented as a real product rather than only future intent.
 - Polished the remaining homepage copy so product, workflow, knowledge, and contact sections read more like a finished visitor-facing site and less like internal planning notes.
+- Made the fixed sidebar scrollable inside the viewport so the full menu remains reachable on smaller screens and shorter viewports.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.

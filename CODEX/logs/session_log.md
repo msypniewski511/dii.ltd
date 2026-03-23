@@ -24,3 +24,6 @@
 - Softened the infinity accent by increasing the blur and lowering the glow intensity so it sits further into the background and feels less visually strong.
 - Softened the infinity accent again by pushing the blur further, reducing saturation, and lowering the color alpha so it becomes more transparent and atmospheric.
 - Softened the infinity accent again by bringing the overall layer close to `0.3`, removing the crisp inner merge, and diffusing the symbol much further into the background.
+
+## 2026-03-23
+- Completed `DII-012` by making the fixed sidebar scrollable within the viewport using viewport-bound height and internal vertical scrolling.
