@@ -30,3 +30,22 @@
 - Completed `DII-013` by packaging the current visual system into a reusable UI playbook and starter CSS file for future projects.
 - Confirmed the supplied Google Search Console verification file exists at `/google46d6e99a9bb78479.html`.
 - Completed `DII-005` by adding canonical, robots, Twitter card tags, JSON-LD schema, `/robots.txt`, and `/sitemap.xml` to the production SEO baseline.
+- Completed `DII-006` by adding a skip link, stronger focus-visible states, nav `aria-current` syncing, Escape-to-close sidebar behavior, semantic footer markup, and cleaner assistive-state handling in the carousel and icon set.
+- Ran a headless Chromium render sanity check after the accessibility pass; no full manual browser matrix was completed.
+- Completed `DII-007` by replacing the old timeline and knowledge placeholders with route boards, product preview cards, and a structured knowledge panel built from existing screenshots.
+- Ran another headless Chromium render sanity check after `DII-007`; the new sections still need a manual visual review in a real browser.
+- Completed `DII-009` by standardizing the public naming system to Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts, re-framing the Fast Checker hero slide as part of Startup Business Builder, and confirming the current outbound product URLs respond.
+
+## 2026-03-24
+- Completed `DII-004` by extracting the live stylesheet into `/assets/css/site.css` and the live behavior script into `/assets/js/site.js`, replacing the old inline `<style>` and `<script>` blocks in `/index.html`.
+- Updated the Warewise/NorthStar destination links to the new custom domain `https://www.northstarwms.co/wms`.
+- Completed `DII-008` by cleaning `tmp.html` back to valid HTML and adding an explicit archived-prototype warning so the file is no longer misleading as a pseudo-live page.
+- Started `DII-014` with a browser-driven local regression against the extracted `/assets/css/site.css` and `/assets/js/site.js`.
+- Found and fixed a hero regression from the CSS extraction: the carousel fallback image custom-property URLs were still HTML-relative, which made `/assets/css/site.css` request broken paths such as `/assets/css/assets/images/...`.
+- Found and fixed a carousel interaction regression: clicking a dot or arrow restarted autoplay even while the carousel remained hovered or focus-within, so hover pause did not hold after direct interaction.
+- Recorded a local regression matrix covering Chrome desktop, Chrome short mobile, Chrome Android-size mobile, and Chrome reduced-motion behavior, plus outbound destination spot-checks for all five product links.
+- The local Firefox desktop automation attempt timed out after 12 seconds, so a hosted human pass in Firefox, Safari, Edge, and a real phone browser was split into follow-up task `DII-015`.
+- Started `DII-015` and confirmed that the blocker is deployment, not browser state: `https://dii.ltd/` still serves an older inline build, returns `404` for `/assets/css/site.css`, and still exposes the old warehouse Heroku destination.
+- Ran a best-available hosted smoke in Chrome and Edge against `https://dii.ltd/`; both browsers loaded the live site, but they validated the older deployed build rather than the current repo state.
+- The hosted Firefox desktop launch still timed out locally, and Playwright WebKit is not installed in this environment.
+- Added follow-up task `DII-016` to deploy the current repo state before resuming hosted browser QA.

@@ -57,3 +57,29 @@
 - Added `/robots.txt`
 - Added `/sitemap.xml`
 - Logged the existing `/google46d6e99a9bb78479.html` Google Search Console verification file in the CODEX docs
+- Updated `/index.html` accessibility behavior to add a skip link, shared focus-visible styling, nav `aria-current` state, Escape-to-close mobile menu behavior, and semantic footer markup
+- Updated accessibility-related CODEX docs and QA notes to reflect the new baseline
+- Updated `/index.html` timeline summaries to use structured route boards, product preview cards, and ecosystem layer cards instead of placeholder pills
+- Updated `/index.html` knowledge section to use a real media-and-topic panel instead of a browser-wireframe placeholder
+- Updated related CODEX architecture, design, copy, asset, task, and QA docs for the `DII-007` visual replacement pass
+- Updated `/index.html` copy and metadata so the public product map now uses Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts consistently across metadata, sidebar links, hero slides, product cards, and workflow copy
+- Updated the Fast Checker hero slide in `/index.html` so it now reads as a Startup Business Builder entry view rather than a separate live product
+- Updated related CODEX task, content, and reference docs for the `DII-009` naming and destination consistency pass
+
+## 2026-03-24
+- Added `/assets/css/site.css`
+- Added `/assets/js/site.js`
+- Updated `/index.html` to load the extracted stylesheet and script instead of inline homepage blocks
+- Updated `/index.html` warehouse product links to `https://www.northstarwms.co/wms`
+- Updated CODEX architecture, project, task, log, reference, and QA docs for the `DII-004` extraction pass
+- Updated `/tmp.html` to remove the appended prompt text after the closing HTML and add a visible archived-prototype warning
+- Updated CODEX task and project docs for the `DII-008` prototype cleanup pass
+- Updated `/index.html` hero slide fallback image custom-property URLs from `assets/images/...` to `../images/...` so the extracted stylesheet resolves the fallback images correctly
+- Updated `/assets/js/site.js` so carousel autoplay does not restart while the carousel is still hovered or focus-within after a dot or arrow click
+- Updated CODEX testing, task, log, and architecture docs for the `DII-014` browser regression pass and its follow-up task `DII-015`
+
+## QA Notes
+- A local Chrome desktop/mobile/reduced-motion regression is now recorded after the CSS/JS extraction
+- The five public product destinations were spot-checked and returned `200`; NorthStar redirects from `/wms` to `/users/sign_in`
+- Firefox desktop automation timed out locally, so hosted human QA on Firefox/Safari/Edge still remains open
+- Hosted smoke work then confirmed a bigger blocker: `https://dii.ltd/` is still serving an older inline build with no extracted asset files and the old warehouse Heroku destination

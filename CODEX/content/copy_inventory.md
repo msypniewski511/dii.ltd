@@ -2,7 +2,7 @@
 
 ## Hero
 - Job: explain DII as one connected company and drive visitors to products, process, or contact
-- Current state: strong H1, ecosystem framing, clearer CTA roles, and explicit inclusion of the new finance/accountancy layer
+- Current state: strong H1, ecosystem framing, clearer CTA roles, explicit inclusion of the finance/accountancy layer, and a cleaner hero naming system that no longer treats Fast Checker like a separate live product
 - Issue: could later gain stronger proof signals, but the basic route logic is now clearer
 
 ## Platform Overview
@@ -12,18 +12,18 @@
 
 ## Products
 - Job: make product differences legible and clickable
-- Current state: the section now includes a routing strip for common visitor goals before the cards, a dedicated DII Accounts finance card, and less internal positioning language inside the product bullets
+- Current state: the section now includes a routing strip for common visitor goals before the cards, a dedicated DII Accounts finance card, less internal positioning language inside the product bullets, and standardized public product naming that matches the outbound destinations more closely
 - Issue: proof and differentiation can still improve, but first-click routing is stronger
 
 ## How It Works
 - Job: show the customer journey from idea to operations and finance
-- Current state: structurally useful, visually strong, and now reads more like a visitor-facing journey explanation rather than internal strategy narration
-- Issue: placeholder visuals are still abstract even though the mobile content-loss bug is fixed
+- Current state: structurally useful, visually stronger, and now supported by route cards, product previews, and layer summaries instead of abstract placeholders
+- Issue: still uses summary visuals rather than fully custom product or operations screenshots for every lane
 
 ## Knowledge
 - Job: position content as a future trust and SEO layer
-- Current state: strategic direction is visible, the copy is visitor-facing, and the topic examples now extend into finance workflows without exposing roadmap-style instructions
-- Issue: the section is still conceptual until real content is built
+- Current state: strategic direction is visible, the copy is visitor-facing, and the right-side panel now presents a production-style knowledge structure with real media and topic cards
+- Issue: the section is still conceptual until actual article pages and solution content are built
 
 ## Principles
 - Job: translate the parent-brand position into credibility traits

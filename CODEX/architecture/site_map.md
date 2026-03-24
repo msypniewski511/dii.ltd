@@ -17,8 +17,8 @@
 - `https://www.dhruviinfinity.com/`
 - `https://www.dhruviinfinity.com/ifv`
 - `https://www.aryabiz.co.uk/`
-- `https://warewise-8b381130a046.herokuapp.com/`
+- `https://www.northstarwms.co/wms`
 - `mailto:` links for `contact@dii.ltd`, `sales@dii.ltd`, `sales.ifv@dii.ltd`, `support@dii.ltd`, `support.ifv@dii.ltd`, `legal@dii.ltd`, `contact.ifv@dii.ltd`
 
 ## Non-Production Files
-- `/tmp.html`: earlier alternate homepage concept; contains appended prompt text after the HTML and should not be shipped or treated as live structure.
+- `/tmp.html`: earlier alternate homepage concept; now retained as an archived prototype with a visible warning and no appended prompt text after the closing HTML.

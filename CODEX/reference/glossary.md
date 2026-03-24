@@ -7,13 +7,13 @@ Dhruvi Infinity Inspiration Ltd., the parent brand presented on the homepage.
 Founder-facing product for validating and structuring business ideas.
 
 ## IFV Builder
-Innovation Founder Visa Builder, a product focused on visa-path and endorsement-oriented preparation.
+A product label used on `dii.ltd` for the Innovator Founder Visa preparation route and endorsement-oriented founder support flow.
 
-## RotaPlan
+## Rotaplan
 Operations-focused scheduling and rota planning product.
 
-## NorthStar WMS
-Warehouse management and inventory control product linked from the homepage.
+## Warewise
+Warehouse management and inventory control product linked from the homepage, currently routed to `https://www.northstarwms.co/wms`.
 
 ## Knowledge Layer
 The planned content/guidance system described in the homepage copy.

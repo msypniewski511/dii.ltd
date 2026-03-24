@@ -1,8 +1,8 @@
 # In Progress
 
 ## Current Status
-- No implementation task is actively in progress.
-- Last completed task: `DII-005` on 2026-03-23.
+- `DII-015` is blocked because the hosted site is not serving the current repo state.
+- Last completed task: `DII-014` on 2026-03-24.
 
 ## Next Resume Action
-- Start `DII-006` unless the user gives a different instruction.
+- Complete `DII-016`, then rerun `DII-015` on the hosted domain.

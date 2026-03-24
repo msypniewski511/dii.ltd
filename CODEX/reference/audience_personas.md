@@ -12,7 +12,7 @@
 
 ## Operations Lead
 - Needs: rota planning, workforce coordination, warehouse visibility
-- Likely destination: RotaPlan or NorthStar WMS
+- Likely destination: Rotaplan or Warewise
 - Relevant sections: platform, products, how-it-works
 
 ## Partner Or Buyer Evaluator

@@ -9,7 +9,7 @@
     </title>
     <meta
       name="description"
-      content="Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Builder, IFV Builder, RotaPlan, NorthStar WMS, DII Accounts, and a growing knowledge base for business growth."
+      content="Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Business Builder, IFV Builder, Rotaplan, Warewise, DII Accounts, and a growing knowledge base for business growth."
     />
     <meta
       name="robots"
@@ -108,7 +108,7 @@
             "@id": "https://dii.ltd/#webpage",
             "url": "https://dii.ltd/",
             "name": "Dhruvi Infinity Inspiration Ltd. | Build, Launch & Scale with Connected SaaS",
-            "description": "Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Builder, IFV Builder, RotaPlan, NorthStar WMS, DII Accounts, and a growing knowledge base for business growth.",
+            "description": "Dhruvi Infinity Inspiration Ltd. builds connected SaaS for founders and operators: Startup Business Builder, IFV Builder, Rotaplan, Warewise, DII Accounts, and a growing knowledge base for business growth.",
             "isPartOf": {
               "@id": "https://dii.ltd/#website"
             },
@@ -137,1852 +137,23 @@
     <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    <style>
-      :root {
-        --bg: #f7fbff;
-        --bg-strong: #eef6ff;
-        --surface: rgba(255, 255, 255, 0.78);
-        --surface-strong: #ffffff;
-        --ink: #4b5563;
-        --ink-strong: #0f172a;
-        --muted: #6b7280;
-        --line: rgba(15, 23, 42, 0.08);
-
-        --blue-1: #0ea5e9;
-        --blue-2: #2563eb;
-        --blue-3: #1d4ed8;
-        --blue-4: #60a5fa;
-        --cyan: #67e8f9;
-        --indigo: #6366f1;
-        --mint: #4ade80;
-
-        --ok: #16a34a;
-        --warn: #d97706;
-
-        --shadow-sm: 0 10px 30px rgba(37, 99, 235, 0.08);
-        --shadow-md: 0 16px 40px rgba(37, 99, 235, 0.12);
-        --shadow-lg: 0 22px 70px rgba(37, 99, 235, 0.16);
-
-        --radius-sm: 14px;
-        --radius-md: 20px;
-        --radius-lg: 28px;
-
-        --sidebar: 290px;
-        --container: 1380px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        color: var(--ink);
-        font-family:
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Inter,
-          Arial,
-          sans-serif;
-        background:
-          radial-gradient(
-            circle at top right,
-            rgba(96, 165, 250, 0.22),
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at left 20%,
-            rgba(14, 165, 233, 0.12),
-            transparent 18%
-          ),
-          linear-gradient(180deg, #f8fbff 0%, #f3f8ff 35%, #f8fbff 100%);
-        display: flex;
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(37, 99, 235, 0.045) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
-        background-size: 34px 34px;
-        mask-image: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.65),
-          transparent 92%
-        );
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .page-infinity {
-        position: fixed;
-        top: -24px;
-        right: -52px;
-        width: min(66vw, 860px);
-        height: min(28vw, 370px);
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.32;
-        transform: rotate(-4deg);
-        filter: saturate(92%);
-      }
-
-      .page-infinity::before,
-      .page-infinity::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 999px;
-      }
-
-      .page-infinity::before {
-        inset: 12% 6% 18%;
-        background:
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(255, 255, 255, 0.14),
-            transparent 12%
-          ),
-          radial-gradient(
-            circle at 24% 54%,
-            rgba(103, 232, 249, 0.07),
-            transparent 26%
-          ),
-          radial-gradient(
-            circle at 74% 44%,
-            rgba(96, 165, 250, 0.08),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at 88% 34%,
-            rgba(74, 222, 128, 0.045),
-            transparent 16%
-          );
-        filter: blur(128px);
-      }
-
-      .page-infinity::after {
-        inset: 4% 6% 8%;
-        background:
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(255, 255, 255, 0.1),
-            transparent 8%
-          ),
-          radial-gradient(
-            circle at 20% 64%,
-            rgba(99, 102, 241, 0.05),
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 80% 36%,
-            rgba(103, 232, 249, 0.05),
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 88% 34%,
-            rgba(74, 222, 128, 0.04),
-            transparent 16%
-          );
-        filter: blur(156px);
-      }
-
-      .page-infinity-svg {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .sidebar {
-        max-height: 100vh;
-        max-height: 100dvh;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        -webkit-overflow-scrolling: touch;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: var(--sidebar);
-        padding: 24px 18px 18px;
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(20px);
-        border-right: 1px solid rgba(255, 255, 255, 0.7);
-        box-shadow: 8px 0 40px rgba(37, 99, 235, 0.08);
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        z-index: 30;
-        transition: transform 0.35s ease;
-      }
-
-      .brand {
-        display: flex;
-        gap: 14px;
-        align-items: flex-start;
-        padding: 10px 10px 12px;
-        border-radius: 18px;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.82),
-          rgba(239, 246, 255, 0.9)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .brand-mark {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        color: #fff;
-        background: linear-gradient(
-          135deg,
-          var(--blue-1),
-          var(--blue-2),
-          var(--indigo)
-        );
-        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
-        flex: 0 0 auto;
-      }
-
-      .brand-copy strong {
-        display: block;
-        font-size: 1rem;
-        color: var(--ink-strong);
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-      }
-
-      .brand-copy span {
-        display: block;
-        margin-top: 5px;
-        font-size: 0.84rem;
-        color: var(--muted);
-        line-height: 1.45;
-      }
-
-      .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 4px;
-      }
-
-      .nav a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        padding: 12px 14px;
-        border-radius: 14px;
-        color: #334155;
-        transition:
-          background 0.2s ease,
-          transform 0.12s ease,
-          color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .nav a ion-icon {
-        font-size: 1.1rem;
-        color: #64748b;
-      }
-
-      .nav a:hover,
-      .nav a.active {
-        background: linear-gradient(
-          135deg,
-          rgba(219, 234, 254, 0.9),
-          rgba(239, 246, 255, 0.95)
-        );
-        color: var(--ink-strong);
-        box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
-      }
-
-      .nav a:hover {
-        transform: translateY(-1px);
-      }
-
-      .sidebar-stack {
-        display: grid;
-        gap: 12px;
-      }
-
-      .side-card {
-        padding: 16px;
-        border-radius: 18px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.84),
-          rgba(243, 248, 255, 0.9)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .side-card h3 {
-        margin: 0 0 8px;
-        color: var(--ink-strong);
-        font-size: 0.95rem;
-      }
-
-      .side-card p {
-        margin: 0;
-        font-size: 0.92rem;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .side-links {
-        display: grid;
-        gap: 8px;
-        margin-top: 12px;
-      }
-
-      .mini-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        text-decoration: none;
-        padding: 10px 12px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.68);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-        transition:
-          transform 0.12s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .mini-link:hover {
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-sm);
-        border-color: rgba(37, 99, 235, 0.16);
-      }
-
-      .mini-link strong {
-        display: block;
-        color: var(--ink-strong);
-        font-size: 0.92rem;
-      }
-
-      .mini-link span {
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
-
-      .sidebar-footer {
-        margin-top: auto;
-        font-size: 0.8rem;
-        color: #7c8798;
-        padding: 6px 8px 0;
-      }
-
-      .menu-toggle {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 45;
-        border: none;
-        border-radius: 14px;
-        padding: 11px 13px;
-        color: var(--ink-strong);
-        background: rgba(255, 255, 255, 0.82);
-        backdrop-filter: blur(14px);
-        box-shadow: var(--shadow-sm);
-        display: none;
-        cursor: pointer;
-      }
-
-      .menu-toggle ion-icon {
-        font-size: 1.25rem;
-      }
-
-      .backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(15, 23, 42, 0.28);
-        opacity: 0;
-        visibility: hidden;
-        transition:
-          opacity 0.25s ease,
-          visibility 0.25s ease;
-        z-index: 20;
-      }
-
-      .backdrop.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .main {
-        position: relative;
-        z-index: 1;
-        margin-left: var(--sidebar);
-        width: 100%;
-        padding: 42px 44px 48px;
-      }
-
-      .shell {
-        max-width: var(--container);
-        margin: 0 auto;
-      }
-
-      .section {
-        margin-bottom: 104px;
-      }
-
-      .section-head {
-        margin-bottom: 22px;
-        max-width: 920px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(37, 99, 235, 0.1);
-        color: #2563eb;
-        font-size: 0.8rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        box-shadow: var(--shadow-sm);
-        margin-bottom: 14px;
-      }
-
-      .section h2,
-      .hero-copy h1 {
-        margin: 0;
-        color: var(--ink-strong);
-        letter-spacing: -0.035em;
-        line-height: 1.02;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(2.3rem, 5vw, 4.65rem);
-        max-width: 900px;
-      }
-
-      .section h2 {
-        font-size: clamp(1.9rem, 3vw, 3rem);
-        margin-bottom: 12px;
-      }
-
-      .lede,
-      .section-head p {
-        font-size: 1.07rem;
-        line-height: 1.8;
-        color: #526071;
-        margin: 14px 0 0;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 26px;
-        align-items: stretch;
-        min-height: calc(100vh - 84px);
-        padding-top: 12px;
-      }
-
-      .hero-copy,
-      .hero-visual {
-        position: relative;
-      }
-
-      .hero-copy {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 18px;
-        padding: 18px 0;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 8px;
-      }
-
-      .hero-action-note {
-        max-width: 700px;
-        margin: -2px 0 0;
-        color: #5b6878;
-        font-size: 0.95rem;
-        line-height: 1.7;
-      }
-
-      .hero-action-note strong {
-        color: var(--ink-strong);
-      }
-
-      .hero-points {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 10px;
-      }
-
-      .hero-point {
-        padding: 14px 15px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: var(--shadow-sm);
-        min-height: 100%;
-      }
-
-      .hero-point strong {
-        display: block;
-        color: var(--ink-strong);
-        font-size: 0.96rem;
-        margin-bottom: 6px;
-      }
-
-      .hero-point span {
-        display: block;
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.55;
-      }
-
-      .hero-visual {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-art {
-        --hero-panel-gap: 20px;
-        --hero-panel-main-height: 236px;
-        position: relative;
-        display: grid;
-        grid-template-rows: auto minmax(0, 1fr);
-        gap: var(--hero-panel-gap);
-        width: min(100%, 640px);
-        aspect-ratio: 1 / 1.28;
-        min-height: 820px;
-        border-radius: 32px;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            circle at 18% 18%,
-            rgba(103, 232, 249, 0.7),
-            transparent 18%
-          ),
-          radial-gradient(
-            circle at 82% 24%,
-            rgba(96, 165, 250, 0.75),
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 35% 84%,
-            rgba(99, 102, 241, 0.42),
-            transparent 18%
-          ),
-          linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.95),
-            rgba(239, 246, 255, 0.88) 55%,
-            rgba(219, 234, 254, 0.75)
-          );
-        border: 1px solid rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow-lg);
-        padding: 20px;
-        isolation: isolate;
-      }
-
-      .hero-art::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
-        background-size: 26px 26px;
-        opacity: 0.55;
-        z-index: -1;
-      }
-
-      .glass-card {
-        position: absolute;
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.58);
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(14px);
-        box-shadow: 0 18px 50px rgba(37, 99, 235, 0.14);
-        overflow: hidden;
-      }
-
-      .glass-card::after {
-        content: "";
-        position: absolute;
-        inset: auto 0 0;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(37, 99, 235, 0.16),
-          transparent
-        );
-      }
-
-      .hero-panel-main {
-        position: relative;
-        min-height: var(--hero-panel-main-height);
-        padding: 24px;
-        z-index: 3;
-      }
-
-      .hero-panel-bottom {
-        position: relative;
-        height: 100%;
-        min-height: 272px;
-        padding: 0;
-        z-index: 2;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.14);
-        backdrop-filter: none;
-      }
-
-      .hero-panel-badge {
-        display: inline-flex;
-        padding: 10px 14px;
-        border-radius: 999px;
-        background: rgba(14, 165, 233, 0.14);
-        color: var(--blue-3);
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-
-      .hero-panel-main h3 {
-        margin: 0 0 8px;
-        color: var(--ink-strong);
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        font-size: 1.58rem;
-      }
-
-      .hero-panel-main p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-        font-size: 1rem;
-      }
-
-      .mini-bars {
-        display: grid;
-        gap: 10px;
-        margin-top: 14px;
-      }
-
-      .mini-bar {
-        display: grid;
-        gap: 6px;
-      }
-
-      .mini-bar span {
-        display: flex;
-        justify-content: space-between;
-        gap: 8px;
-        font-size: 0.82rem;
-        color: #475569;
-      }
-
-      .mini-bar-track {
-        height: 9px;
-        border-radius: 999px;
-        background: rgba(37, 99, 235, 0.08);
-        overflow: hidden;
-      }
-
-      .mini-bar-fill {
-        height: 100%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
-      }
-
-      .hero-carousel {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: inherit;
-        overflow: hidden;
-        border-radius: 22px;
-      }
-
-      .hero-carousel-track {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: inherit;
-      }
-
-      .hero-slide {
-        position: absolute;
-        inset: 0;
-        height: 100%;
-        min-height: inherit;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 0;
-        pointer-events: none;
-        background-color: rgba(219, 234, 254, 0.28);
-        background-image: var(--slide-image);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center top;
-        transition:
-          opacity 0.5s ease,
-          visibility 0.5s ease;
-        overflow: hidden;
-        border-radius: 22px;
-      }
-
-      .hero-slide.active {
-        opacity: 1;
-        visibility: visible;
-        z-index: 1;
-        pointer-events: auto;
-      }
-
-      .hero-slide picture {
-        position: absolute;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .hero-slide img {
-        position: absolute;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        z-index: 0;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-      }
-
-      .hero-slide img {
-        object-fit: cover;
-        object-position: center top;
-      }
-
-      .hero-slide-overlay {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-        padding: 26px 22px 46px;
-        color: #fff;
-        background: linear-gradient(
-          180deg,
-          rgba(15, 23, 42, 0) 0%,
-          rgba(15, 23, 42, 0.34) 52%,
-          rgba(15, 23, 42, 0.86) 100%
-        );
-      }
-
-      .hero-slide-label {
-        display: inline-flex;
-        margin-bottom: 10px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(10px);
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .hero-slide-overlay h3 {
-        margin: 0 0 8px;
-        font-size: 1.2rem;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        color: #fff;
-      }
-
-      .hero-slide-overlay p {
-        margin: 0;
-        line-height: 1.6;
-        font-size: 0.93rem;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .hero-carousel-controls {
-        position: absolute;
-        inset: 16px 16px auto auto;
-        display: flex;
-        gap: 8px;
-        z-index: 4;
-      }
-
-      .hero-carousel-btn {
-        width: 42px;
-        height: 42px;
-        border: none;
-        border-radius: 999px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.78);
-        color: var(--ink-strong);
-        backdrop-filter: blur(12px);
-        box-shadow: var(--shadow-sm);
-        cursor: pointer;
-        transition:
-          transform 0.12s ease,
-          background 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .hero-carousel-btn:hover {
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: var(--shadow-md);
-      }
-
-      .hero-carousel-btn ion-icon {
-        font-size: 1.1rem;
-      }
-
-      .hero-carousel-dots {
-        position: absolute;
-        left: 20px;
-        bottom: 18px;
-        display: flex;
-        gap: 9px;
-        z-index: 4;
-      }
-
-      .hero-carousel-dot {
-        width: 11px;
-        height: 11px;
-        border-radius: 999px;
-        border: none;
-        cursor: pointer;
-        background: rgba(255, 255, 255, 0.4);
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
-        transition:
-          transform 0.15s ease,
-          background 0.2s ease,
-          width 0.2s ease;
-      }
-
-      .hero-carousel-dot.active {
-        width: 28px;
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 13px 18px;
-        border-radius: 14px;
-        text-decoration: none;
-        font-weight: 600;
-        transition:
-          transform 0.12s ease,
-          box-shadow 0.2s ease,
-          background 0.2s ease,
-          border-color 0.2s ease;
-        cursor: pointer;
-        border: 1px solid transparent;
-        box-shadow: var(--shadow-sm);
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .btn-primary {
-        color: #fff;
-        background: linear-gradient(
-          135deg,
-          var(--blue-1),
-          var(--blue-2),
-          var(--indigo)
-        );
-      }
-
-      .btn-secondary {
-        color: var(--ink-strong);
-        background: rgba(255, 255, 255, 0.78);
-        border-color: rgba(37, 99, 235, 0.1);
-        backdrop-filter: blur(10px);
-      }
-
-      .btn-ghost {
-        color: var(--blue-3);
-        background: rgba(219, 234, 254, 0.62);
-        border-color: rgba(37, 99, 235, 0.1);
-      }
-
-      .grid {
-        display: grid;
-        gap: 18px;
-      }
-
-      .grid-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .card {
-        position: relative;
-        padding: 22px;
-        border-radius: 24px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.82),
-          rgba(249, 252, 255, 0.96)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-sm);
-        overflow: hidden;
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          rgba(103, 232, 249, 0.4),
-          rgba(37, 99, 235, 0.25),
-          transparent
-        );
-        pointer-events: none;
-      }
-
-      .card:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .card-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(
-          135deg,
-          rgba(14, 165, 233, 0.16),
-          rgba(37, 99, 235, 0.16)
-        );
-        color: var(--blue-3);
-        margin-bottom: 14px;
-        font-size: 1.3rem;
-      }
-
-      .card h3 {
-        margin: 0 0 10px;
-        color: var(--ink-strong);
-        font-size: 1.18rem;
-        letter-spacing: -0.02em;
-      }
-
-      .card p {
-        margin: 0;
-        line-height: 1.7;
-        color: #5c6b7d;
-      }
-
-      .card-actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 18px;
-      }
-
-      .platform-band {
-        padding: 28px;
-        border-radius: 32px;
-        background:
-          radial-gradient(
-            circle at top right,
-            rgba(96, 165, 250, 0.18),
-            transparent 20%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.82),
-            rgba(239, 246, 255, 0.88)
-          );
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-md);
-      }
-
-      .metric-row {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 20px;
-      }
-
-      .metric {
-        padding: 18px 16px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-      }
-
-      .metric strong {
-        display: block;
-        color: var(--ink-strong);
-        font-size: 1.3rem;
-        margin-bottom: 6px;
-        letter-spacing: -0.02em;
-      }
-
-      .metric span {
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.5;
-      }
-
-      .product-card {
-        display: flex;
-        flex-direction: column;
-        min-height: 100%;
-      }
-
-      .products-grid .product-card-featured {
-        grid-column: 1 / -1;
-      }
-
-      .product-router {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 12px;
-        margin: 24px 0 0;
-      }
-
-      .route-pill {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        padding: 16px;
-        border-radius: 18px;
-        text-decoration: none;
-        background: rgba(255, 255, 255, 0.76);
-        border: 1px solid rgba(37, 99, 235, 0.1);
-        box-shadow: var(--shadow-sm);
-        transition:
-          transform 0.12s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease,
-          background 0.2s ease;
-      }
-
-      .route-pill:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-        border-color: rgba(37, 99, 235, 0.18);
-        background: rgba(255, 255, 255, 0.92);
-      }
-
-      .route-pill strong {
-        color: var(--ink-strong);
-        font-size: 0.96rem;
-      }
-
-      .route-pill span {
-        color: #5b6878;
-        font-size: 0.88rem;
-        line-height: 1.55;
-      }
-
-      .route-pill.route-pill-contact {
-        background: linear-gradient(
-          180deg,
-          rgba(219, 234, 254, 0.86),
-          rgba(239, 246, 255, 0.96)
-        );
-      }
-
-      .product-card[id] {
-        scroll-margin-top: 110px;
-      }
-
-      .product-card .product-head {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .product-status {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        border: 1px solid rgba(37, 99, 235, 0.1);
-        background: rgba(239, 246, 255, 0.95);
-        color: var(--blue-3);
-        white-space: nowrap;
-      }
-
-      .product-list {
-        margin: 14px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 9px;
-      }
-
-      .product-list li {
-        display: flex;
-        gap: 10px;
-        color: #4c5b6c;
-        line-height: 1.55;
-      }
-
-      .product-list ion-icon {
-        flex: 0 0 auto;
-        margin-top: 2px;
-        color: #2563eb;
-        font-size: 1rem;
-      }
-
-      .flow-shell {
-        position: relative;
-        padding: 28px 0 12px;
-      }
-
-      .flow-intro {
-        max-width: 900px;
-        margin-bottom: 26px;
-      }
-
-      .timeline {
-        position: relative;
-        display: grid;
-        gap: 34px;
-        padding: 10px 0;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 2px;
-        transform: translateX(-50%);
-        background: linear-gradient(
-          180deg,
-          rgba(14, 165, 233, 0.18),
-          rgba(37, 99, 235, 0.44),
-          rgba(99, 102, 241, 0.34),
-          rgba(14, 165, 233, 0.15)
-        );
-        border-radius: 999px;
-      }
-
-      .timeline-row {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 84px 1fr;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .timeline-side {
-        min-height: 100%;
-      }
-
-      .timeline-center {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100%;
-      }
-
-      .timeline-marker {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(
-          135deg,
-          var(--blue-1),
-          var(--blue-2),
-          var(--indigo)
-        );
-        color: #fff;
-        font-weight: 800;
-        box-shadow: 0 18px 38px rgba(37, 99, 235, 0.22);
-        border: 4px solid rgba(255, 255, 255, 0.9);
-        z-index: 2;
-      }
-
-      .timeline-card,
-      .timeline-summary {
-        border-radius: 24px;
-        padding: 22px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.82),
-          rgba(247, 251, 255, 0.96)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.9);
-        box-shadow: var(--shadow-sm);
-        min-height: 100%;
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .timeline-kicker {
-        display: inline-flex;
-        margin-bottom: 10px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        background: rgba(219, 234, 254, 0.58);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-        color: var(--blue-3);
-      }
-
-      .timeline-card h3,
-      .timeline-summary h3 {
-        margin: 0 0 10px;
-        color: var(--ink-strong);
-        font-size: 1.22rem;
-        letter-spacing: -0.02em;
-      }
-
-      .timeline-card p,
-      .timeline-summary p {
-        margin: 0;
-        line-height: 1.72;
-        color: #59697b;
-      }
-
-      .timeline-list {
-        margin: 16px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 10px;
-      }
-
-      .timeline-list li {
-        display: flex;
-        gap: 10px;
-        line-height: 1.56;
-        color: #465668;
-      }
-
-      .timeline-list ion-icon {
-        flex: 0 0 auto;
-        color: #2563eb;
-        margin-top: 2px;
-        font-size: 1rem;
-      }
-
-      .timeline-placeholder {
-        margin-top: 16px;
-        padding: 14px 15px;
-        border-radius: 16px;
-        background: rgba(239, 246, 255, 0.75);
-        border: 1px dashed rgba(37, 99, 235, 0.25);
-        color: #516173;
-        font-size: 0.92rem;
-        line-height: 1.6;
-      }
-
-      .knowledge-split {
-        display: grid;
-        grid-template-columns: 1fr 0.95fr;
-        gap: 20px;
-        align-items: start;
-      }
-
-      .feature-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      .feature-item {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        padding: 14px 16px;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-      }
-
-      .feature-item ion-icon {
-        font-size: 1.1rem;
-        color: #2563eb;
-        margin-top: 2px;
-      }
-
-      .feature-item strong {
-        display: block;
-        color: var(--ink-strong);
-        margin-bottom: 4px;
-      }
-
-      .placeholder-frame {
-        position: relative;
-        min-height: 420px;
-        border-radius: 28px;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            circle at 82% 15%,
-            rgba(96, 165, 250, 0.3),
-            transparent 18%
-          ),
-          radial-gradient(
-            circle at 18% 84%,
-            rgba(103, 232, 249, 0.24),
-            transparent 18%
-          ),
-          linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.95),
-            rgba(239, 246, 255, 0.85)
-          );
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-md);
-        padding: 22px;
-      }
-
-      .placeholder-frame::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
-        background-size: 30px 30px;
-        opacity: 0.55;
-        pointer-events: none;
-      }
-
-      .placeholder-window {
-        position: relative;
-        z-index: 1;
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.78);
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-sm);
-        overflow: hidden;
-      }
-
-      .placeholder-window .window-top {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 14px 16px;
-        border-bottom: 1px solid rgba(37, 99, 235, 0.08);
-      }
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #cbd5e1;
-      }
-
-      .dot:nth-child(1) {
-        background: #93c5fd;
-      }
-
-      .dot:nth-child(2) {
-        background: #67e8f9;
-      }
-
-      .dot:nth-child(3) {
-        background: #c4b5fd;
-      }
-
-      .window-body {
-        padding: 18px;
-        display: grid;
-        gap: 14px;
-      }
-
-      .placeholder-block {
-        height: 18px;
-        border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          rgba(191, 219, 254, 0.55),
-          rgba(219, 234, 254, 0.95),
-          rgba(191, 219, 254, 0.45)
-        );
-      }
-
-      .placeholder-block.short {
-        width: 46%;
-      }
-
-      .placeholder-block.mid {
-        width: 72%;
-      }
-
-      .placeholder-block.long {
-        width: 92%;
-      }
-
-      .placeholder-note {
-        position: relative;
-        z-index: 1;
-        margin-top: 18px;
-        padding: 16px;
-        border-radius: 16px;
-        background: rgba(239, 246, 255, 0.72);
-        border: 1px dashed rgba(37, 99, 235, 0.22);
-        color: #516173;
-        line-height: 1.7;
-        font-size: 0.93rem;
-      }
-
-      .pillars {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .pillar {
-        padding: 18px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .pillar h3 {
-        margin: 0 0 8px;
-        color: var(--ink-strong);
-        font-size: 1.02rem;
-      }
-
-      .pillar p {
-        margin: 0;
-        color: #5c6b7d;
-        line-height: 1.65;
-      }
-
-      .contact-shell {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 20px;
-        align-items: start;
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .contact-card {
-        padding: 20px;
-        border-radius: 22px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.82),
-          rgba(247, 251, 255, 0.96)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-sm);
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .contact-card h3 {
-        margin: 0 0 10px;
-        color: var(--ink-strong);
-        font-size: 1.03rem;
-      }
-
-      .contact-card ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 10px;
-      }
-
-      .contact-card li {
-        color: #516173;
-        line-height: 1.55;
-        word-break: break-word;
-      }
-
-      .contact-card a {
-        text-decoration: none;
-        color: var(--blue-3);
-        font-weight: 600;
-      }
-
-      .contact-card a:hover {
-        text-decoration: underline;
-      }
-
-      .contact-panel {
-        padding: 24px;
-        border-radius: 26px;
-        background:
-          radial-gradient(
-            circle at top right,
-            rgba(96, 165, 250, 0.18),
-            transparent 26%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.82),
-            rgba(239, 246, 255, 0.9)
-          );
-        border: 1px solid rgba(255, 255, 255, 0.88);
-        box-shadow: var(--shadow-md);
-      }
-
-      .contact-panel h3 {
-        margin: 0 0 10px;
-        color: var(--ink-strong);
-        font-size: 1.25rem;
-        letter-spacing: -0.02em;
-      }
-
-      .contact-panel p {
-        margin: 0 0 14px;
-        line-height: 1.72;
-        color: #556476;
-      }
-
-      .contact-lead {
-        margin-top: 18px;
-        padding: 16px 18px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(37, 99, 235, 0.08);
-      }
-
-      .contact-lead strong {
-        display: block;
-        margin-bottom: 6px;
-        color: var(--ink-strong);
-      }
-
-      .contact-lead span {
-        color: #556476;
-        line-height: 1.62;
-      }
-
-      .contact-meta {
-        display: grid;
-        gap: 10px;
-        margin: 16px 0 18px;
-      }
-
-      .contact-meta div {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        color: #475569;
-        line-height: 1.6;
-      }
-
-      .contact-meta ion-icon {
-        color: #2563eb;
-        font-size: 1.05rem;
-        flex: 0 0 auto;
-        margin-top: 3px;
-      }
-
-      .footer {
-        margin-top: 30px;
-        padding-top: 22px;
-        border-top: 1px solid rgba(15, 23, 42, 0.08);
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        color: #708092;
-        font-size: 0.92rem;
-      }
-
-      @media (max-width: 1260px) {
-        .page-infinity {
-          top: -10px;
-          right: -106px;
-          width: min(74vw, 760px);
-          height: min(31vw, 340px);
-          opacity: 0.72;
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-          min-height: auto;
-        }
-
-        .hero-copy {
-          padding-top: 30px;
-        }
-
-        .hero-visual {
-          justify-content: flex-start;
-        }
-
-        .hero-art {
-          width: min(100%, 760px);
-          min-height: 900px;
-        }
-
-        .knowledge-split,
-        .contact-shell {
-          grid-template-columns: 1fr;
-        }
-
-        .pillars {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 1080px) {
-        .grid-4 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .grid-3 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .metric-row {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .hero-points {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 920px) {
-        .page-infinity {
-          top: 42px;
-          right: -138px;
-          width: min(86vw, 610px);
-          height: min(34vw, 246px);
-          opacity: 0.5;
-          transform: rotate(-4deg) scale(0.92);
-        }
-
-        .menu-toggle {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .sidebar {
-          transform: translateX(-100%);
-        }
-
-        .sidebar.open {
-          transform: translateX(0);
-        }
-
-        .main {
-          margin-left: 0;
-          padding: 76px 20px 36px;
-        }
-
-        .timeline::before {
-          left: 29px;
-          transform: none;
-        }
-
-        .timeline-row {
-          grid-template-columns: 58px minmax(0, 1fr);
-          align-items: start;
-          gap: 14px;
-        }
-
-        .timeline-side:first-child {
-          display: block;
-          grid-column: 2;
-          grid-row: 1;
-        }
-
-        .timeline-center {
-          grid-column: 1;
-          grid-row: 1 / span 2;
-          align-items: flex-start;
-          justify-content: flex-start;
-          padding-top: 2px;
-        }
-
-        .timeline-side:last-child {
-          grid-column: 2;
-          grid-row: 2;
-        }
-
-        .timeline-row:nth-child(even) .timeline-side:first-child {
-          grid-row: 2;
-        }
-
-        .timeline-row:nth-child(even) .timeline-side:last-child {
-          grid-row: 1;
-        }
-
-        .timeline-card,
-        .timeline-summary {
-          padding: 18px;
-        }
-      }
-
-      @media (max-width: 760px) {
-        .page-infinity {
-          top: 82px;
-          right: -190px;
-          width: 420px;
-          height: 180px;
-          opacity: 0.38;
-          transform: rotate(-4deg) scale(0.82);
-        }
-
-        .grid-4,
-        .grid-3,
-        .grid-2,
-        .contact-grid,
-        .metric-row,
-        .pillars {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-art {
-          --hero-panel-gap: 16px;
-          --hero-panel-main-height: 220px;
-          aspect-ratio: auto;
-          min-height: 860px;
-          padding: 16px;
-        }
-
-        .hero-panel-main {
-          padding: 20px;
-        }
-
-        .hero-panel-bottom {
-          min-height: 300px;
-        }
-
-        .hero-carousel-controls {
-          top: 12px;
-          right: 12px;
-        }
-
-        .hero-carousel-btn {
-          width: 38px;
-          height: 38px;
-        }
-
-        .section {
-          margin-bottom: 82px;
-        }
-
-        .footer {
-          flex-direction: column;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        * {
-          animation: none !important;
-          transition: none !important;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
     <button
       class="menu-toggle"
       id="menuToggle"
       type="button"
-      aria-label="Open menu"
+      aria-label="Open navigation menu"
       aria-controls="sidebar"
       aria-expanded="false"
     >
       <ion-icon name="menu-outline"></ion-icon>
     </button>
 
-    <div class="backdrop" id="backdrop"></div>
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
 
     <div class="page-infinity" aria-hidden="true">
       <svg
@@ -2104,8 +275,8 @@
         </div>
       </div>
 
-      <nav class="nav" id="nav">
-        <a href="#hero" class="active">
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#hero" class="active" aria-current="location">
           <ion-icon name="home-outline"></ion-icon>Home
         </a>
         <a href="#platform">
@@ -2143,7 +314,7 @@
               rel="noopener"
             >
               <div>
-                <strong>Startup Builder</strong>
+                <strong>Startup Business Builder</strong>
                 <span>Business planning & growth</span>
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -2157,7 +328,7 @@
             >
               <div>
                 <strong>IFV Builder</strong>
-                <span>Visa-focused founder path</span>
+                <span>Innovator Founder Visa preparation</span>
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
@@ -2169,20 +340,20 @@
               rel="noopener"
             >
               <div>
-                <strong>RotaPlan</strong>
-                <span>Shift planning & operations</span>
+                <strong>Rotaplan</strong>
+                <span>Shift planning & team operations</span>
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
 
             <a
               class="mini-link"
-              href="https://warewise-8b381130a046.herokuapp.com/"
+              href="https://www.northstarwms.co/wms"
               target="_blank"
               rel="noopener"
             >
               <div>
-                <strong>NorthStar WMS</strong>
+                <strong>Warewise</strong>
                 <span>Warehouse control</span>
               </div>
               <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -2207,7 +378,7 @@
       <div class="sidebar-footer">London HQ · 86–90 Paul Street, EC2A 4NE</div>
     </aside>
 
-    <main class="main">
+    <main class="main" id="mainContent" tabindex="-1">
       <div class="shell">
         <section class="section hero" id="hero">
           <div class="hero-copy reveal">
@@ -2223,10 +394,9 @@
 
             <p class="lede">
               Dhruvi Infinity Inspiration Ltd. brings together connected SaaS
-              products for founders and operators: business building, visa-path
-              preparation, rota planning, warehouse control, accountancy
-              operations, and an expanding knowledge base for smarter
-              decisions.
+              products for founders and operators: Startup Business Builder,
+              IFV Builder, Rotaplan, Warewise, DII Accounts, and an expanding
+              knowledge base for smarter decisions.
             </p>
 
             <div class="hero-actions">
@@ -2323,7 +493,12 @@
               </div>
 
               <div class="glass-card hero-panel-bottom">
-                <div class="hero-carousel" id="heroCarousel">
+                <div
+                  class="hero-carousel"
+                  id="heroCarousel"
+                  role="region"
+                  aria-label="DII product previews"
+                >
                   <div class="hero-carousel-controls">
                     <button
                       class="hero-carousel-btn"
@@ -2346,7 +521,7 @@
                   <div class="hero-carousel-track">
                     <article
                       class="hero-slide active"
-                      style="--slide-image: url('assets/images/dhruviinfinity.jpg')"
+                      style="--slide-image: url('../images/dhruviinfinity.jpg')"
                     >
                       <picture>
                         <source
@@ -2360,7 +535,9 @@
                         />
                       </picture>
                       <div class="hero-slide-overlay">
-                        <span class="hero-slide-label">Startup Builder</span>
+                        <span class="hero-slide-label"
+                          >Startup Business Builder</span
+                        >
                         <h3>
                           Structure business ideas into a clearer launch path
                         </h3>
@@ -2374,7 +551,7 @@
 
                     <article
                       class="hero-slide"
-                      style="--slide-image: url('assets/images/ifv.jpg')"
+                      style="--slide-image: url('../images/ifv.jpg')"
                     >
                       <picture>
                         <source
@@ -2383,7 +560,7 @@
                         />
                         <img
                           src="assets/images/ifv.jpg"
-                          alt="Innovation Founder Visa Builder preview"
+                          alt="IFV Builder preview"
                           loading="lazy"
                         />
                       </picture>
@@ -2403,7 +580,7 @@
                     <article
                       class="hero-slide"
                       style="
-                        --slide-image: url('assets/images/dhruviinfinity-fast-checker.jpg')
+                        --slide-image: url('../images/dhruviinfinity-fast-checker.jpg')
                       "
                     >
                       <picture>
@@ -2413,25 +590,28 @@
                         />
                         <img
                           src="assets/images/dhruviinfinity-fast-checker.jpg"
-                          alt="Fast Checker product preview"
+                          alt="Startup Business Builder Fast Checker preview"
                           loading="lazy"
                         />
                       </picture>
                       <div class="hero-slide-overlay">
-                        <span class="hero-slide-label">Fast Checker</span>
+                        <span class="hero-slide-label"
+                          >Startup Business Builder</span
+                        >
                         <h3>
-                          Give founders a quick first signal before deeper work
+                          Start with a fast founder check before deeper planning
                         </h3>
                         <p>
-                          Help users test early viability and understand whether
-                          they should move into deeper strategy or validation.
+                          Fast Checker gives founders a quick first signal
+                          before they move into the fuller Startup Business
+                          Builder workflow.
                         </p>
                       </div>
                     </article>
 
                     <article
                       class="hero-slide"
-                      style="--slide-image: url('assets/images/DIIAccounts.jpg')"
+                      style="--slide-image: url('../images/DIIAccounts.jpg')"
                     >
                       <picture>
                         <img
@@ -2547,14 +727,14 @@
               <div class="metric">
                 <strong>Founder layer</strong>
                 <span>
-                  Startup Builder, IFV workflows, and strategic planning
+                  Startup Business Builder, IFV Builder, and strategic planning
                   support.
                 </span>
               </div>
               <div class="metric">
                 <strong>Ops layer</strong>
                 <span>
-                  Shift planning, team organisation, inventory, and warehouse
+                  Rotaplan, team organisation, inventory, and warehouse
                   control.
                 </span>
               </div>
@@ -2584,17 +764,16 @@
             </div>
             <h2>The DII product family</h2>
             <p>
-              Use Startup Builder for general founder planning, IFV Builder for
-              visa-path preparation, and RotaPlan or NorthStar when the
-              operational challenge is scheduling, workforce coordination, stock
-              control, or accountancy operations.
+              Use Startup Business Builder for general founder planning, IFV
+              Builder for visa-path preparation, Rotaplan or Warewise for daily
+              operations, and DII Accounts for accountancy and reporting.
             </p>
           </div>
 
           <div class="product-router" aria-label="Product routes">
             <a class="route-pill" href="#startup-builder">
               <strong>Founder planning</strong>
-              <span>Go straight to Startup Builder.</span>
+              <span>Go straight to Startup Business Builder.</span>
             </a>
             <a class="route-pill" href="#ifv-builder">
               <strong>IFV preparation</strong>
@@ -2604,9 +783,9 @@
               <strong>Shift planning</strong>
               <span>See the rota and workforce option.</span>
             </a>
-            <a class="route-pill" href="#northstar-wms">
+            <a class="route-pill" href="#warewise">
               <strong>Warehouse control</strong>
-              <span>Jump to stock and movement visibility.</span>
+              <span>Jump to Warewise for stock and movement visibility.</span>
             </a>
             <a class="route-pill" href="#dii-accounts">
               <strong>Accounting & reporting</strong>
@@ -2658,15 +837,15 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Go to founder planning
+                  Open Startup Business Builder
                 </a>
               </div>
             </article>
 
             <article class="card product-card" id="ifv-builder">
               <div class="product-head">
-                <h3>Innovation Founder Visa Builder</h3>
-                <span class="product-status">Focused path</span>
+                <h3>IFV Builder</h3>
+                <span class="product-status">Live route</span>
               </div>
               <p>
                 A specialised layer for founders preparing visa-ready venture
@@ -2702,15 +881,15 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Go to IFV Builder
+                  Open IFV Builder
                 </a>
               </div>
             </article>
 
             <article class="card product-card" id="rotaplan">
               <div class="product-head">
-                <h3>RotaPlan</h3>
-                <span class="product-status">Operations</span>
+                <h3>Rotaplan</h3>
+                <span class="product-status">Live platform</span>
               </div>
               <p>
                 A simpler scheduling layer for teams that need rota planning,
@@ -2744,15 +923,15 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  See the shift planning tool
+                  Open Rotaplan
                 </a>
               </div>
             </article>
 
-            <article class="card product-card" id="northstar-wms">
+            <article class="card product-card" id="warewise">
               <div class="product-head">
-                <h3>NorthStar WMS</h3>
-                <span class="product-status">Growing ops tool</span>
+                <h3>Warewise</h3>
+                <span class="product-status">Live platform</span>
               </div>
               <p>
                 A warehouse and inventory control layer for growing businesses
@@ -2783,11 +962,11 @@
               <div class="card-actions">
                 <a
                   class="btn btn-secondary"
-                  href="https://warewise-8b381130a046.herokuapp.com/"
+                  href="https://www.northstarwms.co/wms"
                   target="_blank"
                   rel="noopener"
                 >
-                  See the warehouse control tool
+                  Open Warewise
                 </a>
               </div>
             </article>
@@ -2798,7 +977,7 @@
             >
               <div class="product-head">
                 <h3>DII Accounts</h3>
-                <span class="product-status">MVP live</span>
+                <span class="product-status">Live MVP</span>
               </div>
               <p>
                 A UK-focused accountancy workspace for organisations that need
@@ -2915,8 +1094,39 @@
                       DII helps people recognise their entry point before they
                       choose a product or contact route.
                     </p>
-                    <div class="timeline-placeholder">
-                      Founder path | Visa path | Operations path | Finance path
+                    <div class="timeline-visual timeline-visual-grid">
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Founder path</span>
+                        <strong>Validate and plan</strong>
+                        <span class="timeline-visual-note">
+                          Start with business structure, launch logic, and
+                          clearer early decisions.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Visa path</span>
+                        <strong>Prepare with evidence</strong>
+                        <span class="timeline-visual-note">
+                          Use endorsement-aware guidance for founder readiness
+                          and case preparation.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Operations path</span>
+                        <strong>Run the day-to-day</strong>
+                        <span class="timeline-visual-note">
+                          Move straight into rota planning, stock visibility,
+                          and execution support.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Finance path</span>
+                        <strong>Control money flow</strong>
+                        <span class="timeline-visual-note">
+                          Bring invoicing, payments, and reporting into one
+                          clearer accountancy workspace.
+                        </span>
+                      </article>
                     </div>
                   </div>
                 </div>
@@ -2954,8 +1164,8 @@
                       <li>
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                         <span>
-                          Startup Builder for general founders and structured
-                          planning
+                          Startup Business Builder for general founders and
+                          structured planning
                         </span>
                       </li>
                       <li>
@@ -2968,7 +1178,8 @@
                       <li>
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                         <span>
-                          RotaPlan and WMS for execution-focused businesses
+                          Rotaplan and Warewise for execution-focused
+                          businesses
                         </span>
                       </li>
                       <li>
@@ -3025,14 +1236,68 @@
                 <div class="timeline-side">
                   <div class="timeline-summary">
                     <span class="timeline-kicker">Product snapshot</span>
-                    <h3>See strategy, validation, operations, and finance in one flow</h3>
+                    <h3>
+                      See founder planning, operations, and finance in one flow
+                    </h3>
                     <p>
-                      Business Builder, IFV preparation, operations tools, and
-                      DII Accounts each solve a different stage of the journey
-                      while staying connected.
+                      Startup Business Builder, IFV Builder, Rotaplan,
+                      Warewise, and DII Accounts each solve a different stage of
+                      the journey while staying connected.
                     </p>
-                    <div class="timeline-placeholder">
-                      Validate | Prepare | Operate | Account
+                    <div class="timeline-visual timeline-visual-grid">
+                      <article class="timeline-preview-card">
+                        <div class="timeline-preview-thumb">
+                          <img
+                            src="assets/images/dhruviinfinity.jpg"
+                            alt="Startup Business Builder preview"
+                            loading="lazy"
+                          />
+                        </div>
+                        <strong>Startup Business Builder</strong>
+                        <span class="timeline-preview-note">
+                          Validation, planning, and launch structure.
+                        </span>
+                      </article>
+                      <article class="timeline-preview-card">
+                        <div class="timeline-preview-thumb">
+                          <img
+                            src="assets/images/ifv.jpg"
+                            alt="IFV Builder preview"
+                            loading="lazy"
+                          />
+                        </div>
+                        <strong>IFV Builder</strong>
+                        <span class="timeline-preview-note">
+                          Founder-case preparation with endorsement context.
+                        </span>
+                      </article>
+                      <article class="timeline-preview-card">
+                        <div
+                          class="timeline-preview-thumb timeline-preview-thumb--icon"
+                          aria-hidden="true"
+                        >
+                          <ion-icon name="briefcase-outline"></ion-icon>
+                        </div>
+                        <strong>Operations layer</strong>
+                        <span class="timeline-preview-note">
+                          Rotaplan and Warewise support execution-focused
+                          teams.
+                        </span>
+                      </article>
+                      <article class="timeline-preview-card">
+                        <div class="timeline-preview-thumb">
+                          <img
+                            src="assets/images/DIIAccounts.jpg"
+                            alt="DII Accounts preview"
+                            loading="lazy"
+                          />
+                        </div>
+                        <strong>DII Accounts</strong>
+                        <span class="timeline-preview-note">
+                          Invoicing, payments, reporting, and accountancy
+                          operations.
+                        </span>
+                      </article>
                     </div>
                   </div>
                 </div>
@@ -3139,8 +1404,39 @@
                       The product family connects founder support, operations
                       systems, finance tools, and knowledge under one company.
                     </p>
-                    <div class="timeline-placeholder">
-                      Founders | Operations | Knowledge | Finance
+                    <div class="timeline-visual timeline-visual-grid">
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Founders</span>
+                        <strong>Plan and launch</strong>
+                        <span class="timeline-visual-note">
+                          Start with validation, structure, and stronger next
+                          steps.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Operations</span>
+                        <strong>Coordinate execution</strong>
+                        <span class="timeline-visual-note">
+                          Keep shifts, stock, and movement visible as teams
+                          grow.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Knowledge</span>
+                        <strong>Guide decisions</strong>
+                        <span class="timeline-visual-note">
+                          Use explainers and solution content to support better
+                          choices.
+                        </span>
+                      </article>
+                      <article class="timeline-visual-card">
+                        <span class="timeline-visual-label">Finance</span>
+                        <strong>Track and report</strong>
+                        <span class="timeline-visual-note">
+                          Keep invoicing, payments, and reporting inside the
+                          same wider system.
+                        </span>
+                      </article>
                     </div>
                   </div>
                 </div>
@@ -3226,28 +1522,74 @@
               </div>
             </div>
 
-            <div class="placeholder-frame">
-              <div class="placeholder-window">
-                <div class="window-top">
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                </div>
-                <div class="window-body">
-                  <div class="placeholder-block long"></div>
-                  <div class="placeholder-block mid"></div>
-                  <div class="placeholder-block long"></div>
-                  <div class="placeholder-block short"></div>
-                  <div class="placeholder-block long"></div>
-                  <div class="placeholder-block mid"></div>
-                  <div class="placeholder-block short"></div>
-                </div>
-              </div>
+            <div class="knowledge-panel">
+              <div class="knowledge-board">
+                <article class="knowledge-hero-card">
+                  <img
+                    src="assets/images/ifv.jpg"
+                    alt="DII knowledge and guidance preview"
+                    loading="lazy"
+                  />
+                  <div class="knowledge-hero-copy">
+                    <span class="knowledge-badge">Knowledge routes</span>
+                    <strong>
+                      Help people answer the question before they choose the
+                      product.
+                    </strong>
+                    <span>
+                      The knowledge layer can frame founder, visa, operations,
+                      and finance topics in one clearer journey.
+                    </span>
+                  </div>
+                </article>
 
-              <div class="placeholder-note">
-                <strong>Content themes:</strong><br />
-                Articles, guides, solution explainers, finance workflows, and
-                case-led content all belong in this layer.
+                <div class="knowledge-topic-grid">
+                  <article class="knowledge-topic-card">
+                    <span class="knowledge-topic-kicker">Founders</span>
+                    <strong>Validation and launch guides</strong>
+                    <span class="knowledge-topic-note">
+                      Business structure, planning logic, and smarter first
+                      steps.
+                    </span>
+                  </article>
+                  <article class="knowledge-topic-card">
+                    <span class="knowledge-topic-kicker">Visa</span>
+                    <strong>Founder readiness content</strong>
+                    <span class="knowledge-topic-note">
+                      Practical explainers that support endorsement-aware
+                      preparation.
+                    </span>
+                  </article>
+                  <article class="knowledge-topic-card">
+                    <span class="knowledge-topic-kicker">Operations</span>
+                    <strong>Workflow and systems explainers</strong>
+                    <span class="knowledge-topic-note">
+                      Rota, warehouse, and team coordination content for
+                      growing businesses.
+                    </span>
+                  </article>
+                  <article class="knowledge-topic-card">
+                    <span class="knowledge-topic-kicker">Finance</span>
+                    <strong>Reporting and accountancy routes</strong>
+                    <span class="knowledge-topic-note">
+                      Invoicing, payments, and reporting topics for clearer
+                      daily finance work.
+                    </span>
+                  </article>
+                </div>
+
+                <div class="knowledge-query-row" aria-label="Knowledge themes">
+                  <span class="knowledge-query">Startup idea validation</span>
+                  <span class="knowledge-query">
+                    Innovator Founder Visa readiness
+                  </span>
+                  <span class="knowledge-query">
+                    Rota and warehouse workflow
+                  </span>
+                  <span class="knowledge-query">
+                    Invoicing and reporting
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -3427,7 +1769,7 @@
             </aside>
           </div>
 
-          <div class="footer">
+          <footer class="footer">
             <span
               >© 2026 Dhruvi Infinity Inspiration Ltd. All rights
               reserved.</span
@@ -3436,244 +1778,11 @@
               Designed as a parent-company homepage for a connected SaaS
               ecosystem.
             </span>
-          </div>
+          </footer>
         </section>
       </div>
     </main>
 
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const menuToggle = document.getElementById("menuToggle");
-      const backdrop = document.getElementById("backdrop");
-      const navLinks = document.querySelectorAll(".nav a");
-
-      function closeSidebar() {
-        sidebar.classList.remove("open");
-        backdrop.classList.remove("show");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-
-      function openSidebar() {
-        sidebar.classList.add("open");
-        backdrop.classList.add("show");
-        menuToggle.setAttribute("aria-expanded", "true");
-      }
-
-      menuToggle.addEventListener("click", () => {
-        const isOpen = sidebar.classList.contains("open");
-        if (isOpen) {
-          closeSidebar();
-        } else {
-          openSidebar();
-        }
-      });
-
-      backdrop.addEventListener("click", closeSidebar);
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 920) closeSidebar();
-        });
-      });
-
-      const sections = [...document.querySelectorAll("section[id]")];
-      const linkMap = new Map(
-        sections.map((section) => [
-          section.id,
-          document.querySelector(`.nav a[href="#${section.id}"]`),
-        ]),
-      );
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navLinks.forEach((link) => link.classList.remove("active"));
-              const active = linkMap.get(entry.target.id);
-              if (active) active.classList.add("active");
-            }
-          });
-        },
-        {
-          rootMargin: "-38% 0px -48% 0px",
-          threshold: 0.01,
-        },
-      );
-
-      sections.forEach((section) => observer.observe(section));
-
-      const carousel = document.getElementById("heroCarousel");
-      const slides = carousel ? carousel.querySelectorAll(".hero-slide") : [];
-      const dots = carousel
-        ? carousel.querySelectorAll(".hero-carousel-dot")
-        : [];
-      const prevBtn = document.getElementById("heroPrev");
-      const nextBtn = document.getElementById("heroNext");
-
-      let currentSlide = 0;
-      let autoplayId = null;
-      const autoplayDelay = 5000;
-
-      function showSlide(index) {
-        if (!slides.length) return;
-
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === currentSlide);
-        });
-
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === currentSlide);
-          dot.setAttribute(
-            "aria-current",
-            i === currentSlide ? "true" : "false",
-          );
-        });
-      }
-
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-
-      function prevSlide() {
-        showSlide(currentSlide - 1);
-      }
-
-      function startAutoplay() {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-          return;
-        stopAutoplay();
-        autoplayId = window.setInterval(nextSlide, autoplayDelay);
-      }
-
-      function stopAutoplay() {
-        if (autoplayId) {
-          window.clearInterval(autoplayId);
-          autoplayId = null;
-        }
-      }
-
-      if (slides.length) {
-        showSlide(0);
-
-        nextBtn?.addEventListener("click", () => {
-          nextSlide();
-          startAutoplay();
-        });
-
-        prevBtn?.addEventListener("click", () => {
-          prevSlide();
-          startAutoplay();
-        });
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            showSlide(index);
-            startAutoplay();
-          });
-        });
-
-        carousel.addEventListener("mouseenter", stopAutoplay);
-        carousel.addEventListener("mouseleave", startAutoplay);
-        carousel.addEventListener("focusin", stopAutoplay);
-        carousel.addEventListener("focusout", startAutoplay);
-
-        startAutoplay();
-      }
-
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      if (!reduceMotion && window.gsap) {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".hero-copy .eyebrow", {
-          opacity: 0,
-          y: 18,
-          duration: 0.55,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-copy h1", {
-          opacity: 0,
-          y: 26,
-          duration: 0.7,
-          delay: 0.06,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-copy .lede", {
-          opacity: 0,
-          y: 18,
-          duration: 0.65,
-          delay: 0.14,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-actions .btn", {
-          opacity: 0,
-          y: 16,
-          stagger: 0.07,
-          duration: 0.55,
-          delay: 0.2,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-point", {
-          opacity: 0,
-          y: 18,
-          stagger: 0.08,
-          duration: 0.55,
-          delay: 0.26,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-panel-main", {
-          opacity: 0,
-          x: 18,
-          duration: 0.7,
-          delay: 0.1,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-panel-bottom", {
-          opacity: 0,
-          y: 18,
-          duration: 0.72,
-          delay: 0.24,
-          ease: "power2.out",
-        });
-
-        gsap.from(".hero-carousel-controls, .hero-carousel-dots", {
-          opacity: 0,
-          y: 10,
-          duration: 0.5,
-          delay: 0.4,
-          ease: "power2.out",
-        });
-
-        document.querySelectorAll(".reveal").forEach((section) => {
-          gsap.from(
-            section.querySelectorAll(
-              ".card, .pillar, .contact-card, .timeline-card, .timeline-summary, .metric, .placeholder-frame, .contact-panel",
-            ),
-            {
-              opacity: 0,
-              y: 24,
-              duration: 0.65,
-              stagger: 0.06,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 78%",
-                toggleActions: "play none none reverse",
-              },
-            },
-          );
-        });
-      }
-    </script>
+    <script src="assets/js/site.js"></script>
   </body>
 </html>

@@ -5,12 +5,14 @@ This folder is the persistent operating context for future Codex sessions workin
 
 ## Source Of Truth
 - Production page: `/index.html`
+- Live stylesheet: `/assets/css/site.css`
+- Live script: `/assets/js/site.js`
 - Domain config: `/CNAME`
 - Social preview image: `/ILOVE.png`
 - Crawl files: `/robots.txt`, `/sitemap.xml`
 - Search Console verification: `/google46d6e99a9bb78479.html`
 - Product screenshots: `/assets/images/`
-- Non-production artifact: `/tmp.html`
+- Archived non-production prototype: `/tmp.html`
 
 ## Read Order Before New Work
 1. `/CODEX_START_HERE.md`

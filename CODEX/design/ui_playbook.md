@@ -4,14 +4,14 @@
 Reusable UI instructions and a Codex-ready design prompt extracted from the live `dii.ltd` frontend.
 
 ## Source Of Truth
-- Exact live implementation: `/index.html`
+- Exact live implementation: `/assets/css/site.css` plus `/index.html`
 - Reusable starter CSS: `/CODEX/design/ui_foundation.css`
 
 ## How To Use This In Future Projects
 1. Start from `/CODEX/design/ui_foundation.css`.
 2. Keep the token names and component classes unless the project needs a different visual system.
 3. Use the Codex prompt below when you want the same style language in a new repo.
-4. Pull any page-specific selectors from `/index.html` only when the starter file is not enough.
+4. Pull any page-specific selectors from `/assets/css/site.css` only when the starter file is not enough.
 
 ## Codex UI Prompt
 Use this prompt for future Codex sessions:
@@ -125,8 +125,8 @@ Accessibility rules:
 - decorative elements that overpower copy
 - too many one-off class names for similar components
 
-## When To Pull More From `/index.html`
-Use the live page CSS if you need:
+## When To Pull More From The Live CSS
+Use `/assets/css/site.css` if you need:
 - the full hero carousel styling
 - the timeline layout
 - the placeholder window pattern
@@ -135,4 +135,4 @@ Use the live page CSS if you need:
 
 ## Notes
 - `/CODEX/design/ui_foundation.css` is the reusable starter, not a one-to-one dump of every selector in `/index.html`.
-- `/index.html` remains the exact production reference if you want to lift section-specific styles.
+- `/assets/css/site.css` is the exact production reference if you want to lift section-specific styles, while `/index.html` remains the structure/content reference.

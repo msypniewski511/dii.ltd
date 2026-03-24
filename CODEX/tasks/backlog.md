@@ -13,6 +13,15 @@
 
 ## P1 High
 
+### DII-016
+- Title: Deploy the current extracted-asset build before hosted QA resumes
+- Description: Sync the current repo state to GitHub Pages so `https://dii.ltd/` serves `/assets/css/site.css`, `/assets/js/site.js`, and the current product/link configuration before any hosted browser matrix is recorded.
+- Area: Release / deployment
+- Priority: P1 High
+- Status: TODO
+- Dependencies: Current local homepage changes
+- Notes: `DII-015` is blocked because the hosted domain is still serving an older inline build with the old warehouse destination and no extracted assets.
+
 ### DII-002
 - Title: Replace placeholder and editor-facing homepage copy
 - Description: Rewrite live sections so the page speaks to visitors, not the site owner, and remove visible TODO/instructional text from production content.
@@ -56,9 +65,9 @@
 - Description: Add stronger keyboard-visible states, review nav state semantics, and consider a skip link.
 - Area: Accessibility
 - Priority: P2 Medium
-- Status: TODO
+- Status: DONE
 - Dependencies: None
-- Notes: Existing interactivity is usable, but focus styling and assistive-state signals are weak.
+- Notes: Completed on 2026-03-23. Added a skip link, stronger focus-visible treatment, `aria-current` nav state syncing, Escape-to-close mobile menu behavior, semantic footer markup, and cleaner assistive-state handling in the carousel and icon set.
 
 ### DII-012
 - Title: Make the fixed sidebar scrollable on smaller screens
@@ -83,27 +92,45 @@
 - Description: Remove mock placeholder boxes and insert real screenshots, diagrams, or structured content blocks.
 - Area: Design / content
 - Priority: P2 Medium
-- Status: TODO
+- Status: DONE
 - Dependencies: DII-002
-- Notes: Timeline and knowledge sections still rely on placeholder visuals and abstract stand-in UI.
+- Notes: Completed on 2026-03-23. The timeline now uses route boards, product preview cards, and layer cards, while the knowledge section now uses a structured media-and-topic panel instead of browser-wireframe placeholders.
 
 ### DII-004
 - Title: Extract inline CSS and JS after layout and messaging stabilize
 - Description: Move the embedded style and script blocks into maintainable static asset files.
 - Area: Frontend architecture / performance
 - Priority: P2 Medium
-- Status: TODO
+- Status: DONE
 - Dependencies: DII-001, DII-002
-- Notes: Do this after the homepage structure and messaging settle to avoid duplicate churn.
+- Notes: Completed on 2026-03-24. Extracted the production CSS to `/assets/css/site.css`, the production JS to `/assets/js/site.js`, and updated the Warewise/NorthStar destination links to `https://www.northstarwms.co/wms`.
 
 ### DII-009
 - Title: Audit product naming and outbound destination consistency
 - Description: Confirm that product naming, statuses, and destination URLs are consistent across sidebar cards, hero slides, and product cards.
 - Area: Brand / content / IA
 - Priority: P2 Medium
-- Status: TODO
+- Status: DONE
 - Dependencies: None
-- Notes: This is mainly a consistency sweep across current copy and links.
+- Notes: Completed on 2026-03-23. Standardized the live naming system to Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts; tied the Fast Checker hero slide back to Startup Business Builder; and confirmed the linked product destinations respond.
+
+### DII-014
+- Title: Run a manual browser regression pass after recent structural changes
+- Description: Check the live page in real browsers after the CSS/JS extraction and repo cleanup work so layout, navigation, and interactive states are confirmed outside headless verification.
+- Area: QA / accessibility / responsive
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: DII-004
+- Notes: Completed on 2026-03-24 with a local browser-driven Chrome matrix plus reduced-motion coverage. The pass fixed broken hero fallback image paths after CSS extraction and fixed carousel autoplay restarting while hovered or focus-within after control clicks. A hosted manual Firefox/Safari/Edge pass is now tracked separately as `DII-015`.
+
+### DII-015
+- Title: Record a hosted manual cross-browser pass outside local Chrome automation
+- Description: Verify the deployed site in Firefox, Safari, Edge, and at least one real phone browser to close the remaining matrix gap after the local Chrome regression.
+- Area: QA / cross-browser compatibility
+- Priority: P2 Medium
+- Status: BLOCKED
+- Dependencies: DII-014, DII-016
+- Notes: As of 2026-03-24, `https://dii.ltd/` is still serving an older inline build: `/assets/css/site.css` returns `404`, the hosted HTML does not load the extracted assets, and the warehouse card still points to `https://warewise-8b381130a046.herokuapp.com/`.
 
 ### DII-010
 - Title: Add DII Accounts to the live ecosystem
@@ -121,9 +148,9 @@
 - Description: Either remove it from active use, move it to a clearer archive path, or clean it so it is not a misleading repo artifact.
 - Area: Repo hygiene
 - Priority: P3 Low
-- Status: TODO
+- Status: DONE
 - Dependencies: None
-- Notes: The file currently contains appended prompt text after the HTML, which makes it unreliable as a project reference.
+- Notes: Completed on 2026-03-24. Removed the appended prompt text after `</html>`, updated the page title, and added a visible archived-prototype warning so the file can stay as a non-production reference without being confused for the live page.
 
 ### CODX-000
 - Title: Bootstrap persistent Codex workspace

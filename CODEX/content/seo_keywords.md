@@ -18,9 +18,9 @@
 
 ### Product Terms Mentioned On The Homepage
 - Startup Business Builder
-- Innovation Founder Visa Builder
-- RotaPlan
-- NorthStar WMS
+- IFV Builder
+- Rotaplan
+- Warewise
 - DII Accounts
 
 ## Recommended Page Intent
@@ -42,3 +42,4 @@
 ## Notes
 - Keep keyword usage natural.
 - Canonical, social tags, schema, and crawl files were added on 2026-03-23, so the next SEO step is content architecture rather than homepage metadata basics.
+- Homepage metadata and visible product copy were aligned on 2026-03-23 so the public naming map now matches the current outbound destination brands more closely.
