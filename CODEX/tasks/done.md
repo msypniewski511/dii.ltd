@@ -134,3 +134,12 @@
 - Status: DONE
 - Dependencies: DII-004
 - Notes: Completed on 2026-03-24 using a local Chrome desktop/mobile/reduced-motion matrix plus outbound URL spot-checks. Fixed the hero carousel fallback image path bug in `/index.html` and the hover/focus autoplay restart bug in `/assets/js/site.js`. Firefox desktop automation timed out locally, so hosted non-Chromium coverage moved into `DII-015`.
+
+## DII-016
+- Title: Deploy the current extracted-asset build before hosted QA resumes
+- Description: Synced the deployed site to the current repo so hosted QA can validate the right build.
+- Area: Release / deployment
+- Priority: P1 High
+- Status: DONE
+- Dependencies: Current local homepage changes
+- Notes: Completed on 2026-03-24 by pushing commit `94b83eb` to `origin/main`. Verified that `https://dii.ltd/assets/css/site.css` and `https://dii.ltd/assets/js/site.js` return `200`, and confirmed in hosted Chrome and Edge smoke checks that the extracted asset tags plus the NorthStar destination are present on the live page.

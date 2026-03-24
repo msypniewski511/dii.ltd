@@ -23,18 +23,18 @@ Persistent collaboration docs live in `/CODEX/`.
 - Root SEO/crawl files now include `/robots.txt`, `/sitemap.xml`, and `/google46d6e99a9bb78479.html`.
 - Primary experience is a scrollable one-page layout with a fixed sidebar, hero carousel, product cards, timeline summary boards, a structured knowledge panel, principles section, and contact block.
 - A local browser-driven regression pass is now recorded after the CSS/JS extraction, including Chrome desktop, short mobile, Android-size mobile, and reduced-motion coverage.
-- As of 2026-03-24, `https://dii.ltd/` is still serving an older inline build rather than the current extracted-asset repo state; the hosted domain returns `404` for `/assets/css/site.css`.
+- As of 2026-03-24, `https://dii.ltd/` now serves the current extracted-asset repo state; `/assets/css/site.css` and `/assets/js/site.js` return `200` on the hosted domain.
 - `tmp.html` is now an archived prototype with a visible non-production warning and cleaned closing HTML; do not treat it as live.
 - No `CODEX/` workspace existed before this bootstrap. Initial architecture, task, content, design, and testing docs were created on 2026-03-22.
 
 ## Active Priorities
-- `DII-016` Deploy the current repo state so `https://dii.ltd/` matches the extracted-asset build before hosted QA resumes.
+- `DII-015` Record the remaining hosted human browser pass in Firefox, Safari, Edge, and a real phone browser.
 
 ## Current In-Progress Task
-- `DII-015` is blocked because the hosted site is not serving the current repo state.
+- None.
 
 ## Recommended Next Task
-- `DII-016` Deploy the current repo state so `https://dii.ltd/` matches the extracted-asset build before hosted QA resumes.
+- `DII-015` Record the remaining hosted human browser pass in Firefox, Safari, Edge, and a real phone browser.
 
 ## Recent Changes
 - Created `/CODEX/` workspace structure and seeded it with real findings from `/index.html`, `/tmp.html`, `/assets/images/`, `/CNAME`, and the current repository state.
@@ -55,7 +55,7 @@ Persistent collaboration docs live in `/CODEX/`.
 - Completed `DII-004` by extracting the live stylesheet to `/assets/css/site.css`, the live behavior script to `/assets/js/site.js`, and updating the warehouse destination links to `https://www.northstarwms.co/wms`.
 - Completed `DII-008` by trimming the copied prompt text out of `/tmp.html`, marking the file visibly as an archived prototype, and keeping it in place as a non-production reference rather than a misleading live page.
 - Completed `DII-014` with a local browser-driven regression pass, fixing two regressions found during QA: hero slide CSS fallback image paths that broke after CSS extraction, and carousel autoplay restarting while hovered or focus-within after control clicks.
-- Started `DII-015` and confirmed the blocker: the hosted site still serves an older inline build with the old warehouse destination and no extracted `/assets/css/site.css` or `/assets/js/site.js`, so truthful hosted QA for the current repo now depends on deployment sync first.
+- Completed `DII-016` by pushing commit `94b83eb` to `origin/main`, verifying the hosted domain now serves `/assets/css/site.css` and `/assets/js/site.js`, and confirming in live Chrome and Edge smoke checks that the extracted build and NorthStar destination are now present on `https://dii.ltd/`.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.

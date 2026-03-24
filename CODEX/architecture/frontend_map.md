@@ -131,7 +131,7 @@
 - `carousel` logic assumes `#heroCarousel` exists before event binding
 - There is still no bundling or cache-busting asset pipeline; the page relies on static relative asset paths
 - A full hosted human QA matrix in Firefox, Safari, Edge, and a real phone browser is still unrecorded; the local Firefox desktop automation attempt timed out during the 2026-03-24 regression pass
-- As of 2026-03-24, `https://dii.ltd/` is still serving an older inline build from GitHub Pages and returns `404` for `/assets/css/site.css`, so hosted QA cannot yet validate the current repo state directly
+- As of 2026-03-24, the hosted GitHub Pages deployment is back in sync with the repo and serves `/assets/css/site.css` plus `/assets/js/site.js`; the remaining gap is human browser coverage rather than deployment drift
 
 ## Reuse Assets
 - `/CODEX/design/ui_playbook.md` stores the reusable Codex-facing design instructions for this visual language.

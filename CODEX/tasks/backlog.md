@@ -18,9 +18,9 @@
 - Description: Sync the current repo state to GitHub Pages so `https://dii.ltd/` serves `/assets/css/site.css`, `/assets/js/site.js`, and the current product/link configuration before any hosted browser matrix is recorded.
 - Area: Release / deployment
 - Priority: P1 High
-- Status: TODO
+- Status: DONE
 - Dependencies: Current local homepage changes
-- Notes: `DII-015` is blocked because the hosted domain is still serving an older inline build with the old warehouse destination and no extracted assets.
+- Notes: Completed on 2026-03-24 by pushing commit `94b83eb` to `origin/main` and verifying that `https://dii.ltd/` now returns `200` for `/assets/css/site.css` and `/assets/js/site.js`, with the NorthStar destination present on the hosted page.
 
 ### DII-002
 - Title: Replace placeholder and editor-facing homepage copy
@@ -128,9 +128,9 @@
 - Description: Verify the deployed site in Firefox, Safari, Edge, and at least one real phone browser to close the remaining matrix gap after the local Chrome regression.
 - Area: QA / cross-browser compatibility
 - Priority: P2 Medium
-- Status: BLOCKED
-- Dependencies: DII-014, DII-016
-- Notes: As of 2026-03-24, `https://dii.ltd/` is still serving an older inline build: `/assets/css/site.css` returns `404`, the hosted HTML does not load the extracted assets, and the warehouse card still points to `https://warewise-8b381130a046.herokuapp.com/`.
+- Status: TODO
+- Dependencies: DII-014
+- Notes: Deployment is now synced after `DII-016`; the remaining gap is human hosted QA in Firefox, Safari, Edge, and at least one real phone browser.
 
 ### DII-010
 - Title: Add DII Accounts to the live ecosystem

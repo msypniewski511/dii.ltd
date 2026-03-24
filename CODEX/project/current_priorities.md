@@ -72,18 +72,19 @@
 - Outcome: a local Chrome desktop/mobile/reduced-motion regression is now recorded, the extracted CSS/JS assets were confirmed to load, and two regressions found during QA were fixed: hero fallback image paths after CSS extraction and carousel autoplay restarting while hovered or focus-within after control clicks.
 - Files: `/index.html`, `/assets/js/site.js`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
 
-## P1 High
-
 ### DII-016 Deploy the current extracted-asset build before hosted QA resumes
-- Area: Release / deployment
-- Why now: `DII-015` is blocked because `https://dii.ltd/` is still serving an older inline build and returns `404` for `/assets/css/site.css`.
+- Status: DONE on 2026-03-24
+- Outcome: the live GitHub Pages deployment is now back in sync with the repo, `/assets/css/site.css` and `/assets/js/site.js` return `200` on `https://dii.ltd/`, and hosted Chrome/Edge smoke checks confirm the extracted asset tags plus the NorthStar destination are present on the live page.
+- Files: `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
+
+## P1 High
+- No open P1 tasks at the moment.
 
 ## P2 Medium
 
 ### DII-015 Record a hosted manual cross-browser pass outside local Chrome automation
 - Area: QA / cross-browser compatibility
-- Status: BLOCKED on 2026-03-24
-- Why now: the hosted pass still matters, but it is currently blocked until the deployed site matches the current repo state.
+- Why now: deployment is synced again, but Firefox/Safari/real-phone hosted QA is still unrecorded.
 
 ## P3 Low
 - No open P3 tasks at the moment.

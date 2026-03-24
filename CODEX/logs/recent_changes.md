@@ -82,4 +82,5 @@
 - A local Chrome desktop/mobile/reduced-motion regression is now recorded after the CSS/JS extraction
 - The five public product destinations were spot-checked and returned `200`; NorthStar redirects from `/wms` to `/users/sign_in`
 - Firefox desktop automation timed out locally, so hosted human QA on Firefox/Safari/Edge still remains open
-- Hosted smoke work then confirmed a bigger blocker: `https://dii.ltd/` is still serving an older inline build with no extracted asset files and the old warehouse Heroku destination
+- Hosted smoke work first exposed deployment drift, then `DII-016` fixed it by pushing the current build to `origin/main`
+- `https://dii.ltd/` now serves the extracted asset build and returns `200` for both `/assets/css/site.css` and `/assets/js/site.js`

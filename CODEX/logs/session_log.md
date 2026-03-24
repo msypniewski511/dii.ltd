@@ -49,3 +49,6 @@
 - Ran a best-available hosted smoke in Chrome and Edge against `https://dii.ltd/`; both browsers loaded the live site, but they validated the older deployed build rather than the current repo state.
 - The hosted Firefox desktop launch still timed out locally, and Playwright WebKit is not installed in this environment.
 - Added follow-up task `DII-016` to deploy the current repo state before resuming hosted browser QA.
+- Completed `DII-016` by pushing commit `94b83eb` to `origin/main`.
+- Verified deployment sync by confirming `https://dii.ltd/assets/css/site.css` and `https://dii.ltd/assets/js/site.js` now return `200`.
+- Re-ran hosted Chrome and Edge smoke checks after the push and confirmed the live page now includes the extracted asset tags and `https://www.northstarwms.co/wms`.

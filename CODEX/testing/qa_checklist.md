@@ -38,7 +38,7 @@
 - Verify the knowledge panel image, topic cards, and query chips remain legible and aligned on desktop and mobile.
 
 ## Current Known Failure
-- `https://dii.ltd/` is still serving an older inline build and does not expose the extracted `/assets/css/site.css` or `/assets/js/site.js` assets from the current repo state.
+- No deployment mismatch is currently recorded after `DII-016`.
 
 ## Remaining Coverage Gap
-- After deployment sync, Firefox, Safari, Edge, and a real phone-browser pass still need human hosted-site QA.
+- Firefox, Safari, Edge, and a real phone-browser pass still need human hosted-site QA.

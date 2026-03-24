@@ -1,18 +1,17 @@
 # Next Task
 
-## DII-016
-- Title: Deploy the current extracted-asset build before hosted QA resumes
-- Priority: P1 High
+## DII-015
+- Title: Record a hosted manual cross-browser pass outside local Chrome automation
+- Priority: P2 Medium
 - Status: TODO
-- Area: Release / deployment
+- Area: QA / cross-browser compatibility
 
 ## Why This Is Next
-- `DII-015` is now blocked because `https://dii.ltd/` is still serving an older inline build rather than the current extracted-asset repo state.
-- The hosted domain returns `404` for `/assets/css/site.css`, does not include the extracted asset tags in the HTML, and still exposes the old warehouse destination.
-- Until deployment is synced, any hosted browser matrix would be validating the wrong build.
+- `DII-016` has now synced the live deployment to the current repo state, so hosted QA can validate the right build again.
+- Chrome and Edge live smoke checks already confirm that the extracted asset tags and NorthStar destination are now present on `https://dii.ltd/`.
+- The remaining quality gap is the still-unrecorded human pass in Firefox, Safari, Edge, and at least one real phone browser.
 
 ## Relevant Files
-- `/CNAME`
 - `/index.html`
 - `/assets/css/site.css`
 - `/assets/js/site.js`
@@ -23,6 +22,6 @@
 - `/CODEX/logs/session_log.md`
 
 ## Acceptance Criteria
-- `https://dii.ltd/` serves the current repo build rather than the older inline deployment.
-- The hosted domain returns `200` for `/assets/css/site.css` and `/assets/js/site.js` if the extracted-asset build remains the current architecture.
-- The hosted page reflects the current repo state, including the Warewise/NorthStar destination and current product naming, so `DII-015` can be rerun meaningfully.
+- A hosted manual pass is recorded for Firefox, Safari, Edge, and at least one real phone browser in `/CODEX/testing/browser_checks.md`.
+- Any browser-specific regression is either fixed or logged clearly for follow-up.
+- QA notes are updated so future sessions know which parts of the browser matrix are human-verified versus automated smoke coverage.
