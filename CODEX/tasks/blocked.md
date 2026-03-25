@@ -1,7 +1,9 @@
 # Blocked
 
 ## Current Blocked Tasks
-- None recorded.
+- `DII-017` Record the remaining physical-phone hosted QA after WebKit coverage
+  - Blocker: the WebKit portion is now covered, but no physical phone browser is attached to this environment and `adb` currently reports no available device path for manual verification.
 
 ## Notes
-- Hosted human QA is still needed, but no task is currently blocked by deployment drift.
+- Deployment drift is no longer a blocker after `DII-016`.
+- The remaining QA gap is now only real-device phone access rather than a repo-side defect.

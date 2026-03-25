@@ -1,27 +1,28 @@
 # Next Task
 
-## DII-015
-- Title: Record a hosted manual cross-browser pass outside local Chrome automation
-- Priority: P2 Medium
+## DII-020
+- Title: Sharpen product differentiation by audience, problem, and outcome
+- Priority: P1 High
 - Status: TODO
-- Area: QA / cross-browser compatibility
+- Area: Conversion / IA / copy
 
 ## Why This Is Next
-- `DII-016` has now synced the live deployment to the current repo state, so hosted QA can validate the right build again.
-- Chrome and Edge live smoke checks already confirm that the extracted asset tags and NorthStar destination are now present on `https://dii.ltd/`.
-- The remaining quality gap is the still-unrecorded human pass in Firefox, Safari, Edge, and at least one real phone browser.
+- `DII-019` added factual proof near the product-selection flow, which improves trust but does not fully solve the remaining decision problem.
+- The strongest remaining unblocked conversion opportunity is to make product choice easier by sharpening who each route is for, what problem it solves, and what outcome it leads to.
+- `DII-017` still exists, but it remains blocked on physical phone access and should not stop repo-local improvement work.
 
 ## Relevant Files
 - `/index.html`
 - `/assets/css/site.css`
-- `/assets/js/site.js`
-- `/CODEX/testing/browser_checks.md`
-- `/CODEX/testing/qa_checklist.md`
+- `/CODEX/content/copy_inventory.md`
+- `/CODEX/content/brand_voice.md`
+- `/CODEX/design/component_inventory.md`
+- `/CODEX/design/design_system.md`
 - `/CODEX/project/current_priorities.md`
 - `/CODEX/tasks/backlog.md`
 - `/CODEX/logs/session_log.md`
 
 ## Acceptance Criteria
-- A hosted manual pass is recorded for Firefox, Safari, Edge, and at least one real phone browser in `/CODEX/testing/browser_checks.md`.
-- Any browser-specific regression is either fixed or logged clearly for follow-up.
-- QA notes are updated so future sessions know which parts of the browser matrix are human-verified versus automated smoke coverage.
+- The product-intro copy, route labels, or product-card framing make the audience fit and differences between the five routes easier to understand.
+- The homepage reduces overlap and ambiguity between founder planning, visa support, operations tools, and finance tooling.
+- Relevant CODEX copy/design/task docs are updated so future sessions understand the product-differentiation direction.

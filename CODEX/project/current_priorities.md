@@ -77,14 +77,32 @@
 - Outcome: the live GitHub Pages deployment is now back in sync with the repo, `/assets/css/site.css` and `/assets/js/site.js` return `200` on `https://dii.ltd/`, and hosted Chrome/Edge smoke checks confirm the extracted asset tags plus the NorthStar destination are present on the live page.
 - Files: `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
 
+### DII-015 Record a hosted manual cross-browser pass outside local Chrome automation
+- Status: DONE on 2026-03-24
+- Outcome: the best-available hosted browser-driven matrix is now recorded for Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation against `https://dii.ltd/`, with no live regression reproduced after deployment sync.
+- Files: `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
+
+### DII-018 Clarify what is live now versus still growing across the homepage
+- Status: DONE on 2026-03-24
+- Outcome: the homepage now uses a reusable live-versus-growing availability pattern and more explicit knowledge-layer copy, so visitors can see which ecosystem routes are available today and which layer is still expanding next.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
+
+### DII-019 Add stronger proof and trust cues near the product-selection flow
+- Status: DONE on 2026-03-24
+- Outcome: the homepage now surfaces factual trust signals near the route-selection area, including five live product routes, named contact inboxes, and the public London HQ listing.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
+
 ## P1 High
-- No open P1 tasks at the moment.
+
+### DII-020 Sharpen product differentiation by audience, problem, and outcome
+- Area: Conversion / IA / copy
+- Why now: trust cues are stronger, but the remaining friction is decision clarity between the five live routes.
 
 ## P2 Medium
 
-### DII-015 Record a hosted manual cross-browser pass outside local Chrome automation
-- Area: QA / cross-browser compatibility
-- Why now: deployment is synced again, but Firefox/Safari/real-phone hosted QA is still unrecorded.
+### DII-017 Record the remaining physical-phone hosted QA after WebKit coverage
+- Area: QA / external browser coverage
+- Why now: the deployed site now also looks clean in true WebKit from this machine, but the remaining real-device phone coverage still requires hardware access that this environment does not have.
 
 ## P3 Low
 - No open P3 tasks at the moment.

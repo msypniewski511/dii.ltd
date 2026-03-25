@@ -29,6 +29,14 @@
 ### Content Blocks
 - `.card`
 - `.card-icon`
+- `.availability-band`
+- `.availability-card`
+- `.status-chip`
+- `.section-status`
+- `.proof-band`
+- `.proof-card`
+- `.proof-icon`
+- `.proof-kicker`
 - `.metric`
 - `.products-grid`
 - `.product-router`
@@ -79,3 +87,5 @@
 - The old placeholder visual system has been removed in favor of reusable timeline and knowledge presentation components.
 - The new product router is a lightweight conversion component rather than a separate page-level navigation system.
 - DII Accounts is currently the only full-width featured product card in the grid.
+- The availability band now acts as a reusable trust/clarity component for signaling which ecosystem layers are live today versus still growing next.
+- The proof band now acts as a reusable trust component for factual credibility cues near conversion decisions.

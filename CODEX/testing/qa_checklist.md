@@ -41,4 +41,5 @@
 - No deployment mismatch is currently recorded after `DII-016`.
 
 ## Remaining Coverage Gap
-- Firefox, Safari, Edge, and a real phone-browser pass still need human hosted-site QA.
+- Best-available hosted coverage is now recorded for Chrome, Edge, Firefox, Android-size mobile emulation, iPhone-size mobile emulation, WebKit desktop, and WebKit iPhone-size mobile emulation.
+- The only remaining browser-coverage gap is at least one true physical phone-browser pass, still tracked under `DII-017`.

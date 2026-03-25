@@ -24,17 +24,22 @@ Persistent collaboration docs live in `/CODEX/`.
 - Primary experience is a scrollable one-page layout with a fixed sidebar, hero carousel, product cards, timeline summary boards, a structured knowledge panel, principles section, and contact block.
 - A local browser-driven regression pass is now recorded after the CSS/JS extraction, including Chrome desktop, short mobile, Android-size mobile, and reduced-motion coverage.
 - As of 2026-03-24, `https://dii.ltd/` now serves the current extracted-asset repo state; `/assets/css/site.css` and `/assets/js/site.js` return `200` on the hosted domain.
+- A hosted browser-driven pass is now also recorded for Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation against `https://dii.ltd/`, with no live regression reproduced.
+- A hosted WebKit pass is now also recorded for desktop and iPhone-size mobile emulation against `https://dii.ltd/`, with no WebKit-specific regression reproduced.
+- The homepage now uses a reusable live-versus-growing availability pattern so visitors can see which ecosystem routes are live today and which layer is still expanding next.
+- The products section now includes a reusable factual proof band so visitors see five live routes, named inboxes, and the London HQ listing before they choose a product.
 - `tmp.html` is now an archived prototype with a visible non-production warning and cleaned closing HTML; do not treat it as live.
 - No `CODEX/` workspace existed before this bootstrap. Initial architecture, task, content, design, and testing docs were created on 2026-03-22.
 
 ## Active Priorities
-- `DII-015` Record the remaining hosted human browser pass in Firefox, Safari, Edge, and a real phone browser.
+- `DII-020` Sharpen product differentiation by audience, problem, and outcome.
+- `DII-017` Record the remaining physical-phone hosted QA after WebKit coverage was completed from this Linux environment.
 
 ## Current In-Progress Task
 - None.
 
 ## Recommended Next Task
-- `DII-015` Record the remaining hosted human browser pass in Firefox, Safari, Edge, and a real phone browser.
+- `DII-020` Sharpen product differentiation by audience, problem, and outcome.
 
 ## Recent Changes
 - Created `/CODEX/` workspace structure and seeded it with real findings from `/index.html`, `/tmp.html`, `/assets/images/`, `/CNAME`, and the current repository state.
@@ -56,6 +61,10 @@ Persistent collaboration docs live in `/CODEX/`.
 - Completed `DII-008` by trimming the copied prompt text out of `/tmp.html`, marking the file visibly as an archived prototype, and keeping it in place as a non-production reference rather than a misleading live page.
 - Completed `DII-014` with a local browser-driven regression pass, fixing two regressions found during QA: hero slide CSS fallback image paths that broke after CSS extraction, and carousel autoplay restarting while hovered or focus-within after control clicks.
 - Completed `DII-016` by pushing commit `94b83eb` to `origin/main`, verifying the hosted domain now serves `/assets/css/site.css` and `/assets/js/site.js`, and confirming in live Chrome and Edge smoke checks that the extracted build and NorthStar destination are now present on `https://dii.ltd/`.
+- Completed `DII-015` as the best-available hosted browser matrix from this Linux environment, covering Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation with no live regression reproduced after deployment sync.
+- Advanced `DII-017` by unblocking Playwright WebKit locally, recording hosted WebKit desktop and WebKit iPhone-size passes with no regression reproduced, and narrowing the remaining blocker to a true physical phone-browser pass.
+- Completed `DII-018` by adding a reusable live-versus-growing availability band, tightening knowledge-layer copy, and making the product-versus-content availability state clearer across the homepage.
+- Completed `DII-019` by adding a reusable proof band near the product-selection flow, using only supported facts already present on the homepage.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.
@@ -64,6 +73,7 @@ Persistent collaboration docs live in `/CODEX/`.
 - Keep work grounded in real files, selectors, assets, and links.
 - Prefer small, safe iterations over broad redesigns.
 - Preserve the static HTML/CSS/JS stack unless explicitly told otherwise.
+- Treat physical-phone QA as external-device work until a machine or device with a real phone browser is available.
 
 ## Resume Protocol
 If context is lost:

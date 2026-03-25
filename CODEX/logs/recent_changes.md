@@ -77,10 +77,25 @@
 - Updated `/index.html` hero slide fallback image custom-property URLs from `assets/images/...` to `../images/...` so the extracted stylesheet resolves the fallback images correctly
 - Updated `/assets/js/site.js` so carousel autoplay does not restart while the carousel is still hovered or focus-within after a dot or arrow click
 - Updated CODEX testing, task, log, and architecture docs for the `DII-014` browser regression pass and its follow-up task `DII-015`
+- Updated CODEX testing notes to record the hosted `DII-015` browser-driven matrix for Chrome, Edge, Firefox, and mobile emulations against `https://dii.ltd/`
+- Updated CODEX task and log docs to mark `DII-015` complete as the best-available hosted matrix from this environment and split the remaining true Safari/physical-phone coverage into blocked follow-up `DII-017`
+- Updated CODEX testing notes again to record hosted WebKit desktop and WebKit iPhone-size passes after locally unblocking Playwright WPE
+- Updated CODEX task and log docs so `DII-017` now tracks only the remaining physical phone-browser blocker
+- Updated `/index.html` platform, timeline, and knowledge copy to distinguish live product routes from the still-growing knowledge center
+- Updated `/assets/css/site.css` to add a reusable availability band plus shared live-now and growing-next status chips
+- Updated CODEX copy, design, architecture, task, and log docs for the new `DII-018` credibility/availability pass
+- Updated `/index.html` products section to add a factual proof band above the product router
+- Updated `/assets/css/site.css` to add reusable proof-band, proof-card, and proof-icon patterns
+- Updated CODEX copy, design, architecture, task, and log docs for the completed `DII-019` trust-cue pass
 
 ## QA Notes
 - A local Chrome desktop/mobile/reduced-motion regression is now recorded after the CSS/JS extraction
 - The five public product destinations were spot-checked and returned `200`; NorthStar redirects from `/wms` to `/users/sign_in`
-- Firefox desktop automation timed out locally, so hosted human QA on Firefox/Safari/Edge still remains open
+- Firefox desktop automation initially timed out locally during `DII-014`, but the hosted `DII-015` pass now records Firefox desktop as PASS after Playwright Firefox was installed
 - Hosted smoke work first exposed deployment drift, then `DII-016` fixed it by pushing the current build to `origin/main`
 - `https://dii.ltd/` now serves the extracted asset build and returns `200` for both `/assets/css/site.css` and `/assets/js/site.js`
+- The hosted browser-driven pass now records PASS results for Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation
+- WebKit desktop and WebKit iPhone-size hosted passes now also record PASS after staging missing runtime libs into Playwright's WPE bundle
+- Only the physical phone-browser pass remains blocked because no real device is attached to this environment
+- The homepage now makes live-versus-growing availability clearer, especially around the knowledge layer
+- The product-selection flow now surfaces factual trust cues before visitors choose a route

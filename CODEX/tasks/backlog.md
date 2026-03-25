@@ -58,6 +58,33 @@
 - Dependencies: DII-002
 - Notes: Completed on 2026-03-22. Products, workflow, knowledge, principles, and contact copy now read more like a finished company site.
 
+### DII-018
+- Title: Clarify what is live now versus still growing across the homepage
+- Description: Add a reusable availability pattern and tighten copy so visitors can distinguish live product routes from the still-expanding knowledge layer.
+- Area: Copy / conversion / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-011
+- Notes: Completed on 2026-03-24 in `/index.html` and `/assets/css/site.css`. Added a live-versus-growing availability band in the platform section, made the knowledge section more explicit about being the next public layer DII is expanding, and added reusable status-chip styling for future availability cues.
+
+### DII-019
+- Title: Add stronger proof and trust cues near the product-selection flow
+- Description: Introduce more concrete credibility signals near the hero, products, or contact route using only facts the site can support today, so visitors get more confidence without inflated claims.
+- Area: Conversion / credibility / copy
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-018 preferred first
+- Notes: Completed on 2026-03-24 in `/index.html` and `/assets/css/site.css`. Added a reusable proof band above the product router using only supported facts: five live product routes, named contact inboxes, and the public London HQ listing.
+
+### DII-020
+- Title: Sharpen product differentiation by audience, problem, and outcome
+- Description: Make it easier for visitors to understand which product is for them by tightening the product-intro copy, route labels, and product-card positioning around specific buyer contexts and outcomes.
+- Area: Conversion / IA / copy
+- Priority: P1 High
+- Status: TODO
+- Dependencies: DII-019 preferred first
+- Notes: The homepage now has clearer trust cues, so the next leverage point is reducing hesitation between Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
+
 ## P2 Medium
 
 ### DII-006
@@ -128,9 +155,18 @@
 - Description: Verify the deployed site in Firefox, Safari, Edge, and at least one real phone browser to close the remaining matrix gap after the local Chrome regression.
 - Area: QA / cross-browser compatibility
 - Priority: P2 Medium
-- Status: TODO
+- Status: DONE
 - Dependencies: DII-014
-- Notes: Deployment is now synced after `DII-016`; the remaining gap is human hosted QA in Firefox, Safari, Edge, and at least one real phone browser.
+- Notes: Completed on 2026-03-24 as the best-available hosted matrix from this Linux environment: Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation all passed against `https://dii.ltd/`. The true Safari/WebKit and physical-phone slice could not be executed here and is now tracked separately as `DII-017`.
+
+### DII-017
+- Title: Record the remaining physical-phone hosted QA after WebKit coverage
+- Description: Run a real manual pass on the deployed site in Safari or another true WebKit browser plus at least one physical phone browser, then log any browser-specific regressions or confirm the site is clean.
+- Area: QA / external browser coverage
+- Priority: P2 Medium
+- Status: BLOCKED
+- Dependencies: DII-015
+- Notes: Updated on 2026-03-24. True WebKit coverage is now recorded from this machine after locally staging the missing Playwright WPE runtime libraries, and both WebKit desktop plus WebKit iPhone-size emulation passed against `https://dii.ltd/`. The remaining blocker is only the physical phone-browser slice because no attached device is available here.
 
 ### DII-010
 - Title: Add DII Accounts to the live ecosystem

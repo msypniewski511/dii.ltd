@@ -143,3 +143,30 @@
 - Status: DONE
 - Dependencies: Current local homepage changes
 - Notes: Completed on 2026-03-24 by pushing commit `94b83eb` to `origin/main`. Verified that `https://dii.ltd/assets/css/site.css` and `https://dii.ltd/assets/js/site.js` return `200`, and confirmed in hosted Chrome and Edge smoke checks that the extracted asset tags plus the NorthStar destination are present on the live page.
+
+## DII-015
+- Title: Record a hosted manual cross-browser pass outside local Chrome automation
+- Description: Recorded the best-available hosted browser matrix from this environment after deployment sync and confirmed the live site behaves correctly outside the earlier local Chrome-only coverage.
+- Area: QA / cross-browser compatibility
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: DII-014
+- Notes: Completed on 2026-03-24 using hosted browser-driven checks in Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation against `https://dii.ltd/`. No hosted regression was reproduced. The remaining true Safari/WebKit and physical-phone slice is now tracked as `DII-017`.
+
+## DII-018
+- Title: Clarify what is live now versus still growing across the homepage
+- Description: Added a reusable availability pattern plus more explicit knowledge-layer copy so the homepage is clearer about which parts of the ecosystem are available today and which part is still expanding next.
+- Area: Copy / conversion / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-011
+- Notes: Completed on 2026-03-24 in `/index.html` and `/assets/css/site.css`. Added a two-card availability band in the platform section, introduced reusable `status-chip` styling, and reframed the knowledge section as a growing next layer rather than an equally live product surface.
+
+## DII-019
+- Title: Add stronger proof and trust cues near the product-selection flow
+- Description: Added factual trust signals close to the product-selection area so visitors see concrete proof points before they choose a route.
+- Area: Conversion / credibility / copy
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-018 preferred first
+- Notes: Completed on 2026-03-24 in `/index.html` and `/assets/css/site.css`. Added a reusable three-card proof band above the product router covering five live product routes, named contact inboxes, and the public London HQ listing.

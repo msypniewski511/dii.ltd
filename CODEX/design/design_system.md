@@ -34,6 +34,8 @@
 - Section eyebrow pill
 - Gradient primary button
 - Frosted secondary surfaces
+- Reusable availability band with live-now and growing-next status chips
+- Reusable proof band with icon-led factual trust cards
 - Shared focus-visible ring for buttons, route pills, sidebar links, and contact links
 - Fixed skip link that stays hidden until keyboard focus
 - Fixed page-level decorative accent using an SVG infinity stroke, layered glow trails, and blurred color glows
@@ -60,6 +62,8 @@
 - The live CSS is now extracted, but it still lives as one large page-level stylesheet rather than a more modular component system.
 - Keyboard states are improved, but they still need a manual browser pass across desktop and mobile assistive flows.
 - The new visual boards still rely on a limited screenshot set, so operations-specific visuals are represented more by structured cards than by dedicated product imagery.
+- The homepage now distinguishes live routes from the growing knowledge layer more clearly, but the next trust gap is proof rather than availability labeling.
+- The homepage now has better factual trust cues, so the next conversion gap is clearer product differentiation rather than basic proof.
 
 ## Rule For Future Design Changes
 - Keep the current visual language unless the user requests a redesign.

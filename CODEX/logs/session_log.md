@@ -52,3 +52,20 @@
 - Completed `DII-016` by pushing commit `94b83eb` to `origin/main`.
 - Verified deployment sync by confirming `https://dii.ltd/assets/css/site.css` and `https://dii.ltd/assets/js/site.js` now return `200`.
 - Re-ran hosted Chrome and Edge smoke checks after the push and confirmed the live page now includes the extracted asset tags and `https://www.northstarwms.co/wms`.
+- Resumed `DII-015` after deployment sync and re-read the startup CODEX docs before the hosted pass.
+- Installed the Playwright Firefox browser bundle locally, confirmed Firefox now launches in this environment, and used it in the hosted matrix.
+- Recorded a hosted browser-driven matrix against `https://dii.ltd/` covering Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation; all recorded scenarios passed.
+- Confirmed the hosted pass exercises the extracted asset tags, hero carousel controls, skip link, sidebar `aria-current` updates, DII Accounts route pill, timeline visibility, contact block visibility, mobile menu states, and knowledge panel visibility without reproducing a regression.
+- Confirmed that true Safari/WebKit coverage is still unavailable from this Linux environment because Playwright WebKit cannot launch without extra system libraries, and no physical phone browser is attached here.
+- Split the remaining external-only QA gap into follow-up task `DII-017`.
+- Resumed `DII-017` and re-read the startup CODEX docs before attempting to unblock the remaining external QA gap.
+- Downloaded the missing Ubuntu runtime libraries into `/home/maciej/pwtemp/webkit-libs/` and staged the needed shared objects into the Playwright `minibrowser-wpe/sys/lib` runtime so Playwright WebKit could launch locally without system-wide package installs.
+- Recorded a hosted WebKit desktop pass and a hosted WebKit iPhone-size mobile-emulation pass against `https://dii.ltd/`; both passed without reproducing a browser-specific regression.
+- Checked for a device path using `adb` and confirmed that no physical phone browser is available from this environment.
+- Narrowed `DII-017` so the only remaining blocker is the real physical phone-browser pass.
+- Selected the next best unblocked repo-local task after `DII-017` stalled on hardware: clarify what is live today versus still growing next across the homepage.
+- Completed `DII-018` by adding a reusable live-versus-growing availability band in the platform section, tightening timeline and knowledge-layer copy, and making the growing-next status explicit inside the knowledge section.
+- Ran a local browser sanity pass in desktop and mobile Chrome against a temporary `http.server`; the new availability band and knowledge status note rendered correctly with no console or page errors.
+- Started `DII-019` after re-reading the startup CODEX files and chose the product-selection area as the highest-leverage place for factual trust cues.
+- Completed `DII-019` by adding a reusable three-card proof band above the product router covering five live product routes, named contact inboxes, and the public London HQ listing.
+- Ran another local Chrome desktop/mobile sanity pass against a temporary `http.server`; the proof band rendered correctly with no console or page errors.

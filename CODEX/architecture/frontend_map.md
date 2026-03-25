@@ -58,15 +58,16 @@
 - Key classes: `.hero`, `.hero-copy`, `.hero-actions`, `.hero-action-note`, `.hero-point`, `.hero-art`, `.hero-carousel`, `.hero-slide`
 
 ### `#platform`
-- Section head plus four explanatory cards and a four-metric row, now including a live finance layer
+- Section head plus a reusable two-card availability band, four explanatory cards, and a four-metric row, now including a live finance layer
 - Key classes: `.platform-band`, `.grid.grid-4`, `.card`, `.metric-row`, `.metric`
 
 ### `#products`
-- Product-intent intro, a routing strip for common visitor goals, and five product cards with status pills, bullet lists, and outbound buttons
+- Product-intent intro, a three-card proof band, a routing strip for common visitor goals, and five product cards with status pills, bullet lists, and outbound buttons
 - The live naming map is Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts, matching the current destination brands or live route labels
 - Warewise currently points to the custom domain `https://www.northstarwms.co/wms`
 - The final finance card spans the full product grid width to position DII Accounts as the layer that later connects planning, operations, and reporting
-- Key classes: `.products-grid`, `.product-router`, `.route-pill`, `.product-card`, `.product-card-featured`, `.product-head`, `.product-status`, `.product-list`
+- The section now surfaces factual trust cues before the route pills: five live product routes, named inboxes, and the public London HQ listing
+- Key classes: `.proof-band`, `.proof-card`, `.proof-kicker`, `.products-grid`, `.product-router`, `.route-pill`, `.product-card`, `.product-card-featured`, `.product-head`, `.product-status`, `.product-list`
 
 ### `#how-it-works`
 - Intro plus five alternating timeline rows that now explicitly include a finance path
@@ -76,9 +77,9 @@
 - Mobile behavior: below `920px`, each row reflows into a stacked two-card layout with the marker in the left rail and the main step card shown first
 
 ### `#knowledge`
-- Left card describing future content direction
+- Left card describing the growing-next content direction with an explicit availability note
 - Right panel now uses a real knowledge board with hero media, topic cards, and query chips instead of a browser-wireframe placeholder
-- Key classes: `.knowledge-split`, `.feature-list`, `.feature-item`, `.knowledge-panel`, `.knowledge-board`, `.knowledge-hero-card`, `.knowledge-topic-grid`, `.knowledge-query`
+- Key classes: `.knowledge-split`, `.feature-list`, `.feature-item`, `.knowledge-panel`, `.knowledge-board`, `.knowledge-hero-card`, `.knowledge-topic-grid`, `.knowledge-query`, `.section-status`
 
 ### `#principles`
 - Four compact brand-principle blocks
@@ -96,6 +97,8 @@
   - decorative background: `.page-infinity`, `.page-infinity-svg`
   - navigation: `.sidebar`, `.nav`, `.mini-link`
   - actions: `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-ghost`
+  - availability cues: `.availability-band`, `.availability-card`, `.status-chip`, `.section-status`
+  - trust cues: `.proof-band`, `.proof-card`, `.proof-icon`, `.proof-kicker`
   - content blocks: `.card`, `.metric`, `.pillar`, `.contact-card`, `.contact-lead`
   - routing: `.products-grid`, `.product-router`, `.route-pill`
   - timeline: `.timeline-*`, `.timeline-visual*`, `.timeline-preview-*`
@@ -130,8 +133,8 @@
 - CSS and JS are now extracted, but they still live as one large stylesheet and one large script without module boundaries
 - `carousel` logic assumes `#heroCarousel` exists before event binding
 - There is still no bundling or cache-busting asset pipeline; the page relies on static relative asset paths
-- A full hosted human QA matrix in Firefox, Safari, Edge, and a real phone browser is still unrecorded; the local Firefox desktop automation attempt timed out during the 2026-03-24 regression pass
-- As of 2026-03-24, the hosted GitHub Pages deployment is back in sync with the repo and serves `/assets/css/site.css` plus `/assets/js/site.js`; the remaining gap is human browser coverage rather than deployment drift
+- A best-available hosted matrix is now recorded for Chrome, Edge, Firefox, Android-size mobile emulation, iPhone-size mobile emulation, WebKit desktop, and WebKit iPhone-size mobile emulation; only true physical-phone coverage remains unrecorded from this environment
+- As of 2026-03-24, the hosted GitHub Pages deployment is back in sync with the repo and serves `/assets/css/site.css` plus `/assets/js/site.js`; the remaining QA gap is now real-device phone access rather than deployment drift
 
 ## Reuse Assets
 - `/CODEX/design/ui_playbook.md` stores the reusable Codex-facing design instructions for this visual language.
