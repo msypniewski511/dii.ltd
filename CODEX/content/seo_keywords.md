@@ -43,3 +43,4 @@
 - Keep keyword usage natural.
 - Canonical, social tags, schema, and crawl files were added on 2026-03-23, so the next SEO step is content architecture rather than homepage metadata basics.
 - Homepage metadata and visible product copy were aligned on 2026-03-23 so the public naming map now matches the current outbound destination brands more closely.
+- `DII-025` on 2026-03-27 moved the knowledge section toward more search-style discovery framing, so future content work should preserve example query language such as startup idea validation, IFV evidence, rota and warehouse coordination, and invoicing/reporting simplification.

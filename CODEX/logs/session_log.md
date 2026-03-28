@@ -69,3 +69,62 @@
 - Started `DII-019` after re-reading the startup CODEX files and chose the product-selection area as the highest-leverage place for factual trust cues.
 - Completed `DII-019` by adding a reusable three-card proof band above the product router covering five live product routes, named contact inboxes, and the public London HQ listing.
 - Ran another local Chrome desktop/mobile sanity pass against a temporary `http.server`; the proof band rendered correctly with no console or page errors.
+
+## 2026-03-27
+- Re-read the required startup CODEX files before starting new work.
+- Selected `DII-020` after the user explicitly requested it and confirmed the task still matched the highest-priority open repo-local improvement.
+- Tightened the products intro copy and route-pill labels so the product-selection flow now starts from clearer audience/problem contexts instead of generic category names.
+- Added reusable audience/problem/outcome fit rows inside each product card to separate Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts without redesigning the page.
+- Updated the timeline routing copy so the founder, IFV, operations, warehouse, and finance split stays consistent outside the products section.
+- Ran a targeted local browser sanity pass at `#products`; Firefox desktop and iPhone 13 emulation both rendered the new route labels and `.product-fit` rows successfully.
+- Re-read the required startup CODEX files before starting `DII-021`.
+- Replaced the mailto-only guided enquiry CTA with an in-page enquiry workspace inside the contact panel.
+- Added client-side routing logic so the guided enquiry now recommends the right inbox, prepares a structured message, and supports both copy and mailto-draft actions without adding a backend.
+- Verified the new contact flow locally with Firefox desktop/mobile-size renders, `node --check` on `/assets/js/site.js`, and a headless Chrome same-origin DOM harness that confirmed the inbox recommendation updates correctly after the enquiry type changes.
+- Re-read the required startup CODEX files before starting `DII-022`.
+- Tightened the hero H1, lede, and CTA guidance note so the first screen now signals five live routes and a clearer audience split earlier.
+- Reframed the hero audience cards around new founders, visa-focused founders, and operations/finance teams instead of broader ecosystem language.
+- Replaced the abstract top hero summary treatment with a factual proof grid covering live routes, named inboxes, London HQ, and the growing-next knowledge layer.
+- Ran a targeted local hero sanity pass at `#hero`; Firefox desktop and Firefox mobile-size renders both showed the new proof grid and buyer-fit cards without a first-screen layout break.
+- Re-read the required startup CODEX files before starting `DII-023`.
+- Tightened the contact-section intro, general contact card, guided-enquiry lead copy, guided-enquiry helper note, and guided status messages so the first email now reads as a clearer starting brief.
+- Added a reusable three-card reassurance strip under the contact shell to explain how visitors can start with the closest route, how DII uses the context, and why the first email should keep the prepared summary.
+- Ran a targeted local contact reassurance pass at `#contact`; Firefox desktop and Firefox mobile-size renders both showed the new reassurance cards and guided note without a layout break.
+- Verified `/assets/js/site.js` with `node --check`, then ran a temporary Playwright Firefox interaction harness from `/home/maciej/pwtemp/` to confirm the guided enquiry still routes IFV sales to `sales.ifv@dii.ltd`, switches legal enquiries to `legal@dii.ltd`, and keeps the new starting-brief status copy after edits.
+- Re-read the required startup CODEX files before starting `DII-024`.
+- Reworked Step 02 of the journey section so the routing layer now shows five named live routes instead of a mostly descriptive summary.
+- Used real screenshots for Startup Business Builder, IFV Builder, and DII Accounts where the repo already had them, then used route-specific operation and warehouse icon cards for Rotaplan and Warewise so all five live routes appear in one proof board.
+- Made the new journey proof cards jump directly to the matching product anchors so the mid-page proof also acts as a route handoff.
+- Ran a targeted local journey proof pass at `#how-it-works`; Firefox desktop and Firefox mobile-size renders both showed the five-card proof board, and a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` confirmed all five `.timeline-proof-link` cards point to the expected product IDs.
+- Re-read the required startup CODEX files before starting `DII-025`.
+- Reframed the knowledge section around search-style discovery language while keeping the growing-next status explicit.
+- Tightened the knowledge topic titles and CTA so the section now previews concrete guide, explainer, solution, and finance-content intent instead of reading mostly like roadmap copy.
+- Added four example discovery-path cards for founder, visa, operations, and finance questions so the knowledge layer shows how likely search queries map to the right DII route.
+- Ran a targeted local knowledge discovery pass at `#knowledge`; Firefox desktop and Firefox mobile-size renders both showed the new `.knowledge-path-grid` without a layout break.
+- Verified the knowledge update with a temporary Playwright Firefox content harness from `/home/maciej/pwtemp/` that confirmed the new knowledge-path heading text, four example path-card titles, and the updated CTA copy.
+- Re-read the required startup CODEX files before starting `DII-026`.
+- Added a two-card operations-proof strip below the product router so Rotaplan and Warewise now show route-specific workflow evidence before the visitor reaches the individual product cards.
+- Replaced the generic Rotaplan and Warewise icon thumbs in the Step 02 journey proof board with structured workflow signal boards, then split the Step 03 snapshot back into separate Rotaplan and Warewise cards.
+- Reused one shared route-signal visual language across the products section and the journey so the weaker operations routes gain more concrete proof without inventing screenshots or changing the stack.
+- Ran a targeted local operations proof pass at `#products` and `#how-it-works`; Firefox desktop and Firefox mobile-size renders both showed the new operations proof strip and journey boards without a layout break.
+- Verified the operations update with a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` that confirmed two operations proof cards render in the products section, two route-signal boards render inside the live journey proof grid, and Step 03 now exposes five snapshot cards including Rotaplan and Warewise separately.
+- Re-read the required startup CODEX files before starting `DII-027`.
+- Tightened the platform overview heading, intro, availability messaging, four support cards, and metric row so the section now describes clearer founder decisions, lower day-to-day friction, stronger finance control, and earlier route recognition.
+- Tightened the principles intro and four pillar descriptions so they now explain the results DII is aiming for rather than leaning mostly on broad values language.
+- Kept the implementation copy-only inside the existing structure, avoiding new sections or layout changes.
+- Ran a targeted local platform-and-principles pass at `#platform` and `#principles`; Firefox desktop and Firefox mobile-size renders both showed the longer outcome-first copy without a layout break.
+- Verified the copy update with a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` that confirmed the updated platform heading, the new platform metric labels, and the revised principles intro text render on the live page.
+
+## 2026-03-28
+- Re-read the required startup CODEX files before starting `DII-028`.
+- Added a route-handoff head plus four platform handoff cards under the platform overview so visitors can move straight to founder, operations, finance, knowledge, or guided-enquiry destinations.
+- Kept the new action layer intentionally lighter than the products router by using compact route chips instead of another full comparison block.
+- Added a reusable `.platform-handoff-*` style pattern in `/assets/css/site.css` and extended the shared focus-visible selector to cover the new handoff links.
+- Ran a targeted local platform handoff pass at `#platform`; Firefox desktop and Firefox mobile-size renders both showed the new handoff cards without a layout break.
+- Verified the handoff update with a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` that confirmed four platform handoff cards render and seven route chips point to `#startup-builder`, `#ifv-builder`, `#rotaplan`, `#warewise`, `#dii-accounts`, `#knowledge`, and `#contact`.
+- Re-read the required startup CODEX files before starting `DII-029`.
+- Updated the hero guidance note and buyer-fit cards so the first screen now hands visitors directly into Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
+- Kept the new hero action layer lighter than the products router by adding compact route chips inside the existing buyer-fit cards instead of another standalone handoff block.
+- Added reusable `.hero-point-links` and `.hero-point-link` styling in `/assets/css/site.css` and extended the shared focus-visible selector to cover the new hero route chips.
+- Ran a targeted local hero handoff pass at `#hero`; Firefox desktop and Firefox mobile-size renders both showed the new direct route chips without a first-screen layout break.
+- Verified the hero handoff update with a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` that confirmed three buyer-fit cards render, five `.hero-point-link` chips are present, and those chips point to `#startup-builder`, `#ifv-builder`, `#rotaplan`, `#warewise`, and `#dii-accounts`.

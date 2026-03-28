@@ -99,3 +99,54 @@
 - Only the physical phone-browser pass remains blocked because no real device is attached to this environment
 - The homepage now makes live-versus-growing availability clearer, especially around the knowledge layer
 - The product-selection flow now surfaces factual trust cues before visitors choose a route
+
+## 2026-03-27
+- Updated `/index.html` product-intro copy so the five routes are framed by starting point instead of a generic product list
+- Updated `/index.html` route-pill labels and product-card copy to separate founder planning, IFV preparation, shift planning, warehouse control, and finance operations more clearly
+- Updated `/index.html` timeline routing copy so the product split stays consistent outside the main products section
+- Updated `/assets/css/site.css` to add reusable `.product-fit*` rows for audience/problem/outcome framing inside product cards
+- Updated CODEX architecture, content, design, task, decision, and log docs for the completed `DII-020` differentiation pass
+- Added follow-up task `DII-021` to improve the current mailto-only guided enquiry path
+- Updated `/index.html` so the hero guidance CTA now jumps to an in-page guided enquiry workspace and the contact panel now includes a structured enquiry form plus result state
+- Updated `/assets/css/site.css` to add reusable guided enquiry layout, field, result-card, and status patterns
+- Updated `/assets/js/site.js` to recommend the right inbox, prepare a structured message, support clipboard copy, and generate a draft email link from the guided enquiry inputs
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-021` lead-capture pass
+- Added follow-up task `DII-022` to strengthen hero trust and differentiation above the fold
+- Updated `/index.html` hero copy so the first screen now signals five live routes earlier and separates the main audience groups more clearly
+- Updated `/index.html` top hero panel to replace the abstract summary treatment with factual above-the-fold proof cues
+- Updated `/assets/css/site.css` to add reusable hero fact styling plus route-label styling inside the hero audience cards
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-022` hero pass
+- Added follow-up task `DII-023` to clarify what happens after a guided enquiry or contact route
+- Updated `/index.html` contact intro, direct-inbox copy, guided-enquiry copy, and added a reusable three-card next-steps reassurance strip under the contact shell
+- Updated `/assets/css/site.css` to style `.contact-next-steps`, `.contact-step`, and `.contact-step-number`
+- Updated `/assets/js/site.js` guided-enquiry status copy so the prepared email is framed as the starting brief for the next conversation
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-023` contact-reassurance pass
+- Added follow-up task `DII-024` to strengthen product-specific proof in the journey section
+- Updated `/index.html` Step 02 of `#how-it-works` to add a five-route live proof board with named product cards and direct jumps to the matching product anchors
+- Updated `/assets/css/site.css` to add `.timeline-proof-grid` plus `.timeline-proof-link` hover/focus behavior for the new journey proof board
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-024` journey-proof pass
+- Added follow-up task `DII-025` to make the knowledge section feel more concrete and searchable
+- Updated `/index.html` knowledge copy so the growing-next content layer now previews search-style questions, more concrete topic titles, and a more specific CTA
+- Updated `/index.html` knowledge panel to add four example discovery-path cards for founder, visa, operations, and finance queries
+- Updated `/assets/css/site.css` to add `.knowledge-path-head`, `.knowledge-path-grid`, and `.knowledge-path-note` patterns with responsive collapse behavior
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-025` knowledge-discovery pass
+- Added follow-up task `DII-026` to strengthen operations-route proof where screenshot coverage is still weakest
+- Updated `/index.html` to add a two-card operations proof strip under the product router so Rotaplan and Warewise now show route-specific workflow evidence before the full product cards
+- Updated `/index.html` journey proof and Step 03 snapshot so Rotaplan and Warewise use structured workflow signal boards instead of generic icon-only treatment and appear as separate operations routes again
+- Updated `/assets/css/site.css` to add reusable `.operations-proof-*` and `.route-signal-*` patterns plus focus states and responsive layout for the new operations proof treatment
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-026` operations-proof pass
+- Added follow-up task `DII-027` to sharpen outcome specificity in the platform and principles sections
+- Updated `/index.html` platform overview copy so the section now speaks more directly about clearer founder decisions, lower operational drag, stronger finance control, and earlier route recognition
+- Updated `/index.html` principles intro and pillar copy so the parent-brand message now describes clearer outcomes rather than staying mostly values-led
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-027` parent-brand outcome pass
+- Added follow-up task `DII-028` to make the platform overview more actionable with route-level handoff
+
+## 2026-03-28
+- Updated `/index.html` platform overview to add a route-handoff head and four compact handoff cards that jump directly to founder, operations, finance, knowledge, and guided-enquiry destinations
+- Updated `/assets/css/site.css` to add reusable `.platform-handoff-*` styles and focus-visible support for the new platform route chips
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-028` platform-handoff pass
+- Added follow-up task `DII-029` to make the hero buyer-fit cards more actionable with direct route handoff
+- Updated `/index.html` hero guidance copy and buyer-fit cards so the first screen now includes compact direct route chips for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts
+- Updated `/assets/css/site.css` to add reusable `.hero-point-links` and `.hero-point-link` styles plus focus-visible support for the new hero handoff chips
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-029` hero-handoff pass
+- Added follow-up task `DII-030` to add stronger factual proof near the contact decision

@@ -170,3 +170,93 @@
 - Status: DONE
 - Dependencies: DII-018 preferred first
 - Notes: Completed on 2026-03-24 in `/index.html` and `/assets/css/site.css`. Added a reusable three-card proof band above the product router covering five live product routes, named contact inboxes, and the public London HQ listing.
+
+## DII-020
+- Title: Sharpen product differentiation by audience, problem, and outcome
+- Description: Tightened the product-selection flow so visitors can distinguish founder planning, visa preparation, shift planning, warehouse control, and finance operations faster.
+- Area: Conversion / IA / copy
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-019 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added clearer starting-context route pills plus reusable audience/problem/outcome fit rows inside each product card.
+
+## DII-021
+- Title: Make the guided enquiry path easier than raw `mailto:` links
+- Description: Replaced the mailto-only fallback enquiry path with an on-page guided enquiry tool that recommends the right inbox and prepares a structured message for email or clipboard use.
+- Area: Conversion / UX / lead capture
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-020 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html`, `/assets/css/site.css`, and `/assets/js/site.js`, with related CODEX updates. The guided enquiry now supports inbox recommendation, copy-to-clipboard, and mailto-draft generation.
+
+## DII-022
+- Title: Strengthen hero trust and differentiation above the fold
+- Description: Tightened the first screen so the hero itself now carries clearer buyer-fit language and factual live-now proof cues before visitors scroll.
+- Area: Conversion / IA / copy
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-021 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. The hero now signals five live routes more clearly, separates key audience types faster, and surfaces factual trust cues inside the top hero panel.
+
+## DII-023
+- Title: Clarify what happens after a guided enquiry or contact route
+- Description: Reduced contact hesitation by explaining how direct inbox messages and guided enquiries become the starting point for the next conversation.
+- Area: Conversion / copy / lead capture
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-022 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html`, `/assets/css/site.css`, and `/assets/js/site.js`, with related CODEX updates. The contact section now explains the first step more clearly, adds a reusable three-step reassurance strip, and frames the guided enquiry output as the starting brief DII can route.
+
+## DII-024
+- Title: Add stronger product-specific proof in the journey section
+- Description: Made the mid-page journey feel more concrete by showing the five live routes as named product cards inside `#how-it-works` rather than leaving that step mostly descriptive.
+- Area: Conversion / proof / design
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-023 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Step 02 now includes a five-route live proof board, uses real screenshots where available, and jumps directly to the matching product cards.
+
+## DII-025
+- Title: Make the knowledge section feel more concrete and searchable
+- Description: Reworked the knowledge section so it previews more specific search-style questions, topic routes, and discovery paths instead of staying mostly strategic.
+- Area: SEO / content / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-024 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. The knowledge section now uses explicit search-intent copy, example discovery-path cards, and a more specific CTA while still stating that the layer is growing next.
+
+## DII-026
+- Title: Strengthen operations-route proof where screenshot coverage is still weakest
+- Description: Reworked the weaker operations proof areas so Rotaplan and Warewise now show clearer route-specific signals instead of relying on generic icon-led treatment.
+- Area: Conversion / design / proof
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-025 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added a reusable operations-proof strip in the products section, replaced icon-only journey thumbs with structured workflow signal boards for Rotaplan and Warewise, and split the Step 03 snapshot back into distinct Rotaplan and Warewise cards.
+
+## DII-027
+- Title: Sharpen outcome specificity in the platform and principles sections
+- Description: Reworked the broader parent-brand sections so they explain clearer end-state outcomes for founders, operators, and finance teams.
+- Area: Copy / conversion
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-026 preferred first
+- Notes: Completed on 2026-03-27 in `/index.html`, with related CODEX updates. The platform overview and principles sections now use clearer outcome-first language instead of leaning mostly on abstract ecosystem wording.
+
+## DII-028
+- Title: Make the platform overview more actionable with route-level handoff
+- Description: Reworked the platform section so it not only explains the ecosystem but also hands visitors directly to the most relevant route or next action.
+- Area: Conversion / UX
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-027 preferred first
+- Notes: Completed on 2026-03-28 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added a platform handoff head and four route-handoff cards linking directly to founder, operations, finance, knowledge, and guided-enquiry destinations.
+
+## DII-029
+- Title: Make the hero buyer-fit cards more actionable with direct route handoff
+- Description: Reworked the first-screen buyer-fit area so visitors can move directly from audience recognition into the closest DII route without waiting for the products section.
+- Area: Conversion / UX
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-028 preferred first
+- Notes: Completed on 2026-03-28 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added compact direct route chips to the hero buyer-fit cards for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.

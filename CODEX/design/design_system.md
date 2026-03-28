@@ -36,14 +36,26 @@
 - Frosted secondary surfaces
 - Reusable availability band with live-now and growing-next status chips
 - Reusable proof band with icon-led factual trust cards
-- Shared focus-visible ring for buttons, route pills, sidebar links, and contact links
+- Reusable platform handoff row for turning broad ecosystem outcomes into direct route choices
+- Reusable operations proof strip with route-specific workflow summaries for Rotaplan and Warewise
+- Reusable hero fact grid for compact above-the-fold proof cues
+- Reusable hero buyer-fit handoff chips for direct first-screen route jumps
+- Reusable product-fit rows that label who a route is for, what problem it solves, and what outcome it aims to deliver
+- Reusable timeline proof grid with named route cards and direct product jump targets
+- Reusable route-signal boards for showing structured workflow cues where dedicated screenshots are still unavailable
+- Reusable knowledge discovery-path cards for previewing search-style questions before a full content library exists
+- Reusable guided enquiry workspace with structured fields, result cards, and copy-or-draft actions
+- Reusable contact next-step cards that explain how the first email is routed and used as the starting brief
+- Shared focus-visible ring for buttons, route pills, sidebar links, contact links, and compact route-handoff chips
 - Fixed skip link that stays hidden until keyboard focus
 - Fixed page-level decorative accent using an SVG infinity stroke, layered glow trails, and blurred color glows
 - Rounded cards with top highlight rule
 - Split layouts for hero, knowledge, and contact
 - Alternating timeline cards with center marker
 - Structured timeline summary boards for routes, product previews, and ecosystem layers
+- Platform handoff cards with compact route chips
 - Knowledge panel with hero media, topic cards, and rounded query chips
+- Operations proof cards paired with structured route-signal boards
 - Compact route pills for product selection and guided conversion
 - Full-width featured product card for the finance layer
 
@@ -61,9 +73,9 @@
 ## Current Design Gaps
 - The live CSS is now extracted, but it still lives as one large page-level stylesheet rather than a more modular component system.
 - Keyboard states are improved, but they still need a manual browser pass across desktop and mobile assistive flows.
-- The new visual boards still rely on a limited screenshot set, so operations-specific visuals are represented more by structured cards than by dedicated product imagery.
+- The new visual boards still rely on a limited screenshot set, but the operations routes now use structured workflow boards instead of generic icons where dedicated product imagery is absent.
 - The homepage now distinguishes live routes from the growing knowledge layer more clearly, but the next trust gap is proof rather than availability labeling.
-- The homepage now has better factual trust cues, so the next conversion gap is clearer product differentiation rather than basic proof.
+- The homepage now has clearer guided conversion, stronger first-screen proof, stronger operations-route proof, more outcome-specific parent-brand copy, a more actionable platform section, a more concrete journey section, a more search-oriented knowledge preview, and direct first-screen route handoff in the hero, so the next visible gap is supported proof near the contact decision rather than route clarity alone.
 
 ## Rule For Future Design Changes
 - Keep the current visual language unless the user requests a redesign.

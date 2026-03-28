@@ -13,6 +13,7 @@
 - Verify dots switch slides.
 - Verify autoplay pauses on hover and focus.
 - Verify hero CTA buttons point to the intended sections.
+- Verify the buyer-fit cards expose the intended direct route links and that those links jump to the matching product sections.
 
 ## Products
 - Verify all five external product links open the correct destinations.

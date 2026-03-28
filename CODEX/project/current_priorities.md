@@ -92,11 +92,61 @@
 - Outcome: the homepage now surfaces factual trust signals near the route-selection area, including five live product routes, named contact inboxes, and the public London HQ listing.
 - Files: `/index.html`, `/assets/css/site.css`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX_START_HERE.md`
 
+### DII-020 Sharpen product differentiation by audience, problem, and outcome
+- Status: DONE on 2026-03-27
+- Outcome: the products section now differentiates the five routes more clearly using tighter intro copy, clearer starting-context route pills, and reusable audience/problem/outcome fit rows inside each product card.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-021 Make the guided enquiry path easier than raw `mailto:` links
+- Status: DONE on 2026-03-27
+- Outcome: the contact panel now includes an on-page guided enquiry tool that recommends the right inbox, prepares a structured message, and gives visitors both copy and email-draft actions without depending entirely on a configured mail client.
+- Files: `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-022 Strengthen hero trust and differentiation above the fold
+- Status: DONE on 2026-03-27
+- Outcome: the hero now introduces five live routes more explicitly, separates the main audience types faster, and surfaces factual live-now cues before visitors scroll into the proof band below.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-023 Clarify what happens after a guided enquiry or contact route
+- Status: DONE on 2026-03-27
+- Outcome: the contact section now explains what happens after direct or guided contact using clearer first-step copy, a three-step reassurance strip, and guided-enquiry messaging that frames the first email as the starting brief.
+- Files: `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-024 Add stronger product-specific proof in the journey section
+- Status: DONE on 2026-03-27
+- Outcome: the journey section now includes a five-route live proof board inside Step 02, using real screenshots where available and direct jump targets to the matching product cards.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-025 Make the knowledge section feel more concrete and searchable
+- Status: DONE on 2026-03-27
+- Outcome: the knowledge section now uses more explicit search-intent copy, concrete topic titles, example discovery-path cards, and a more specific CTA while still clearly framing the layer as growing next.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-026 Strengthen operations-route proof where screenshot coverage is still weakest
+- Status: DONE on 2026-03-27
+- Outcome: the products and journey sections now give Rotaplan and Warewise route-specific proof using a reusable operations-proof strip plus structured workflow signal boards instead of relying on generic icon-only treatments.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-027 Sharpen outcome specificity in the platform and principles sections
+- Status: DONE on 2026-03-27
+- Outcome: the platform and principles sections now describe clearer end-state outcomes for founders, operators, and finance teams instead of leaning mostly on abstract ecosystem language.
+- Files: `/index.html`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/design_system.md`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-028 Make the platform overview more actionable with route-level handoff
+- Status: DONE on 2026-03-28
+- Outcome: the platform section now includes a dedicated route-handoff layer with direct jumps to founder, operations, finance, knowledge, and guided-enquiry destinations instead of ending on explanatory copy alone.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
+### DII-029 Make the hero buyer-fit cards more actionable with direct route handoff
+- Status: DONE on 2026-03-28
+- Outcome: the hero buyer-fit cards now move directly into Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts via compact first-screen jump links instead of acting as audience description only.
+- Files: `/index.html`, `/assets/css/site.css`, `/CODEX/architecture/frontend_map.md`, `/CODEX/content/*`, `/CODEX/design/*`, `/CODEX/testing/*`, `/CODEX/tasks/*`, `/CODEX/logs/*`, `/CODEX/decisions/decision_log.md`, `/CODEX_START_HERE.md`
+
 ## P1 High
 
-### DII-020 Sharpen product differentiation by audience, problem, and outcome
-- Area: Conversion / IA / copy
-- Why now: trust cues are stronger, but the remaining friction is decision clarity between the five live routes.
+### DII-030 Add stronger factual proof near the contact decision
+- Area: Conversion / trust
+- Why now: the first-screen route handoff is now clearer in both the hero and platform sections, but the contact area still relies more on structure and reassurance than on supported proof that reinforces why starting the conversation is a safe next step.
 
 ## P2 Medium
 

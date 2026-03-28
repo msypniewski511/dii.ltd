@@ -21,25 +21,35 @@ Persistent collaboration docs live in `/CODEX/`.
 - Live source of truth is `/index.html`.
 - The frontend now uses `/index.html` plus extracted live assets at `/assets/css/site.css` and `/assets/js/site.js`.
 - Root SEO/crawl files now include `/robots.txt`, `/sitemap.xml`, and `/google46d6e99a9bb78479.html`.
-- Primary experience is a scrollable one-page layout with a fixed sidebar, hero carousel, product cards, timeline summary boards, a structured knowledge panel, principles section, and contact block.
+- Primary experience is a scrollable one-page layout with a fixed sidebar, hero carousel, product cards, timeline summary boards, a structured knowledge panel, principles section, and contact block with a guided enquiry workspace.
 - A local browser-driven regression pass is now recorded after the CSS/JS extraction, including Chrome desktop, short mobile, Android-size mobile, and reduced-motion coverage.
 - As of 2026-03-24, `https://dii.ltd/` now serves the current extracted-asset repo state; `/assets/css/site.css` and `/assets/js/site.js` return `200` on the hosted domain.
 - A hosted browser-driven pass is now also recorded for Chrome desktop, Edge desktop, Firefox desktop, Android-size mobile emulation, and iPhone-size mobile emulation against `https://dii.ltd/`, with no live regression reproduced.
 - A hosted WebKit pass is now also recorded for desktop and iPhone-size mobile emulation against `https://dii.ltd/`, with no WebKit-specific regression reproduced.
+- The hero now carries above-the-fold proof and buyer-fit cues so visitors can see five live routes, named contact structure, and the main audience split before they reach the products section.
+- The hero buyer-fit cards now also act as direct first-screen route handoffs, using compact jump links to Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
 - The homepage now uses a reusable live-versus-growing availability pattern so visitors can see which ecosystem routes are live today and which layer is still expanding next.
 - The products section now includes a reusable factual proof band so visitors see five live routes, named inboxes, and the London HQ listing before they choose a product.
+- The products section now also uses a reusable audience-problem-outcome fit pattern so visitors can separate founder planning, IFV preparation, shift planning, warehouse control, and finance operations more quickly.
+- The products section now also includes a reusable operations-proof strip so Rotaplan and Warewise show route-specific workflow signals instead of relying only on surrounding copy.
+- The journey section now includes a reusable live route proof board so Step 02 shows five named product paths with real screenshots where available and direct jumps to the matching product cards.
+- The journey now also uses structured workflow signal boards for Rotaplan and Warewise where dedicated screenshots are still absent, and Step 03 separates those two operations routes again instead of collapsing them into one generic operations card.
+- The platform overview and principles sections now use more outcome-first language so the broader DII story points more directly to clearer decisions, lower friction, and stronger control.
+- The platform overview now also includes a direct route-handoff layer so the section no longer stops at explanation alone.
+- The knowledge section now previews search-style questions, more concrete topic paths, and example discovery routes so the growing-next layer feels more specific without pretending the article library is already fully live.
+- The contact section now explains what happens after direct or guided contact with clearer first-step copy, a three-step reassurance strip, and guided-enquiry messaging that treats the first email as the starting brief.
 - `tmp.html` is now an archived prototype with a visible non-production warning and cleaned closing HTML; do not treat it as live.
 - No `CODEX/` workspace existed before this bootstrap. Initial architecture, task, content, design, and testing docs were created on 2026-03-22.
 
 ## Active Priorities
-- `DII-020` Sharpen product differentiation by audience, problem, and outcome.
+- `DII-030` Add stronger factual proof near the contact decision.
 - `DII-017` Record the remaining physical-phone hosted QA after WebKit coverage was completed from this Linux environment.
 
 ## Current In-Progress Task
 - None.
 
 ## Recommended Next Task
-- `DII-020` Sharpen product differentiation by audience, problem, and outcome.
+- `DII-030` Add stronger factual proof near the contact decision.
 
 ## Recent Changes
 - Created `/CODEX/` workspace structure and seeded it with real findings from `/index.html`, `/tmp.html`, `/assets/images/`, `/CNAME`, and the current repository state.
@@ -65,6 +75,16 @@ Persistent collaboration docs live in `/CODEX/`.
 - Advanced `DII-017` by unblocking Playwright WebKit locally, recording hosted WebKit desktop and WebKit iPhone-size passes with no regression reproduced, and narrowing the remaining blocker to a true physical phone-browser pass.
 - Completed `DII-018` by adding a reusable live-versus-growing availability band, tightening knowledge-layer copy, and making the product-versus-content availability state clearer across the homepage.
 - Completed `DII-019` by adding a reusable proof band near the product-selection flow, using only supported facts already present on the homepage.
+- Completed `DII-020` by tightening product-intro copy, route-pill labels, and product-card framing around audience fit, core problem, and intended outcome.
+- Completed `DII-021` by replacing the mailto-only guided enquiry path with an on-page form that recommends the right inbox, prepares a structured message, and supports both copy and mailto-draft actions.
+- Completed `DII-022` by strengthening the hero with above-the-fold proof cues, clearer buyer-fit language, and factual live-now framing inside the top hero panel.
+- Completed `DII-023` by clarifying the post-contact flow with stronger first-step copy, a reusable three-step reassurance strip, and guided-enquiry status language that frames the prepared email as the starting brief.
+- Completed `DII-024` by turning Step 02 of the journey section into a five-route live proof board with real screenshots where available and direct jumps to the matching product cards.
+- Completed `DII-025` by making the knowledge section more search-oriented with clearer topic titles, example discovery paths, and a more specific CTA while keeping the growing-next framing.
+- Completed `DII-026` by adding an operations-proof strip near the products router and reusing structured workflow signal boards for Rotaplan and Warewise in the journey section where screenshots are still absent.
+- Completed `DII-027` by tightening the platform overview and principles sections around clearer founder, operations, finance, and learning outcomes instead of broader ecosystem-only wording.
+- Completed `DII-028` by turning the platform overview into a route-level handoff with compact direct links to the main product, knowledge, and guided-enquiry destinations.
+- Completed `DII-029` by turning the hero buyer-fit cards into direct first-screen route handoffs with compact jumps to the matching product sections.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.
