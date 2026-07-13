@@ -1,5 +1,11 @@
 # SEO Map
 
+## 2026-07-13 Address Correction
+- Homepage Organization JSON-LD now uses `264 North Circular Road`, `London`, `NW10 0JT`, `GB`.
+- Visible homepage address copy now matches the structured data.
+- `/sitemap.xml` `lastmod` is updated to `2026-07-13` for the public address correction.
+- No new standalone legal, privacy, terms, or contact pages were added in this pass.
+
 ## Current Baseline
 
 ### Page
@@ -22,15 +28,21 @@
   - `og:type`
   - `og:url`
   - `og:image`
+  - `og:image:type`
+  - `og:image:width`
+  - `og:image:height`
+  - `og:image:alt`
 - Twitter:
   - `twitter:card`
   - `twitter:title`
   - `twitter:description`
   - `twitter:image`
+  - `twitter:image:alt`
 - JSON-LD:
   - `Organization`
   - `WebSite`
   - `WebPage`
+  - `WebPage.hasPart` route entries for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts, each using a real homepage anchor URL and a factual homepage-supported description
 
 ### Crawl Files
 - `/robots.txt`: present
@@ -44,14 +56,14 @@
 ## Internal Linking
 - Internal links are all on-page anchor jumps
 - Product links go directly to external destinations rather than internal detail pages
-- No deeper content architecture exists yet inside this repo
+- The knowledge section now includes a homepage-first content roadmap that maps five planned content lanes to existing product anchors
+- No standalone article or content pages exist yet inside this repo
 
 ## SEO Gaps
 - No dedicated content pages yet for long-tail discovery
 - Single-page architecture limits how much search intent can be captured without additional landing pages or knowledge content
-- `ILOVE.png` works as a baseline social image, but a more intentional branded social card would improve preview quality later
 
 ## Near-Term SEO Work
 - Keep the title, meta description, H1, and schema aligned as homepage copy evolves
-- Build a future content architecture around founder guidance, visa-path guidance, operations software, and finance/accountancy explanations
-- Consider a custom social preview image once the brand system is more fixed
+- Use the first knowledge paths roadmap as the source for future static content pages around founder planning, IFV preparation, operations workflows, warehouse control, and finance operations
+- Keep `/assets/images/dii-social-preview.png` aligned with homepage route names if the public product map changes

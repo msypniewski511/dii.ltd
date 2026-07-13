@@ -8,7 +8,8 @@ This folder is the persistent operating context for future Codex sessions workin
 - Live stylesheet: `/assets/css/site.css`
 - Live script: `/assets/js/site.js`
 - Domain config: `/CNAME`
-- Social preview image: `/ILOVE.png`
+- Social preview image: `/assets/images/dii-social-preview.png`
+- Logo/favicon image: `/ILOVE.png`
 - Crawl files: `/robots.txt`, `/sitemap.xml`
 - Search Console verification: `/google46d6e99a9bb78479.html`
 - Product screenshots: `/assets/images/`

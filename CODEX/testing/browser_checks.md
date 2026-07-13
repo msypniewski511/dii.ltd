@@ -1,5 +1,14 @@
 # Browser Checks
 
+## 2026-07-13 Address / GitHub Pages Readiness Pass
+- Local preview: `python3 -m http.server 4173 --bind 127.0.0.1`.
+- Desktop Chrome headless at `1440x1000`: homepage loaded, CSS loaded, all internal anchors resolved, contact block showed `264 North Circular Road, London, NW10 0JT, United Kingdom`, no old address appeared in rendered HTML/text, and no horizontal overflow was detected.
+- Mobile Chrome headless at `390x900`: homepage loaded, corrected address appeared, no old address appeared, CSS loaded, all internal anchors resolved, and no horizontal overflow was detected.
+- Mobile menu behavior: `#menuToggle` opened the sidebar, changed `aria-expanded` to `true`, updated the label to `Close navigation menu`, and Escape closed it with `aria-expanded="false"`.
+- Archived prototype `/tmp.html` at mobile width: corrected address appeared and the old address did not appear.
+- Console notes: pre-existing GSAP target warnings still appear during local Chrome checks; no serious console error was introduced by the address/hosting changes.
+- Static HTTP checks: `/`, `/assets/css/site.css`, `/assets/js/site.js`, `/assets/images/dii-social-preview.png`, and `/CNAME` returned successfully from local preview.
+
 ## Local Repo-State Pass
 - Date: 2026-03-24
 - Method: local browser-driven regression against `/index.html` served over `http://127.0.0.1`
@@ -151,6 +160,116 @@
   - the compact route chips render without a first-screen layout break on desktop and mobile-size viewports
   - the Playwright harness confirmed three hero buyer-fit cards, five `.hero-point-link` chips, and the expected product anchors: `#startup-builder`, `#ifv-builder`, `#rotaplan`, `#warewise`, and `#dii-accounts`
   - the route labels now read `Closest route`, `Closest route`, and `Closest routes` across the three buyer-fit cards
+
+## Targeted Local Contact Proof Pass
+- Date: 2026-04-17
+- Method: local contact-section proof check against `http://127.0.0.1:4175/#contact`
+- Coverage recorded:
+  - Chromium desktop `1440x1300`: PASS
+  - Chromium mobile-size `390x1200`: PASS
+  - `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`: PASS
+  - `git diff --check`: PASS
+- Checks exercised:
+  - the new `.contact-proof-strip` renders beside the contact decision on desktop and mobile-size viewports
+  - the proof strip exposes four supported facts: five live routes, named inbox paths, London HQ listing, and structured first brief
+  - all seven direct `mailto:` links remain present in the contact section
+  - the contact section keeps one `h2`, existing `h3`/`h4` heading hierarchy, four direct contact cards, and the guided enquiry form
+  - focus styling remains visible on contact `mailto:` links
+  - no horizontal overflow or browser console errors were found in the checked viewports
+  - the guided enquiry still routes IFV sales to `sales.ifv@dii.ltd`, switches legal enquiries to `legal@dii.ltd`, and keeps a generated `mailto:` draft link
+
+## Targeted Local Knowledge Roadmap Pass
+- Date: 2026-04-17
+- Method: local knowledge-section roadmap check against `http://127.0.0.1:4176/#knowledge`
+- Coverage recorded:
+  - Chromium desktop `1440x1300`: PASS
+  - Chromium mobile-size `390x1200`: PASS
+  - `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`: PASS
+  - `git diff --check`: PASS
+- Checks exercised:
+  - the new `.knowledge-roadmap` renders at the knowledge jump target on desktop and mobile-size viewports
+  - five `.knowledge-route-card` entries render for founder planning, IFV preparation, operations workflows, warehouse control, and finance operations
+  - the roadmap links point to `#startup-builder`, `#ifv-builder`, `#rotaplan`, `#warewise`, and `#dii-accounts`
+  - the section still includes the `Growing next` status and explicitly says this is not a live article library yet
+  - heading order remains logical with one knowledge `h2`, roadmap `h3`, and route-card `h4` headings
+
+## Targeted Local Guided Enquiry Accessibility Pass
+- Date: 2026-04-17
+- Method: local guided-enquiry check against `http://127.0.0.1:4183/#guidedEnquiry`
+- Coverage recorded:
+  - Chromium desktop `1440x1100`: PASS
+  - Chromium mobile-size `390x900`: PASS
+  - `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`: PASS
+  - `git diff --check`: PASS
+- Checks exercised:
+  - the guided enquiry renders with explicit local email-preparation guidance
+  - route, need, and problem controls expose helper text through `aria-describedby`
+  - the prepared result is a labelled focusable region
+  - submitting the form moves focus to `#guidedEnquiryResult`
+  - IFV sales still routes to `sales.ifv@dii.ltd`
+  - legal enquiries still route to `legal@dii.ltd`
+  - generated `mailto:` draft links remain present and update with the recommended inbox
+  - keyboard tab order through the main guided enquiry fields remains intact
+  - no horizontal overflow or browser console errors were found in the checked viewports
+
+## Targeted Local Social Preview Metadata Pass
+- Date: 2026-04-17
+- Method: local metadata and page-load check against `http://127.0.0.1:4184/`
+- Coverage recorded:
+  - Chromium desktop `1280x900`: PASS for metadata consistency, image loading, and console errors
+  - `git diff --check`: PASS
+  - JSON-LD parse check: PASS
+  - Social image file check: PASS, `/assets/images/dii-social-preview.png` is 1200x630 and about 49 KB
+- Checks exercised:
+  - `og:image` and `twitter:image` both point to `https://dii.ltd/assets/images/dii-social-preview.png`
+  - Open Graph and Twitter title, description, and image alt text match
+  - Open Graph image type, width, and height are present
+  - referenced social image returns `200` from the local static server
+  - no browser console errors were found on page load
+- Follow-up:
+  - The same browser load check observed page-level horizontal overflow at `1280x900`; this is now tracked separately as `DII-035`.
+
+## Targeted Local Horizontal Overflow Pass
+- Date: 2026-04-18
+- Method: local page-level overflow check against `http://127.0.0.1:4185/`
+- Coverage recorded:
+  - Chromium desktop `1280x900`: PASS
+  - Chromium desktop `1320x900`: PASS
+  - Chromium desktop `1366x900`: PASS
+  - Chromium desktop `1440x1000`: PASS
+  - Chromium wide desktop `1680x1050`: PASS
+  - Chromium tablet/narrow desktop `1024x900`: PASS
+  - Chromium mobile-size `390x900`: PASS
+  - Chromium mobile-size `390x900` with mobile menu open: PASS
+  - `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`: PASS
+  - `git diff --check`: PASS
+- Root cause:
+  - `.main` used `width: 100%` while also being offset by the fixed `290px` sidebar, making the document wider than the viewport at narrow desktop widths.
+  - The hero two-column breakpoint stayed active too long for the fixed-sidebar content width, and the one-column `.hero-art` retained a wide-desktop aspect ratio that could derive extra width from `min-height`.
+- Checks exercised:
+  - `document.documentElement.scrollWidth` and `document.body.scrollWidth` match the viewport width in all checked viewports
+  - hero, knowledge, and contact sections remain inside the content column
+  - mobile sidebar opens without introducing page-level horizontal scroll
+  - no browser console errors were found
+
+## Targeted Local Intrinsic Image Dimensions Pass
+- Date: 2026-04-18
+- Method: local image-dimension and layout check against `http://127.0.0.1:4186/`
+- Coverage recorded:
+  - Chromium desktop `1440x1100`: PASS
+  - Chromium mobile-size `390x900`: PASS
+  - Chromium desktop `1280x900`: PASS for overflow regression guard
+  - `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`: PASS
+  - `git diff --check`: PASS
+- Checks exercised:
+  - all 11 homepage `<img>` elements have `width` and `height` attributes
+  - image attributes match the real source-file dimensions used by the fallback `<img>` elements
+  - hero carousel still renders and advances from Startup Business Builder to IFV Builder
+  - journey/timeline proof and snapshot images load when scrolled into view
+  - knowledge preview image loads when scrolled into view
+  - no page-level horizontal overflow was found at desktop, mobile-size, or the prior `1280x900` guard viewport
+  - mobile sidebar still opens in the mobile-size pass
+  - no browser console errors were found
 
 ## Hosted Site Status
 - Date checked: 2026-03-24

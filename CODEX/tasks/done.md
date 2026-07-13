@@ -1,5 +1,17 @@
 # Done
 
+## 2026-07-13
+
+### DII-ADDRESS-LOCAL-PREP
+- Corrected the current public company address in local static website files.
+- Updated homepage JSON-LD postal address to match visible content.
+- Updated reachable archived prototype address.
+- Added `.nojekyll` for plain-static GitHub Pages publishing.
+- Updated `sitemap.xml` `lastmod` to `2026-07-13`.
+- Added missing root CODEX continuity docs for handoff, product state, feature inventory, hosting, content, documentation index, session log, decision log, and task pointers.
+- Verified local preview and headless Chrome desktop/mobile checks.
+- Not deployed: owner review, named-file commit, push, and hosted GitHub Pages verification remain next.
+
 ## CODX-000
 - Title: Bootstrap persistent Codex workspace
 - Description: Created `/CODEX/` docs, replaced the placeholder root resume file, mapped the current frontend, and seeded the initial backlog.
@@ -260,3 +272,66 @@
 - Status: DONE
 - Dependencies: DII-028 preferred first
 - Notes: Completed on 2026-03-28 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added compact direct route chips to the hero buyer-fit cards for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
+
+## DII-030
+- Title: Add stronger factual proof near the contact decision
+- Description: Added a small supported proof surface near the direct inbox and guided-enquiry area so visitors see concrete facts before they decide how to contact DII.
+- Area: Conversion / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-029 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added a lightweight contact proof strip covering five live routes, named inbox paths, London HQ listing, and the guided enquiry's structured first brief without inventing testimonials, logos, case studies, or reply-time promises.
+
+## DII-031
+- Title: Define the first knowledge content architecture on the homepage
+- Description: Strengthened the growing knowledge section into a clearer SEO/content roadmap for the first route-level topic clusters DII should build.
+- Area: SEO / content architecture / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-030 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/css/site.css`, with related CODEX updates. Added a homepage-first first knowledge paths roadmap covering founder planning, IFV preparation, operations workflows, warehouse control, and finance operations, each mapped back to the closest live DII route while clearly stating that the article library is not live yet.
+
+## DII-032
+- Title: Add route-level structured data for the five live product paths
+- Description: Extended the homepage JSON-LD so crawlers can understand the five live product paths under the DII parent brand.
+- Area: SEO / structured data / parent-brand clarity
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-031 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html`. Added conservative `WebPage.hasPart` entries for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts using existing homepage anchors and factual route descriptions only.
+
+## DII-033
+- Title: Improve guided enquiry accessibility and completion confidence
+- Description: Strengthened the guided enquiry flow with clearer local-processing guidance, assistive helper wiring, and result-state focus handling.
+- Area: Accessibility / conversion / UX
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-032 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html`, `/assets/css/site.css`, and `/assets/js/site.js`, with related CODEX updates. The guided enquiry now states that it prepares an email locally, wires helper text to route/need/problem fields, labels the prepared result as a focusable region, and moves focus to that result after submit.
+
+## DII-034
+- Title: Improve social preview asset and metadata alignment
+- Description: Replaced the baseline social image treatment with an intentional homepage preview asset and matching Open Graph/Twitter metadata.
+- Area: SEO / social preview / brand clarity
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: DII-033 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/images/`, with related CODEX updates. Added `assets/images/dii-social-preview.png` plus SVG source, pointed Open Graph/Twitter preview metadata to the new image, added dimensions/type/alt text, and updated `WebPage.primaryImageOfPage` while keeping `ILOVE.png` for logo/favicon use.
+
+## DII-035
+- Title: Audit and fix page-level horizontal overflow
+- Description: Identified and fixed the page-level horizontal overflow observed during DII-034 QA.
+- Area: Responsive UX / layout stability
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-034 preferred first
+- Notes: Completed on 2026-04-18 in `/assets/css/site.css`, with related CODEX updates. The fix corrected `.main` so it subtracts the fixed sidebar width, moved the one-column hero breakpoint to `1340px`, reset one-column `.hero-art` aspect-ratio sizing, and restored `.main` to full width below the mobile-sidebar breakpoint.
+
+## DII-036
+- Title: Add intrinsic dimensions to homepage images
+- Description: Added accurate `width` and `height` attributes to the homepage's real inline image elements.
+- Area: Performance / layout stability / assets
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-035 preferred first
+- Notes: Completed on 2026-04-18 in `/index.html`, with related CODEX updates. All 11 live `<img>` elements now use real source-file dimensions across the hero carousel, journey/timeline proof visuals, and knowledge preview image, while existing responsive CSS and `object-fit` behavior remain unchanged.

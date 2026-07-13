@@ -22,8 +22,8 @@
 
 ## Knowledge
 - Job: position content as a future trust and SEO layer
-- Current state: the section now uses search-oriented framing, more concrete topic titles, example discovery-path cards, and a more specific CTA while still clearly framing the layer as growing next
-- Issue: more concrete now, but it is still a preview of future content rather than a live article library
+- Current state: the section now uses search-oriented framing, more concrete topic titles, example discovery-path cards, a first knowledge paths roadmap, and a more specific CTA while still clearly framing the layer as growing next
+- Issue: the content architecture is clearer now, but it is still a homepage roadmap rather than standalone crawlable article or solution pages
 
 ## Principles
 - Job: translate the parent-brand position into credibility traits
@@ -32,5 +32,5 @@
 
 ## Contact
 - Job: make the company feel organized and reachable
-- Current state: clear email segmentation, stronger visitor-facing framing, a guided enquiry workspace that recommends the right inbox and prepares a copyable email draft, and an explicit three-step explanation of what happens after first contact
-- Issue: the next contact-related opportunity is proof or real service evidence rather than basic reassurance about the first step
+- Current state: clear email segmentation, stronger visitor-facing framing, a light factual proof strip near the decision point, a guided enquiry workspace that recommends the right inbox and prepares a copyable email draft locally, and an explicit three-step explanation of what happens after first contact
+- Issue: the contact area now has supported proof, reassurance, and clearer guided-enquiry completion language; future upgrades should only add deeper evidence if real testimonials, case studies, product screenshots, service levels, or customer proof become available

@@ -31,6 +31,8 @@
 - `.hero-carousel-btn`
 - `.hero-carousel-dot`
 - `.hero-slide` now uses both a background image fallback and the nested `<picture>` element for more reliable painting across browsers
+- `.hero` now switches to one column at `1340px` so the fixed-sidebar content area can contain `.hero-art` without page-level horizontal overflow
+- In the one-column hero range, `.hero-art` uses height-led sizing instead of the wide-desktop aspect ratio
 
 ### Content Blocks
 - `.card`
@@ -73,7 +75,11 @@
 - `.product-fit-copy`
 - `.feature-item`
 - `.pillar`
+- `.contact-route-column`
 - `.contact-card`
+- `.contact-proof-strip`
+- `.contact-proof-head`
+- `.contact-proof-list`
 - `.contact-panel`
 - `.contact-lead`
 - `.contact-next-steps`
@@ -113,6 +119,11 @@
 - `.knowledge-path-head`
 - `.knowledge-path-grid`
 - `.knowledge-path-note`
+- `.knowledge-roadmap`
+- `.knowledge-roadmap-head`
+- `.knowledge-route-grid`
+- `.knowledge-route-card`
+- `.knowledge-route-detail`
 
 ### Utility Layout
 - `.grid`
@@ -138,7 +149,9 @@
 - The product-fit rows now act as a reusable comparison aid inside the product cards, clarifying audience, problem, and intended outcome without needing a separate comparison table.
 - The timeline proof grid now acts as a reusable mid-page trust pattern for turning a journey step into named live routes with direct product handoff.
 - The knowledge discovery-path cards now act as a reusable preview pattern for showing search-style topic intent before a full article library exists.
-- The guided enquiry workspace now acts as a reusable lead-capture pattern for static sites that need structured email-ready output without a backend form service.
+- The knowledge roadmap now acts as a reusable SEO/content planning pattern for mapping planned content lanes to live product routes without creating fake article pages.
+- The guided enquiry workspace now acts as a reusable lead-capture pattern for static sites that need structured email-ready output without a backend form service; its current pattern includes an explicit local-processing note, field helper text, and a focusable prepared-result region.
+- The contact proof strip now acts as a lightweight final-decision proof pattern, using only supportable facts near the direct inbox cards instead of adding testimonials, logos, or unsupported response promises.
 - The contact next-step strip now acts as a reusable reassurance pattern for explaining how a routed enquiry is handled without inventing reply-time promises.
 - The hero fact grid now acts as a reusable first-screen proof pattern when the page needs concise credibility cues above the fold without adding a heavier section.
 - The hero buyer-fit cards now also act as a reusable first-screen handoff pattern, using compact route chips to move visitors from self-recognition into the closest product section.

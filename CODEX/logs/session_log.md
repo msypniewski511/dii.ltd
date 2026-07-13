@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-07-13
+- Recovered the public DII Ltd static-site state from `/home/maciej-sypniewski/Projects/dii.ltd` after confirming the current `/home/maciej-sypniewski/Projects/warewise` Rails repo is not the website source.
+- Selected `dii.ltd` as source of truth based on `origin git@github.com:msypniewski511/dii.ltd.git`, root `/index.html`, root `/CNAME` containing `dii.ltd`, live GitHub Pages response headers from `https://dii.ltd/`, and existing CODEX records.
+- Initial state was dirty with existing uncommitted website/CODEX work plus untracked social-preview images; this pass preserved that work and made only compatible static-site changes.
+- Corrected the public company address from `86-90/86–90 Paul Street, EC2A 4NE` to `264 North Circular Road, London, NW10 0JT, United Kingdom` in the live homepage, JSON-LD address, visible proof/contact/footer copy, and the reachable archived prototype.
+- Confirmed the live hosted page still currently serves the old address until these local changes are reviewed, committed, pushed, and GitHub Pages refreshes.
+- Continued the existing GitHub Pages work with a bounded plain-static hardening slice: added root `.nojekyll`, updated `sitemap.xml` `lastmod`, and documented hosting/content maps without introducing a build system or workflow change.
+- Created the missing root CODEX continuity files requested for future ChatGPT/Codex recovery: `HANDOFF.md`, `product_state.md`, `feature_inventory.md`, `documentation_index.md`, `hosting_map.md`, and `content_map.md`, plus root task/log pointers.
+- DNS and domain-registration settings were not changed.
+
 ## 2026-03-22
 - Inspected repo structure and confirmed the live site is centered on `/index.html`.
 - Read existing `/AGENTS.md` and found `/CODEX_START_HERE.md` was still a placeholder.
@@ -128,3 +138,64 @@
 - Added reusable `.hero-point-links` and `.hero-point-link` styling in `/assets/css/site.css` and extended the shared focus-visible selector to cover the new hero route chips.
 - Ran a targeted local hero handoff pass at `#hero`; Firefox desktop and Firefox mobile-size renders both showed the new direct route chips without a first-screen layout break.
 - Verified the hero handoff update with a temporary Playwright Firefox harness from `/home/maciej/pwtemp/` that confirmed three buyer-fit cards render, five `.hero-point-link` chips are present, and those chips point to `#startup-builder`, `#ifv-builder`, `#rotaplan`, `#warewise`, and `#dii-accounts`.
+
+## 2026-04-17
+- Re-read the required startup and CODEX context files before starting `DII-030`; the actual repo path in this environment is `/home/maciej-sypniewski/Projects/dii.ltd`.
+- Confirmed `DII-030` was the next unblocked repo-local task and `DII-017` remained blocked on physical phone access.
+- Added a lightweight contact proof strip under the direct inbox cards and beside the guided enquiry panel.
+- Kept the proof limited to facts already supported by the homepage: five live routes, named inbox paths, London HQ listing, and the guided enquiry's structured starting brief.
+- Updated `/assets/css/site.css` with reusable `.contact-proof-*` styles and a mobile single-column collapse.
+- Verified the contact section with Chromium desktop and mobile-size Playwright checks against a local static server, including proof rendering, guided enquiry routing, direct `mailto:` links, focus visibility, heading sanity, no horizontal overflow, and no console errors.
+- Verified `/assets/js/site.js` with `ASDF_NODEJS_VERSION=22.11.0 node --check` and confirmed `git diff --check` passed.
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-030` pass.
+- Re-read the required startup and CODEX context files before starting `DII-031`.
+- Confirmed the repo-local SEO/content gap was the knowledge section's lack of a concrete future content architecture beyond example search prompts.
+- Kept the implementation homepage-first rather than creating empty static pages or pretending that article content already exists.
+- Added a first knowledge paths roadmap to `#knowledge` covering founder planning, IFV preparation, operations workflows, warehouse control, and finance operations.
+- Mapped each planned lane to search intent and the closest live route anchor: Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
+- Added reusable `.knowledge-roadmap` and `.knowledge-route-*` CSS with desktop and mobile-size responsive behavior.
+- Verified the update with a local Chromium Playwright harness at `#knowledge` for desktop and mobile-size viewports, checking five route cards, route links, growing-next honesty, heading hierarchy, no horizontal overflow, and no console errors.
+- Verified `/assets/js/site.js` with `ASDF_NODEJS_VERSION=22.11.0 node --check` and confirmed `git diff --check` passed.
+- Updated CODEX architecture, SEO, content, design, testing, task, decision, and log docs for the completed `DII-031` pass.
+- Re-read the required CODEX context and inspected `/index.html`, `/assets/css/site.css`, and `/assets/js/site.js` before continuing with the requested DII-032/DII-033 sequence.
+- Completed `DII-032` by extending the homepage JSON-LD with conservative `WebPage.hasPart` route entries for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts.
+- Kept `DII-032` schema anchored to real homepage anchors and visible route descriptions only, avoiding fake product pages, offers, pricing, ratings, reviews, or unsupported claims.
+- Started `DII-033` after rebuilding context again and confirmed the repo-local gap was guided enquiry clarity, accessibility, and completion confidence rather than a redesign of the contact section.
+- Added explicit local-processing guidance to the guided enquiry so visitors know the tool prepares an email on the page and does not send to a server.
+- Added helper text for closest route, need, problem summary, and the generated message, wired through `aria-describedby`.
+- Made the prepared enquiry result a labelled focusable region and updated `/assets/js/site.js` so submit moves focus to that result after rendering.
+- Verified `DII-033` with `ASDF_NODEJS_VERSION=22.11.0 node --check assets/js/site.js`, `git diff --check`, and a local Chromium Playwright pass at `#guidedEnquiry` for desktop and mobile-size viewports.
+- Confirmed the guided enquiry still routes IFV sales to `sales.ifv@dii.ltd`, legal enquiries to `legal@dii.ltd`, keeps generated `mailto:` draft links, has no horizontal overflow, reports no console errors, and preserves keyboard flow through the main fields.
+- Updated CODEX architecture, SEO, content, design, testing, task, decision, and log docs for `DII-032` and `DII-033`, then set `DII-034` as the next repo-local task.
+- Re-read the required CODEX context before starting `DII-034` and confirmed the repo-local gap was social preview quality rather than route clarity or contact flow.
+- Inspected `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`, and `/ILOVE.png`; confirmed `ILOVE.png` is a 1536x1024 PNG around 1.8 MiB and was being used as the baseline social image.
+- Chose to keep `ILOVE.png` for logo/favicon use and add a dedicated social preview card instead of overwriting the existing root asset.
+- Added `/assets/images/dii-social-preview.svg` as an editable 1200x630 source card naming DII and the five live routes.
+- Generated `/assets/images/dii-social-preview.png` from the SVG as a 1200x630, 8-bit PNG around 49 KB.
+- Updated Open Graph and Twitter metadata to use `https://dii.ltd/assets/images/dii-social-preview.png`, with matching route-aware title, description, alt text, image type, and dimensions.
+- Updated `WebPage.primaryImageOfPage` in JSON-LD to use the new social preview image while leaving the Organization logo pointed at `ILOVE.png`.
+- Verified metadata consistency, JSON-LD parsing, referenced image existence, image dimensions/file size, `git diff --check`, and local browser page load with no console errors.
+- During the browser load check, observed page-level horizontal overflow at `1280x900`; recorded follow-up `DII-035` to investigate and fix that layout issue separately.
+- Updated CODEX SEO, asset, content, task, decision, and log docs for the completed `DII-034` pass.
+
+## 2026-04-18
+- Re-read the required CODEX context before starting `DII-035` and confirmed the target was the page-level horizontal overflow observed during DII-034 QA.
+- Reproduced the overflow locally at `1280x900`; `document.documentElement.scrollWidth` and `document.body.scrollWidth` were wider than `innerWidth`.
+- Tested additional widths including `1024`, `1320`, `1366`, `1440`, `1680`, and mobile-size `390`.
+- Used a DOM bounding-box harness to identify the exact offenders instead of adding more clipping.
+- Found root cause one: `.main` used `width: 100%` while also being shifted by `margin-left: var(--sidebar)`, so the fixed sidebar offset was effectively added to a viewport-wide main column.
+- Found root cause two: the hero stayed two-column below the width where the fixed-sidebar content area could contain `.hero-art`; in one-column mode, `.hero-art` also retained the wide-desktop aspect ratio and could derive extra width from `min-height`.
+- Updated `/assets/css/site.css` so `.main` uses `width: calc(100% - var(--sidebar))` on desktop and resets to `width: 100%` below `920px`.
+- Moved the existing one-column hero breakpoint from `1260px` to `1340px` and set one-column `.hero-art` to `aspect-ratio: auto`.
+- Re-tested `1280x900`, `1320x900`, `1366x900`, `1440x1000`, `1680x1050`, `1024x900`, `390x900`, and `390x900` with the mobile menu open; all matched document/body scroll width to the viewport width and reported no console errors.
+- Verified `/assets/js/site.js` with `ASDF_NODEJS_VERSION=22.11.0 node --check` and confirmed `git diff --check` passed.
+- Updated CODEX frontend, design, testing, task, decision, and log docs for the completed `DII-035` pass.
+- Re-read the required CODEX context before starting `DII-036` and confirmed the task was the next unblocked repo-local performance/layout-stability improvement.
+- Audited all live homepage `<img>` elements and measured the real image files with `identify`.
+- Added intrinsic `width` and `height` attributes to the 11 live images in `/index.html`: four hero carousel images, six journey/timeline proof or snapshot images, and one knowledge preview image.
+- Kept the change attribute-only so existing CSS continues to control responsive sizing, cropping, and `object-fit` behavior.
+- Verified all 11 image tags now have dimensions matching their real fallback source files.
+- Ran a local Chromium browser pass at desktop `1440x1100`, mobile-size `390x900`, and the prior overflow guard viewport `1280x900`.
+- Confirmed the hero carousel still advances, journey/timeline images load when scrolled into view, the knowledge preview image loads, the mobile sidebar still opens, no console errors were found, and no horizontal overflow regression was introduced.
+- Verified `/assets/js/site.js` with `ASDF_NODEJS_VERSION=22.11.0 node --check` and confirmed `git diff --check` passed.
+- Updated CODEX asset, frontend, performance, testing, task, priority, and log docs for the completed `DII-036` pass, then set `DII-037` as the next repo-local task.

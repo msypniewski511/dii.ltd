@@ -171,11 +171,74 @@
 - Description: Reduce hesitation at the final conversion step by adding a small, supported proof surface near the contact area that reinforces why starting the conversation is a safe next step.
 - Area: Conversion / trust
 - Priority: P1 High
-- Status: TODO
+- Status: DONE
 - Dependencies: DII-029 preferred first
-- Notes: Route clarity is stronger in both the hero and platform sections now, so the next remaining trust gap is later-stage proof near contact rather than another route-selection pattern.
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/css/site.css`. Added a light contact-proof strip beside the direct inbox cards, using only supportable facts already present on the homepage: five live routes, named inbox paths, London HQ listing, and the guided enquiry's structured starting brief.
+
+### DII-031
+- Title: Define the first knowledge content architecture on the homepage
+- Description: Strengthen the growing knowledge section into a clearer SEO/content roadmap that shows the first route-level topic clusters DII should build around founder planning, IFV preparation, operations workflows, warehouse control, and finance operations, while staying honest that the full article library is not live yet.
+- Area: SEO / content architecture / trust
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-030 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/css/site.css`. Added a homepage-first first knowledge paths roadmap with five planned content lanes mapped to the closest live DII product routes, without creating fake article pages or pretending the content library is already live.
+
+### DII-032
+- Title: Add route-level structured data for the five live product paths
+- Description: Extend the homepage JSON-LD so crawlers can understand the five live product paths under the DII parent brand using only facts already visible on the homepage and current outbound product links.
+- Area: SEO / structured data / parent-brand clarity
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-031 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html`. Added conservative `WebPage.hasPart` JSON-LD entries for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts using real homepage anchors and factual descriptions, without inventing offers, ratings, reviews, pricing, or unsupported claims.
+
+### DII-033
+- Title: Improve guided enquiry accessibility and completion confidence
+- Description: Strengthen the guided enquiry flow with clearer local-processing guidance, better assistive-text wiring, and safer result-state focus/announcement patterns so visitors can complete the email-preparation flow with more confidence without changing the static-site stack.
+- Area: Accessibility / conversion / UX
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-032 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html`, `/assets/css/site.css`, and `/assets/js/site.js`. Added explicit local email-preparation guidance, helper text wired with `aria-describedby`, a labelled focusable result region, and submit-time result focus while preserving inbox routing and mailto draft behavior.
+
+### DII-034
+- Title: Improve social preview asset and metadata alignment
+- Description: Replace or supplement the baseline social image treatment with an intentional static homepage preview asset and matching Open Graph/Twitter alt text that reflect DII as the parent brand for five live product routes.
+- Area: SEO / social preview / brand clarity
+- Priority: P2 Medium
+- Status: DONE
+- Dependencies: DII-033 preferred first
+- Notes: Completed on 2026-04-17 in `/index.html` and `/assets/images/`. Added a new static 1200x630 social preview PNG plus SVG source, updated Open Graph/Twitter title, description, image, dimensions, type, and alt text, and kept `ILOVE.png` as the favicon/logo asset.
+
+### DII-035
+- Title: Audit and fix page-level horizontal overflow
+- Description: Investigate and remove the page-level horizontal overflow observed during the DII-034 browser check while preserving the current one-page layout, route anchors, and static stack.
+- Area: Responsive QA / layout stability
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-034 preferred first
+- Notes: Completed on 2026-04-18 in `/assets/css/site.css`. Root causes were `.main` using `width: 100%` while offset by the fixed sidebar, plus the hero's two-column breakpoint and one-column `.hero-art` aspect ratio causing the visual panel to overflow in the narrow desktop/tablet range. Fixed with scoped layout rules, not broad clipping.
+
+### DII-036
+- Title: Add intrinsic dimensions to homepage images
+- Description: Add accurate `width` and `height` attributes to live homepage image elements so responsive screenshots reserve space more predictably and avoid avoidable layout shift.
+- Area: Performance / layout stability / assets
+- Priority: P1 High
+- Status: DONE
+- Dependencies: DII-035 preferred first
+- Notes: Completed on 2026-04-18 in `/index.html`. Added real intrinsic dimensions to all 11 live homepage `<img>` elements across the hero carousel, journey/timeline proof visuals, and knowledge preview image. CSS still controls responsive sizing and no image assets were changed.
 
 ## P2 Medium
+
+### DII-037
+- Title: Replace oversized favicon source with a lightweight icon asset
+- Description: Stop using the legacy 1536x1024 `ILOVE.png` file as the favicon source by adding or selecting a small dedicated icon asset, while keeping the social preview card unchanged.
+- Area: Performance / assets / metadata
+- Priority: P2 Medium
+- Status: TODO
+- Dependencies: DII-036 preferred first
+- Notes: `ILOVE.png` remains useful as the legacy/logo image, but it is much heavier than a favicon needs to be. Keep this task metadata- and asset-focused; do not redesign the visible homepage or change the Open Graph/Twitter social preview image.
 
 ### DII-006
 - Title: Improve accessibility affordances and states

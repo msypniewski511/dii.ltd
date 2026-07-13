@@ -25,6 +25,7 @@ The homepage now leans toward:
 - Contact and enquiry copy should reduce friction by making the next step explicit and easy to act on.
 - Contact copy should make the first email feel like a useful starting brief, not a dead-end handoff.
 - Above-the-fold copy should help visitors recognise themselves quickly, then point them directly to the closest route without making them decode the page first.
+- Knowledge copy should sound like a credible content roadmap while staying honest that the full article library is not live yet.
 
 ## What To Avoid
 - Talking to the site owner in live copy
@@ -49,4 +50,9 @@ The homepage now leans toward:
 - `DII-027` tightened the platform overview and principles copy on 2026-03-27 so the broader DII story now points more directly to clearer decisions, usable outputs, smoother handoffs, and stronger control.
 - `DII-028` made the platform section more actionable on 2026-03-28 by pairing those broader outcome statements with direct route handoffs instead of leaving the section as explanation only.
 - `DII-029` made the hero buyer-fit copy more actionable on 2026-03-28 by turning those first-screen audience cues into direct route choices instead of leaving them as recognition-only text.
-- Remaining polish work is now more about adding supported proof and strengthening SEO than improving basic route clarity.
+- `DII-030` added factual proof near the contact decision on 2026-04-17 so final-step confidence relies on supported details rather than invented testimonials or promises.
+- `DII-031` gave the knowledge layer a clearer first content-path roadmap on 2026-04-17 while keeping the copy explicit that the article library is not live yet.
+- `DII-032` added conservative route-level structured data on 2026-04-17 so crawler-facing copy now mirrors the five visible product paths without adding unsupported product claims.
+- `DII-033` improved guided enquiry confidence on 2026-04-17 by making the copy explicit that the tool prepares a local email draft and by guiding visitors toward the prepared result rather than implying a backend form submission.
+- `DII-034` aligned social preview copy on 2026-04-17 so shared links now name the five live routes and the founder, operations, and finance positioning without adding unsupported proof or promises.
+- Remaining polish work is now more about structured SEO, real content pages, and new evidence than improving basic route clarity.

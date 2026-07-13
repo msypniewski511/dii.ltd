@@ -67,15 +67,24 @@
 - `.knowledge-path-grid` for concrete example queries or content-path previews
 - Reuses `.knowledge-topic-card` so the preview reads like a credible content map instead of loose keyword chips
 
+## Knowledge Roadmap Pattern
+- `.knowledge-roadmap` for a homepage-first content architecture band that stays separate from the visual knowledge board
+- `.knowledge-route-grid` and `.knowledge-route-card` for planned content lanes that map search intent back to live product anchors
+- `.knowledge-route-detail` for compact search-intent and live-route metadata without pretending that standalone articles already exist
+
 ## Contact Pattern
+- `.contact-route-column` groups the direct inbox cards with the nearby proof strip
 - `.contact-grid` for functional contact cards
+- `.contact-proof-strip` and `.contact-proof-list` for lightweight factual evidence near the final contact decision
 - `.contact-panel` for brand/company summary and the guided enquiry workspace
 - `.contact-next-steps` for the three-card explanation of what happens after first contact
 
 ## Guided Enquiry Pattern
 - `.guided-enquiry` nested inside the contact panel
 - `.guided-enquiry-grid` collects short routing details before showing a result state
+- `.guided-helper` and `.guided-local-note` give field-level guidance and make clear that the tool prepares an email locally rather than submitting to a server
 - `.guided-result-*` exposes the recommended inbox, subject, and copyable message without needing a backend form submit
+- `.guided-result` is a labelled focusable region; after submit, script focus moves there so keyboard users discover the prepared output
 - `.guided-note` and guided status copy frame the output as the starting brief for the next conversation
 
 ## Placeholder Pattern

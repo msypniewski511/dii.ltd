@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-07-13
+
+### Preserve the existing plain-static GitHub Pages model
+- Reason: the site is already live from this repository with root `index.html`, root `CNAME`, no package/build system, and GitHub Pages response headers. Adding a Pages Actions workflow would change a working branch-based model without evidence that it is needed.
+
+### Add `.nojekyll` instead of introducing a build framework
+- Reason: the repository is plain HTML/CSS/JavaScript. The safest hosting continuation is to mark the repo as plain static for GitHub Pages while preserving the existing source layout and not adding Node, npm, a generator, or a deployment workflow.
+
+### Update the archived prototype address because it remains reachable
+- Reason: `tmp.html` is explicitly non-production, but it is still a public static HTML file in the repository root. Leaving the obsolete address there could continue the bank-facing discrepancy if the file is discovered.
+
 ## 2026-03-22
 
 ### Use `/index.html` as the live source of truth
@@ -62,3 +73,25 @@
 
 ### Add compact route chips inside the existing hero buyer-fit cards instead of building another full handoff block above the fold
 - Reason: `DII-029` needed the first screen to move from audience recognition into action, but the hero already carried primary CTAs and proof. Adding small route chips inside the existing buyer-fit cards made the cards actionable without duplicating the lower products router or bloating the hero.
+
+## 2026-04-17
+
+### Add a light contact proof strip instead of testimonials or a case-study block
+- Reason: `DII-030` needed more confidence near the final contact decision, but the homepage does not currently support testimonials, customer logos, case studies, or reply-time promises. A small factual strip beside the inbox cards reinforces the five live routes, named inbox paths, London HQ listing, and guided enquiry brief without overstating evidence.
+
+### Keep `DII-031` homepage-first instead of adding empty content pages
+- Reason: the knowledge layer needs clearer SEO/content architecture, but the repo does not yet contain real article copy or a static page pattern for individual knowledge pages. A homepage roadmap gives future sessions a concrete route plan without creating thin pages, fake articles, publication dates, authors, or a blog system that does not exist.
+
+### Represent product paths as homepage parts, not fake product pages
+- Reason: `DII-032` needed crawler clarity for the five visible product routes, but the repo is still a one-page site and should not imply standalone product pages, offers, ratings, pricing, reviews, or availability claims that are not present. Conservative `WebPage.hasPart` entries keep the structured data aligned with real anchors and visible homepage copy.
+
+### Move focus to the prepared guided enquiry result instead of adding a modal or multi-step form
+- Reason: `DII-033` needed stronger completion confidence for keyboard and assistive users without changing the static flow. A labelled focusable result region makes the generated inbox, subject, and message easier to discover after submit while preserving the current in-page form and mailto/copy actions.
+
+### Use a dedicated social preview card while keeping `ILOVE.png` as logo/favicon
+- Reason: `DII-034` needed a clearer share image, but replacing the existing logo-like `ILOVE.png` would mix favicon/logo and social-preview responsibilities. A new 1200x630 PNG generated from an editable SVG source gives Open Graph/Twitter a purpose-built card while leaving the existing logo asset untouched.
+
+## 2026-04-18
+
+### Fix overflow by sizing the layout pieces, not by adding more clipping
+- Reason: `DII-035` found that horizontal overflow came from real layout math: desktop `.main` was viewport-wide despite being offset by the fixed sidebar, and the hero visual kept wide-panel sizing too far into narrow desktop/tablet widths. The fix keeps the existing visual system but makes `.main` subtract `--sidebar`, moves the single-column hero breakpoint to `1340px`, and resets one-column `.hero-art` aspect sizing instead of relying on additional global `overflow-x` clipping.

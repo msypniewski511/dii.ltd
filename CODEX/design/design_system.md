@@ -27,7 +27,7 @@
 - `--radius-lg`
 
 ### Layout
-- Sidebar width: `--sidebar: 290px`
+- Sidebar width: `--sidebar: 290px`; desktop `.main` width subtracts this fixed sidebar value to avoid page-level horizontal overflow
 - Container width: `--container: 1380px`
 
 ## Reusable Styling Patterns
@@ -38,13 +38,15 @@
 - Reusable proof band with icon-led factual trust cards
 - Reusable platform handoff row for turning broad ecosystem outcomes into direct route choices
 - Reusable operations proof strip with route-specific workflow summaries for Rotaplan and Warewise
+- Reusable contact proof strip for factual, lightweight evidence beside the contact decision
 - Reusable hero fact grid for compact above-the-fold proof cues
 - Reusable hero buyer-fit handoff chips for direct first-screen route jumps
 - Reusable product-fit rows that label who a route is for, what problem it solves, and what outcome it aims to deliver
 - Reusable timeline proof grid with named route cards and direct product jump targets
 - Reusable route-signal boards for showing structured workflow cues where dedicated screenshots are still unavailable
 - Reusable knowledge discovery-path cards for previewing search-style questions before a full content library exists
-- Reusable guided enquiry workspace with structured fields, result cards, and copy-or-draft actions
+- Reusable knowledge roadmap band for mapping planned content lanes to live product routes
+- Reusable guided enquiry workspace with structured fields, local-processing guidance, helper text, result cards, focusable result-state, and copy-or-draft actions
 - Reusable contact next-step cards that explain how the first email is routed and used as the starting brief
 - Shared focus-visible ring for buttons, route pills, sidebar links, contact links, and compact route-handoff chips
 - Fixed skip link that stays hidden until keyboard focus
@@ -66,6 +68,7 @@
 
 ## Current Hero Direction
 - The right hero visual is intentionally tall and framed like a layered dashboard rather than a short media card.
+- The hero keeps its two-column layout only while the fixed-sidebar content area can contain the visual panel; below `1340px`, it switches to the existing one-column treatment and uses height-led `.hero-art` sizing.
 - The upper glass summary card is oversized relative to the carousel so the ecosystem explanation reads as part of the hero, not as a small caption block.
 - The hero badge and summary typography were scaled up slightly to hold the larger panel proportion without feeling sparse.
 - The two hero glass cards now share the same internal gutter rhythm as the outer frame, so the right column reads as one composed module rather than two disconnected blocks.
@@ -75,7 +78,7 @@
 - Keyboard states are improved, but they still need a manual browser pass across desktop and mobile assistive flows.
 - The new visual boards still rely on a limited screenshot set, but the operations routes now use structured workflow boards instead of generic icons where dedicated product imagery is absent.
 - The homepage now distinguishes live routes from the growing knowledge layer more clearly, but the next trust gap is proof rather than availability labeling.
-- The homepage now has clearer guided conversion, stronger first-screen proof, stronger operations-route proof, more outcome-specific parent-brand copy, a more actionable platform section, a more concrete journey section, a more search-oriented knowledge preview, and direct first-screen route handoff in the hero, so the next visible gap is supported proof near the contact decision rather than route clarity alone.
+- The homepage now has clearer guided conversion, stronger first-screen proof, stronger operations-route proof, more outcome-specific parent-brand copy, a more actionable platform section, a more concrete journey section, a more search-oriented knowledge preview, a first knowledge paths roadmap, direct first-screen route handoff in the hero, and supported proof near the contact decision. The remaining design gaps are now more dependent on new real evidence, structured data, or future content pages than on rearranging existing claims.
 
 ## Rule For Future Design Changes
 - Keep the current visual language unless the user requests a redesign.

@@ -1,5 +1,11 @@
 # Frontend Map
 
+## 2026-07-13 Address / Hosting Readiness Notes
+- The site remains plain static HTML/CSS/JavaScript: `/index.html`, `/assets/css/site.css`, `/assets/js/site.js`.
+- Public current address text in the sidebar footer, hero proof, product proof band, and contact meta block now points to `264 North Circular Road, London, NW10 0JT, United Kingdom`.
+- `tmp.html` remains an archived prototype but now uses the corrected address because it is still reachable as a static file.
+- `.nojekyll` marks the repository as a plain-static GitHub Pages site.
+
 ## Stack
 - Static HTML
 - External CSS in `/assets/css/site.css`
@@ -50,7 +56,8 @@
 - Hero slides also carry a CSS background-image fallback so the carousel still paints even if the browser mishandles the nested `<picture>` layer inside the glass panel
 - Because the fallback images are now consumed from `/assets/css/site.css`, the `--slide-image` custom-property URLs in `/index.html` must stay stylesheet-relative (`../images/...`) rather than HTML-relative asset paths
 - The lower carousel panel now has an explicit height so the slide, picture, and image layers do not collapse to `0px`
-- The right-side `.hero-art` frame now uses a taller aspect ratio and minimum height, and the top `.hero-panel-main` glass card is intentionally larger to better balance the left-column hero copy
+- The carousel `<img>` fallback elements now include intrinsic `width` and `height` attributes from the real JPEG source files; responsive sizing and cropping still come from CSS
+- The right-side `.hero-art` frame now uses a taller aspect ratio and minimum height on wide desktop, then switches to height-led single-column sizing at the `1340px` breakpoint so it does not overrun the main content column
 - The top and bottom hero glass cards now sit in a two-row internal layout, so the gap between them follows the hero frame gutter instead of opening into a large empty band
 - The tertiary hero action now jumps directly to the guided enquiry workspace inside `#contact`
 - The hero copy and summary now treat finance/accountancy as a live layer, and the carousel includes a DII Accounts slide using `/assets/images/DIIAccounts.jpg`
@@ -89,7 +96,8 @@
 - Left card describing the growing-next content direction with an explicit availability note
 - The section copy now frames the knowledge layer around search-oriented questions, example guides, solution paths, and discovery intent instead of mostly strategic future-language
 - Right panel now uses a real knowledge board with hero media, topic cards, and example discovery-path cards instead of a browser-wireframe placeholder
-- Key classes: `.knowledge-split`, `.feature-list`, `.feature-item`, `.knowledge-panel`, `.knowledge-board`, `.knowledge-hero-card`, `.knowledge-topic-grid`, `.knowledge-path-head`, `.knowledge-path-grid`, `.knowledge-path-note`, `.section-status`
+- A new homepage-first roadmap band now defines the first planned content lanes: founder planning, IFV preparation, operations workflows, warehouse control, and finance operations. Each lane states search intent and maps back to the closest live product route without claiming the article library is live.
+- Key classes: `.knowledge-split`, `.feature-list`, `.feature-item`, `.knowledge-panel`, `.knowledge-board`, `.knowledge-hero-card`, `.knowledge-topic-grid`, `.knowledge-path-head`, `.knowledge-path-grid`, `.knowledge-path-note`, `.knowledge-roadmap`, `.knowledge-roadmap-head`, `.knowledge-route-grid`, `.knowledge-route-card`, `.knowledge-route-detail`, `.section-status`
 
 ### `#principles`
 - Four compact brand-principle blocks
@@ -97,10 +105,12 @@
 - Key class: `.pillars`, `.pillar`
 
 ### `#contact`
-- Four contact cards plus a parent-brand summary panel, guided-enquiry lead block, guided enquiry workspace, a three-card next-steps reassurance strip, and footer text
+- Four contact cards plus a small factual proof strip, parent-brand summary panel, guided-enquiry lead block, guided enquiry workspace, a three-card next-steps reassurance strip, and footer text
+- The contact proof strip sits beside the guided panel under the direct inbox cards and uses only supportable homepage facts: five live routes, named inbox paths, London HQ listing, and the structured first brief prepared by the guided enquiry
 - The guided enquiry workspace collects name, email, company, closest route, enquiry type, and problem summary, then recommends the right inbox and prepares a structured message
-- The result state exposes both a copyable message and a ready-made `mailto:` draft so visitors do not depend entirely on a configured mail app, and the note/status copy now frames that first message as the starting brief DII can route
-- Key classes: `.contact-shell`, `.contact-grid`, `.contact-card`, `.contact-panel`, `.contact-lead`, `.guided-enquiry`, `.guided-enquiry-form`, `.guided-enquiry-grid`, `.guided-field`, `.guided-input`, `.guided-result`, `.guided-result-grid`, `.guided-result-card`, `.guided-result-link`, `.guided-status`, `.guided-note`, `.contact-next-steps`, `.contact-step`, `.contact-step-number`, `.footer`
+- The form now explicitly says it prepares an email locally rather than sending to a server, and the route, need, and problem controls are wired to helper text with `aria-describedby`
+- The result state is a labelled, focusable region that exposes both a copyable message and a ready-made `mailto:` draft; after submit, keyboard focus moves to the prepared result and the live status text confirms the enquiry is ready to review
+- Key classes: `.contact-shell`, `.contact-route-column`, `.contact-grid`, `.contact-card`, `.contact-proof-strip`, `.contact-proof-head`, `.contact-proof-list`, `.contact-panel`, `.contact-lead`, `.guided-enquiry`, `.guided-enquiry-form`, `.guided-enquiry-grid`, `.guided-field`, `.guided-helper`, `.guided-input`, `.guided-local-note`, `.guided-result`, `.guided-result-head`, `.guided-result-grid`, `.guided-result-card`, `.guided-result-link`, `.guided-status`, `.guided-note`, `.contact-next-steps`, `.contact-step`, `.contact-step-number`, `.footer`
 
 ## CSS Architecture
 - Lives in `/assets/css/site.css`
@@ -115,13 +125,16 @@
   - trust cues: `.proof-band`, `.proof-card`, `.proof-icon`, `.proof-kicker`
   - platform handoff: `.platform-handoff-*`
   - operations proof: `.operations-proof-*`, `.route-signal-*`
+  - contact proof: `.contact-proof-*`
   - content blocks: `.card`, `.metric`, `.pillar`, `.contact-card`, `.contact-lead`
   - lead capture: `.guided-enquiry`, `.guided-field`, `.guided-input`, `.guided-result-*`, `.guided-actions`
+  - guided enquiry support text: `.guided-helper`, `.guided-local-note`
   - routing: `.products-grid`, `.product-router`, `.route-pill`
   - timeline: `.timeline-*`, `.timeline-visual*`, `.timeline-proof-*`, `.timeline-preview-*`
   - knowledge visuals: `.knowledge-panel`, `.knowledge-board`, `.knowledge-hero-*`, `.knowledge-topic-*`, `.knowledge-path-*`
+  - knowledge roadmap: `.knowledge-roadmap`, `.knowledge-route-*`
 - Responsive breakpoints:
-  - `1260px`
+  - `1340px`
   - `1080px`
   - `920px`
   - `760px`
@@ -129,6 +142,9 @@
 - Sidebar behavior:
   - Fixed at desktop and mobile
   - Scrolls internally via `overflow-y: auto` when the menu/content exceeds the viewport height
+- Main layout:
+  - On desktop, `.main` uses `margin-left: var(--sidebar)` with `width: calc(100% - var(--sidebar))` so the fixed sidebar offset does not create page-level horizontal overflow
+  - Below `920px`, `.main` resets to `margin-left: 0` and `width: 100%` for the off-canvas mobile sidebar
 
 ## JS Behavior
 - Lives in `/assets/js/site.js`
@@ -150,7 +166,8 @@
   - prepares a structured message preview
   - supports clipboard copy plus a generated `mailto:` draft link
   - keeps the result state synced if the visitor edits the form after the first submit
-  - now uses status messaging that treats the generated enquiry as the starting brief for the next conversation, not just a mail-app fallback
+  - uses status messaging that treats the generated enquiry as the starting brief for the next conversation, not just a mail-app fallback
+  - moves focus to the prepared result region after submit so keyboard and assistive users land on the output
 - GSAP entrance animations for hero and `.reveal` sections
 
 ## Known Frontend Risks
@@ -158,6 +175,7 @@
 - `carousel` logic assumes `#heroCarousel` exists before event binding
 - The guided enquiry tool is still a client-side helper, not a true form backend, so the final send step still happens through the visitor's email service
 - There is still no bundling or cache-busting asset pipeline; the page relies on static relative asset paths
+- The page-level horizontal overflow found in DII-034 QA was fixed in DII-035 by correcting `.main` sizing and the narrow-desktop hero breakpoint/aspect behavior
 - A best-available hosted matrix is now recorded for Chrome, Edge, Firefox, Android-size mobile emulation, iPhone-size mobile emulation, WebKit desktop, and WebKit iPhone-size mobile emulation; only true physical-phone coverage remains unrecorded from this environment
 - As of 2026-03-24, the hosted GitHub Pages deployment is back in sync with the repo and serves `/assets/css/site.css` plus `/assets/js/site.js`; the remaining QA gap is now real-device phone access rather than deployment drift
 
@@ -165,3 +183,4 @@
 - `/CODEX/design/ui_playbook.md` stores the reusable Codex-facing design instructions for this visual language.
 - `/CODEX/design/ui_foundation.css` stores the extracted starter CSS system for reuse in future projects.
 - `/assets/css/site.css` remains the exact source for page-specific selectors beyond the starter kit, while `/index.html` remains the structure/content reference.
+- Homepage inline screenshots in the hero, journey/timeline, and knowledge sections should keep accurate intrinsic dimensions on their `<img>` tags when image markup changes.

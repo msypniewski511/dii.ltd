@@ -1,5 +1,14 @@
 # Recent Changes
 
+## 2026-07-13
+- Recovered the real public website repo as `/home/maciej-sypniewski/Projects/dii.ltd`; the Warwise Rails repo and `startup-builder` are not the selected website source of truth for this pass.
+- Updated all public/current address output in the selected static site to `264 North Circular Road, London, NW10 0JT, United Kingdom`.
+- Updated homepage Organization JSON-LD so structured data matches the visible address.
+- Updated the reachable archived prototype contact line so it no longer publicly displays the obsolete Paul Street address.
+- Added `.nojekyll` for plain-static GitHub Pages publishing and updated the sitemap last modified date for the address correction.
+- Added missing CODEX continuity maps for hosting, content, product state, handoff, feature inventory, and documentation index.
+- No DNS, GitHub settings, deployment, commit, push, Rails app, secrets, or product redesign changes were made.
+
 ## 2026-03-22
 - Added `/CODEX/README.md`
 - Added `/CODEX/project/*`
@@ -150,3 +159,46 @@
 - Updated `/assets/css/site.css` to add reusable `.hero-point-links` and `.hero-point-link` styles plus focus-visible support for the new hero handoff chips
 - Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-029` hero-handoff pass
 - Added follow-up task `DII-030` to add stronger factual proof near the contact decision
+
+## 2026-04-17
+- Updated `/index.html` contact section so the direct inbox cards now sit in a `.contact-route-column` with a lightweight factual proof strip below them
+- Added four supported contact proof facts: five live routes, named inbox paths, London HQ listing, and the guided enquiry's structured first brief
+- Updated `/assets/css/site.css` to add `.contact-route-column`, `.contact-proof-strip`, `.contact-proof-head`, and `.contact-proof-list` styles with mobile collapse behavior
+- Ran a targeted local Chromium contact proof pass against `#contact` on desktop and mobile-size viewports, including guided enquiry routing, mailto link presence, focus visibility, heading sanity, and overflow checks
+- Updated CODEX architecture, content, design, testing, task, decision, and log docs for the completed `DII-030` contact-proof pass
+- Updated `/index.html` knowledge section with a homepage-first first knowledge paths roadmap covering founder planning, IFV preparation, operations workflows, warehouse control, and finance operations
+- Mapped each planned content lane to search intent plus the closest live route: Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts
+- Updated `/assets/css/site.css` with reusable `.knowledge-roadmap`, `.knowledge-route-grid`, `.knowledge-route-card`, and `.knowledge-route-detail` styles plus responsive collapse behavior
+- Ran a targeted local Chromium knowledge roadmap pass against `#knowledge` on desktop and mobile-size viewports, including card count, route links, growing-next messaging, heading hierarchy, overflow, and console checks
+- Updated CODEX architecture, SEO, content, design, testing, task, decision, and log docs for the completed `DII-031` knowledge-roadmap pass
+- Added follow-up task `DII-032` to align route-level JSON-LD with the five live product paths
+- Updated `/index.html` JSON-LD so the homepage `WebPage` has five conservative `WebPageElement` route parts for Startup Business Builder, IFV Builder, Rotaplan, Warewise, and DII Accounts
+- Kept the route-level structured data limited to existing homepage anchors and factual visible route descriptions, with no offers, pricing, ratings, reviews, or fake product pages
+- Updated `/index.html` guided enquiry copy and semantics so visitors are told the tool prepares an email locally and does not send to a server
+- Added helper text for closest route, need, problem summary, and generated message fields, wired through `aria-describedby`
+- Updated `/assets/js/site.js` so submitting the guided enquiry moves focus to the prepared result region after rendering the inbox, subject, and message
+- Updated `/assets/css/site.css` with `.guided-local-note`, `.guided-helper`, `.guided-result-head`, and result-region focus styling
+- Ran a targeted local Chromium guided enquiry accessibility pass against `#guidedEnquiry` on desktop and mobile-size viewports, including IFV sales routing, legal routing, result focus, keyboard order, overflow, and console checks
+- Updated CODEX architecture, SEO, content, design, testing, task, decision, and log docs for the completed `DII-032` and `DII-033` passes
+- Added follow-up task `DII-034` to improve the social preview asset and metadata alignment
+- Added `/assets/images/dii-social-preview.svg` as the editable source for a new DII homepage social preview card
+- Generated `/assets/images/dii-social-preview.png` as a 1200x630, 8-bit PNG social card at about 49 KB
+- Updated Open Graph and Twitter metadata in `/index.html` so shared links use the new social card, matching title/description copy, image dimensions, image type, and route-aware alt text
+- Updated `WebPage.primaryImageOfPage` in JSON-LD to point to the new social preview image while leaving `ILOVE.png` as the logo/favicon asset
+- Ran local metadata, JSON-LD, image existence, image dimension, and browser page-load checks for the DII-034 social preview pass
+- Added follow-up task `DII-035` to audit and fix page-level horizontal overflow observed during the DII-034 browser check
+
+## 2026-04-18
+- Reproduced the DII-034 horizontal overflow at `1280x900` and tested additional desktop, tablet, and mobile-size viewports
+- Identified the first root cause as `.main` using `width: 100%` while also being offset by the fixed `290px` sidebar
+- Identified the second root cause as hero sizing in the narrow desktop/tablet range: the two-column hero stayed active too long, and one-column `.hero-art` could derive extra width from its aspect ratio plus minimum height
+- Updated `/assets/css/site.css` so desktop `.main` uses `width: calc(100% - var(--sidebar))`
+- Moved the existing one-column hero breakpoint from `1260px` to `1340px`
+- Reset one-column `.hero-art` to height-led sizing with `aspect-ratio: auto`
+- Restored `.main` to `width: 100%` below the mobile-sidebar breakpoint
+- Verified no page-level horizontal overflow at `1280x900`, `1320x900`, `1366x900`, `1440x1000`, `1680x1050`, `1024x900`, and `390x900`, including mobile menu open
+- Added follow-up task `DII-036` to add intrinsic dimensions to live homepage images
+- Updated all 11 live homepage `<img>` elements in `/index.html` with accurate intrinsic `width` and `height` attributes from the real source files
+- Covered the hero carousel, journey/timeline proof visuals, product snapshot visuals, and knowledge preview image without changing CSS sizing, image assets, or visual design
+- Verified the image-dimension pass in Chromium desktop and mobile-size viewports, including carousel advance, scrolled timeline/knowledge image loading, no console errors, and no horizontal overflow regression at `1280x900`
+- Added follow-up task `DII-037` to replace the oversized favicon source with a lightweight icon asset

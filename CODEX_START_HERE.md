@@ -36,20 +36,30 @@ Persistent collaboration docs live in `/CODEX/`.
 - The journey now also uses structured workflow signal boards for Rotaplan and Warewise where dedicated screenshots are still absent, and Step 03 separates those two operations routes again instead of collapsing them into one generic operations card.
 - The platform overview and principles sections now use more outcome-first language so the broader DII story points more directly to clearer decisions, lower friction, and stronger control.
 - The platform overview now also includes a direct route-handoff layer so the section no longer stops at explanation alone.
-- The knowledge section now previews search-style questions, more concrete topic paths, and example discovery routes so the growing-next layer feels more specific without pretending the article library is already fully live.
-- The contact section now explains what happens after direct or guided contact with clearer first-step copy, a three-step reassurance strip, and guided-enquiry messaging that treats the first email as the starting brief.
+- The knowledge section now previews search-style questions, more concrete topic paths, example discovery routes, and a five-lane first knowledge paths roadmap so the growing-next layer has a clearer future content architecture without pretending the article library is already fully live.
+- The homepage JSON-LD now includes conservative route-level `WebPage.hasPart` entries for the five visible product anchors under the parent homepage schema.
+- The homepage social preview now uses `/assets/images/dii-social-preview.png`, a 1200x630 static share card aligned to the DII parent brand and five live route names.
+- The page-level horizontal overflow found during DII-034 QA is fixed; `.main` now accounts for the fixed sidebar width, and the hero switches to its single-column sizing before the visual panel can overrun the content column.
+- Live homepage `<img>` elements now carry accurate intrinsic `width` and `height` attributes so the browser can reserve image space earlier while CSS still controls responsive display.
+- The contact section now explains what happens after direct or guided contact with clearer first-step copy, a small factual proof strip beside the contact decision, a three-step reassurance strip, and guided-enquiry messaging that treats the first email as the starting brief.
+- The guided enquiry now states that it prepares an email locally, wires helper text to the key routing fields, and moves focus to the prepared result after submit so keyboard and assistive users can discover the output more reliably.
 - `tmp.html` is now an archived prototype with a visible non-production warning and cleaned closing HTML; do not treat it as live.
+- As of 2026-07-13, the local static site has been updated to show the current company address, `264 North Circular Road, London, NW10 0JT, United Kingdom`, in visible homepage copy, Organization JSON-LD, and the reachable archived prototype. The hosted site still needs review, commit, push, and post-GitHub-Pages verification.
+- The repo now includes `/.nojekyll` plus root CODEX hosting/content continuity docs for GitHub Pages recovery.
 - No `CODEX/` workspace existed before this bootstrap. Initial architecture, task, content, design, and testing docs were created on 2026-03-22.
 
 ## Active Priorities
-- `DII-030` Add stronger factual proof near the contact decision.
+- `DII-ADDRESS-DEPLOY-VERIFY` Review, commit, push, and verify the corrected address on `https://dii.ltd/`.
+- `DII-037` Replace oversized favicon source with a lightweight icon asset.
 - `DII-017` Record the remaining physical-phone hosted QA after WebKit coverage was completed from this Linux environment.
 
 ## Current In-Progress Task
 - None.
 
 ## Recommended Next Task
-- `DII-030` Add stronger factual proof near the contact decision.
+- `DII-ADDRESS-DEPLOY-VERIFY` Review, commit, push, and verify the corrected address on the hosted GitHub Pages site.
+- `DII-037` Replace oversized favicon source with a lightweight icon asset after the address fix is live.
+- `DII-017` only if a real physical phone browser is available.
 
 ## Recent Changes
 - Created `/CODEX/` workspace structure and seeded it with real findings from `/index.html`, `/tmp.html`, `/assets/images/`, `/CNAME`, and the current repository state.
@@ -85,6 +95,13 @@ Persistent collaboration docs live in `/CODEX/`.
 - Completed `DII-027` by tightening the platform overview and principles sections around clearer founder, operations, finance, and learning outcomes instead of broader ecosystem-only wording.
 - Completed `DII-028` by turning the platform overview into a route-level handoff with compact direct links to the main product, knowledge, and guided-enquiry destinations.
 - Completed `DII-029` by turning the hero buyer-fit cards into direct first-screen route handoffs with compact jumps to the matching product sections.
+- Completed `DII-030` by adding a small factual proof strip beside the contact cards, using only homepage-supported facts: five live routes, named inbox paths, London HQ listing, and the guided enquiry's structured starting brief.
+- Completed `DII-031` by adding a homepage-first first knowledge paths roadmap that maps founder planning, IFV preparation, operations workflows, warehouse control, and finance operations to the closest live DII routes while keeping the layer clearly marked as growing next.
+- Completed `DII-032` by adding conservative route-level JSON-LD for the five visible product anchors without inventing product pages, offers, ratings, pricing, reviews, or unsupported claims.
+- Completed `DII-033` by improving guided enquiry accessibility and completion confidence with local-processing guidance, `aria-describedby` helper wiring, and result-state focus management.
+- Completed `DII-034` by adding an intentional 1200x630 social preview image and aligning Open Graph/Twitter metadata with the current five-route homepage positioning.
+- Completed `DII-035` by fixing the page-level horizontal overflow at narrow desktop/tablet widths through scoped main-layout and hero-sizing CSS changes.
+- Completed `DII-036` by adding real intrinsic dimensions to all 11 live homepage `<img>` elements across the hero carousel, journey/timeline proof visuals, and knowledge preview without changing responsive styling.
 
 ## Important Rules
 - Treat `/index.html` as the live page unless the repo structure changes.

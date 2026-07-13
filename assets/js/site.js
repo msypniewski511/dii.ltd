@@ -181,10 +181,14 @@ function renderGuidedEnquiry({ announce = false } = {}) {
 
   if (announce) {
     guidedStatus.textContent =
-      "Enquiry prepared. Send this as your starting brief, or copy it into your normal email service.";
+      "Enquiry prepared below. Review the recommended inbox, subject, and message before sending.";
   }
 
   return { inbox, subject, message };
+}
+
+function focusGuidedResult() {
+  guidedResult.focus({ preventScroll: true });
 }
 
 if (guidedEnquiryForm) {
@@ -199,6 +203,13 @@ if (guidedEnquiryForm) {
       behavior: reduceMotion ? "auto" : "smooth",
       block: "nearest",
     });
+
+    if (reduceMotion) {
+      focusGuidedResult();
+      return;
+    }
+
+    window.setTimeout(focusGuidedResult, 240);
   });
 
   [
